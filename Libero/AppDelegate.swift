@@ -8,15 +8,52 @@
 
 import UIKit
 import Parse
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        if let installation = PFInstallation.current() {
+            installation.setDeviceTokenFrom(deviceToken)
+        }
+    }
+    
+//    private func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+//        if (error.code == 3010) {
+//            print("Push notifications are not supported in the iOS Simulator.");
+//        } else {
+//            // show some alert or otherwise handle the failure to register.
+//            print("application:didFailToRegisterForRemoteNotificationsWithError: \(error)");
+//        }
+//    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        if (error._code == 3010) {
+            print("Push notifications are not supported in the iOS Simulator.");
+        } else {
+            // show some alert or otherwise handle the failure to register.
+            print("application:didFailToRegisterForRemoteNotificationsWithError: \(error)");
+        }
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        PFAnalytics.trackAppOpened(launchOptions: userInfo)
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Parse.setLogLevel(.error)
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        
         
         let parseConfig = ParseClientConfiguration {
             $0.applicationId = "vparU3ObgnU7Fl9mQMwKGrI0GaK1kXfcFKq7UpXS"
@@ -24,6 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://libero-parse.herokuapp.com/parse"
         }
         Parse.initialize(with: parseConfig)
+        
+        
+        PFAnalytics.trackAppOpened(launchOptions: launchOptions)
         
         return true
     }
