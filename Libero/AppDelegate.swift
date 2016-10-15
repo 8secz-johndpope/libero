@@ -55,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         application.registerForRemoteNotifications()
         
+        User.registerSubclass()
         
         let parseConfig = ParseClientConfiguration {
             $0.applicationId = "vparU3ObgnU7Fl9mQMwKGrI0GaK1kXfcFKq7UpXS"

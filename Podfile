@@ -8,4 +8,5 @@ target 'Libero' do
   # Pods for Libero
 
   pod 'Parse'
+  pod 'ParseFacebookUtils'
 end
