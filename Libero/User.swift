@@ -20,7 +20,7 @@ class User: PFUser {
     
     
     
-    static func login(email: String, password: String, block: @escaping (_ user: User?, _ error: Error?) -> Void) {
+    static func login(with email: String, and password: String, block: @escaping (_ user: User?, _ error: Error?) -> Void) {
         PFUser.logInWithUsername(inBackground: email, password: password) { (user, error) in
             if let user = user as? User, error == nil {
                 DispatchQueue.main.async {

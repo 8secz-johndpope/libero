@@ -1,0 +1,4 @@
+#/bin/bash!
+
+open http://0.0.0.0:4040/
+parse-dashboard --appId vparU3ObgnU7Fl9mQMwKGrI0GaK1kXfcFKq7UpXS --masterKey abafJufRg2IbUqDv619W2wwto4TS70kVygIH4nFox4q8pwv9K2ZdffZJl99H --serverURL "http://libero-parse.herokuapp.com/parse" --appName "Libero"
