@@ -11,13 +11,21 @@ import Parse
 import ParseFacebookUtils
 
 class User: PFUser {
+    class ProfilePic: PFObject, PFSubclassing {
+        @NSManaged var file: PFFile
+        
+        static func parseClassName() -> String {
+            return "ProfilePic"
+        }
+    }
+    
     // Commented are ones in by default
     // email: String?
     // password: String?
     // username: String
     @NSManaged var emailVerified: Bool
     @NSManaged var legue: League?
-    @NSManaged var picture: PFFile?
+    @NSManaged var picture: ProfilePic?
     
     var pastWorkouts: [Workout]?
     var achievements: [Achievement]?

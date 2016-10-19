@@ -56,6 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         
         User.registerSubclass()
+        User.ProfilePic.registerSubclass()
+        League.registerSubclass()
+        Workout.registerSubclass()
+        Achievement.registerSubclass()
         
         let parseConfig = ParseClientConfiguration {
             $0.applicationId = "vparU3ObgnU7Fl9mQMwKGrI0GaK1kXfcFKq7UpXS"
