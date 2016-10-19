@@ -14,7 +14,7 @@ class League: PFObject, PFSubclassing {
     private var members: [User]? = []
     
     func initialize() {
-        
+        self.loadMembers() { (_, _) in}
     }
     
     /**

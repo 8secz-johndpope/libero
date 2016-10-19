@@ -26,6 +26,9 @@ class User: PFUser {
     @NSManaged var emailVerified: Bool
     @NSManaged var legue: League?
     @NSManaged var picture: ProfilePic?
+    var pictureURL: String? {
+        return self.picture?.file.url
+    }
     
     var pastWorkouts: [Workout]?
     var achievements: [Achievement]?
