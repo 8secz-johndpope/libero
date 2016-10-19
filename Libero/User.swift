@@ -158,7 +158,7 @@ class User: PFUser {
             
             // Now if there wasnt an error
             // TODO: Write the function on the server and put its name here
-//            PFCloud.callFunction(inBackground: "", withParameters: ["user": user], block: { (result, error) in
+//            PFCloud.callFunction(inBackground: "", withParameters: ["user": user.objectId], block: { (result, error) in
 //                if result == nil || error != nil {
 //                    block(user, BackendError.ServerError.CloudCodeFailed)
 //                }else{ // TODO: Check the result once we know what it will be
@@ -174,8 +174,6 @@ class User: PFUser {
                 print("Error \(error._code): \(error.localizedDescription)")
                 block(BackendError.User.PasswordReset.UnknownPasswordResetError)
             }
-            
-            
         }
     }
     
