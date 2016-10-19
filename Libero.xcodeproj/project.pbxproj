@@ -13,7 +13,7 @@
 		52268ADB1D9F0C2D0005C759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52268AD91D9F0C2D0005C759 /* Main.storyboard */; };
 		52268ADD1D9F0C2D0005C759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52268ADC1D9F0C2D0005C759 /* Assets.xcassets */; };
 		52268AE01D9F0C2D0005C759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52268ADE1D9F0C2D0005C759 /* LaunchScreen.storyboard */; };
-		52344B2E1DB576F200A4BE22 /* Legue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2D1DB576F200A4BE22 /* Legue.swift */; };
+		52344B2E1DB576F200A4BE22 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2D1DB576F200A4BE22 /* League.swift */; };
 		52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */; };
 		525CB9F81DAEF3810050C9D2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525CB9F61DAEF3810050C9D2 /* Bolts.framework */; };
 		525CB9F91DAEF3810050C9D2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525CB9F71DAEF3810050C9D2 /* Parse.framework */; };
@@ -49,7 +49,7 @@
 		52268ADC1D9F0C2D0005C759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52268ADF1D9F0C2D0005C759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52268AE11D9F0C2D0005C759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52344B2D1DB576F200A4BE22 /* Legue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legue.swift; sourceTree = "<group>"; };
+		52344B2D1DB576F200A4BE22 /* League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralEnumsAndFuncs.swift; sourceTree = "<group>"; };
 		525CB9F61DAEF3810050C9D2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Libero-gkjgmyjgieaomodiqcmyhfxsetxw/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework"; sourceTree = "<group>"; };
 		525CB9F71DAEF3810050C9D2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Libero-gkjgmyjgieaomodiqcmyhfxsetxw/Build/Products/Debug-iphonesimulator/Parse/Parse.framework"; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				52AC8E191DB1A76500A5AA52 /* User.swift */,
-				52344B2D1DB576F200A4BE22 /* Legue.swift */,
+				52344B2D1DB576F200A4BE22 /* League.swift */,
 				52E20C2D1DB40BF3004113E6 /* Workout.swift */,
 				52E20C2F1DB40C27004113E6 /* Achievement.swift */,
 				52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */,
@@ -348,7 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52344B2E1DB576F200A4BE22 /* Legue.swift in Sources */,
+				52344B2E1DB576F200A4BE22 /* League.swift in Sources */,
 				52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */,
 				52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */,
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,

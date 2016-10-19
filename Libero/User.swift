@@ -16,11 +16,51 @@ class User: PFUser {
     // password: String?
     // username: String
     @NSManaged var emailVerified: Bool
-    @NSManaged var pastWorkouts: [Workout]
-    @NSManaged var achievements: [Achievement]
-    @NSManaged var legue: Legue?
+    @NSManaged var legue: League?
     @NSManaged var picture: PFFile?
     
+    var pastWorkouts: [Workout]?
+    var achievements: [Achievement]?
+    var friends: [User]?
+    
+    /**
+     Loads a number of the objects stored in the User
+     */
+    func initialize(_ block: @escaping (User) -> Void) {
+        var done = 0
+        self.relation(forKey: "pastWorkouts").query().findObjectsInBackground { (objects, error) in
+            if let objects = objects as? [Workout] {
+                self.pastWorkouts = objects
+            }
+            done += 1
+            
+            if done >= 3 {
+                block(self)
+            }
+        }
+        
+        self.relation(forKey: "achievements").query().findObjectsInBackground { (objects, error) in
+            if let objects = objects as? [Achievement] {
+                self.achievements = objects
+            }
+            done += 1
+            
+            if done >= 3 {
+                block(self)
+            }
+        }
+        
+        self.relation(forKey: "friends").query().findObjectsInBackground { (objects, error) in
+            if let objects = objects as? [User] {
+                self.friends = objects
+            }
+            done += 1
+            
+            if done >= 3 {
+                block(self)
+            }
+        }
+    }
     
     /**
      Standard login with email and password
@@ -54,11 +94,6 @@ class User: PFUser {
             }
         }
     }
-
-    // Not supported yet
-//    static func loginWithGoogle() {
-//        
-//    }
     
     /**
      This will open a modal with which a user can sign in

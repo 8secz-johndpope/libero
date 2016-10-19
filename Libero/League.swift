@@ -9,12 +9,12 @@
 import Foundation
 import Parse
 
-class Legue: PFObject, PFSubclassing {
+class League: PFObject, PFSubclassing {
     @NSManaged var name: String
     private var members: [User]? = []
     
-    override init() {
-        super.init()
+    func initialize() {
+        
     }
     
     /**
@@ -31,7 +31,6 @@ class Legue: PFObject, PFSubclassing {
             }
         }
     }
-    
     
     static func parseClassName() -> String {
         return "Legue"
