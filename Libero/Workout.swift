@@ -19,6 +19,7 @@ class Workout: PFObject, PFSubclassing {
     @NSManaged private var speed: NSNumber?
     var locationData: [CLLocation] = []
     var end: NSDate?
+    var data: Subdata?
     
     // This is the public value which can be received and set to
     //     but when they set it I will redirect the value into the Parse managed values
@@ -34,9 +35,6 @@ class Workout: PFObject, PFSubclassing {
     }
     // This is the actual value stored. Within this file I wont touch the one above
     private var typeValue: (type: WorkoutType, name: WorkoutName) = (.unknown, .unknown)
-    
-    
-    var data: Subdata? = Subdata(activity: .unknown)
     
     // ------ Enums -------
     // This will provide an easy way to identify and set values
@@ -115,9 +113,14 @@ class Workout: PFObject, PFSubclassing {
         }
     }
     
+    //
     override init() {
         super.init()
         
+        parseTypeInfo()
+    }
+    
+    private func parseTypeInfo() {
         // The following parses the name and type of the object
         let type = WorkoutType(rawValue: self.type)
         let name = WorkoutName(rawValue: self.activity)
@@ -141,6 +144,16 @@ class Workout: PFObject, PFSubclassing {
                 break
             }
         }
+    }
+    
+    // Creates a new one
+    init(type: String, activity: String) {
+       super.init()
+        
+        self.type = type
+        self.activity = activity
+        
+        parseTypeInfo()
     }
     
     /**
