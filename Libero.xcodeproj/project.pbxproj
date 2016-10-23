@@ -12,7 +12,6 @@
 		52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52268AD71D9F0C2D0005C759 /* ViewController.swift */; };
 		52268ADB1D9F0C2D0005C759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52268AD91D9F0C2D0005C759 /* Main.storyboard */; };
 		52268ADD1D9F0C2D0005C759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52268ADC1D9F0C2D0005C759 /* Assets.xcassets */; };
-		52268AE01D9F0C2D0005C759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52268ADE1D9F0C2D0005C759 /* LaunchScreen.storyboard */; };
 		52344B2E1DB576F200A4BE22 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2D1DB576F200A4BE22 /* League.swift */; };
 		52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */; };
 		525CB9F81DAEF3810050C9D2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525CB9F61DAEF3810050C9D2 /* Bolts.framework */; };
@@ -31,19 +30,19 @@
 		525CBA131DAEF39E0050C9D2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 525CBA051DAEF39D0050C9D2 /* LICENSE.txt */; };
 		525CBA141DAEF39E0050C9D2 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 525CBA061DAEF39D0050C9D2 /* README.txt */; };
 		525CBA151DAEF39E0050C9D2 /* Samples in Resources */ = {isa = PBXBuildFile; fileRef = 525CBA071DAEF39D0050C9D2 /* Samples */; };
-		52A869461DB9383E0099C77E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A869451DB9383E0099C77E /* GoogleService-Info.plist */; };
 		52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC8E191DB1A76500A5AA52 /* User.swift */; };
 		52AC8E2C1DB1B58500A5AA52 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC8E2A1DB1B58500A5AA52 /* FacebookSDK.framework */; };
 		52AC8E2D1DB1B58500A5AA52 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC8E2B1DB1B58500A5AA52 /* ParseFacebookUtils.framework */; };
 		52CAE3D71DA183D300698CEE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CAE3D61DA183D300698CEE /* HealthKit.framework */; };
+		52D6969A1DBD378B00E84007 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D696991DBD378B00E84007 /* GoogleService-Info.plist */; };
+		52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2D1DB40BF3004113E6 /* Workout.swift */; };
+		52E20C301DB40C27004113E6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2F1DB40C27004113E6 /* Achievement.swift */; };
 		7CDF75D31DBD28B80060F1AB /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D11DBD28B80060F1AB /* Friends.storyboard */; };
 		7CDF75D51DBD28C60060F1AB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D41DBD28C60060F1AB /* Profile.storyboard */; };
 		7CDF75D81DBD29080060F1AB /* Workout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D61DBD29080060F1AB /* Workout.storyboard */; };
 		7CDF75DA1DBD291B0060F1AB /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */; };
 		7CDF75DD1DBD29350060F1AB /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */; };
 		7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */; };
-		52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2D1DB40BF3004113E6 /* Workout.swift */; };
-		52E20C301DB40C27004113E6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2F1DB40C27004113E6 /* Achievement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +71,6 @@
 		525CBA051DAEF39D0050C9D2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = "FacebookSDKs-iOS-4/LICENSE.txt"; sourceTree = "<group>"; };
 		525CBA061DAEF39D0050C9D2 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = "FacebookSDKs-iOS-4/README.txt"; sourceTree = "<group>"; };
 		525CBA071DAEF39D0050C9D2 /* Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Samples; path = "FacebookSDKs-iOS-4/Samples"; sourceTree = "<group>"; };
-		52A869451DB9383E0099C77E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52AC8E191DB1A76500A5AA52 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52AC8E211DB1B29700A5AA52 /* Libero-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Libero-Bridging-Header.h"; sourceTree = "<group>"; };
 		52AC8E281DB1B4AA00A5AA52 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -82,6 +80,7 @@
 		52AC8E301DB1B5A100A5AA52 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		52CAE3D51DA183CB00698CEE /* Libero.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Libero.entitlements; path = Libero/Libero.entitlements; sourceTree = "<group>"; };
 		52CAE3D61DA183D300698CEE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		52D696991DBD378B00E84007 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52E20C2D1DB40BF3004113E6 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		52E20C2F1DB40C27004113E6 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		7AD14A07E261327AAC4AFC21 /* Pods-Libero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Libero/Pods-Libero.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,12 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				52AC8E211DB1B29700A5AA52 /* Libero-Bridging-Header.h */,
-				52AC8E1C1DB1B0AB00A5AA52 /* GoogleService-Info.plist */,
+				52D696991DBD378B00E84007 /* GoogleService-Info.plist */,
 				52268AD41D9F0C2D0005C759 /* Libero */,
 				52268AD31D9F0C2D0005C759 /* Products */,
 				96F1D2FAEFBB10C088EE774C /* Pods */,
 				2FC53C7481C866D930DCEB00 /* Frameworks */,
-				52268AD41D9F0C2D0005C759 /* Libero */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				52268AD51D9F0C2D0005C759 /* AppDelegate.swift */,
-				52AC8E1B1DB1A7B200A5AA52 /* Parse Subclasses */,
+				52D696981DBD31A400E84007 /* Classes */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
 				7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */,
@@ -200,6 +198,14 @@
 				52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */,
 			);
 			name = "Parse Subclasses";
+			sourceTree = "<group>";
+		};
+		52D696981DBD31A400E84007 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				52AC8E1B1DB1A7B200A5AA52 /* Parse Subclasses */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		96F1D2FAEFBB10C088EE774C /* Pods */ = {
@@ -286,6 +292,7 @@
 			files = (
 				525CBA151DAEF39E0050C9D2 /* Samples in Resources */,
 				7CDF75D51DBD28C60060F1AB /* Profile.storyboard in Resources */,
+				52D6969A1DBD378B00E84007 /* GoogleService-Info.plist in Resources */,
 				7CDF75DD1DBD29350060F1AB /* Leaderboard.storyboard in Resources */,
 				7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */,
 				525CBA0B1DAEF39D0050C9D2 /* DocSets in Resources */,
@@ -296,7 +303,6 @@
 				7CDF75DA1DBD291B0060F1AB /* Achievements.storyboard in Resources */,
 				525CBA131DAEF39E0050C9D2 /* LICENSE.txt in Resources */,
 				7CDF75D31DBD28B80060F1AB /* Friends.storyboard in Resources */,
-				52AC8E1D1DB1B0AB00A5AA52 /* GoogleService-Info.plist in Resources */,
 				525CBA091DAEF39D0050C9D2 /* AccountKitStrings.bundle in Resources */,
 				52268ADB1D9F0C2D0005C759 /* Main.storyboard in Resources */,
 			);
