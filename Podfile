@@ -9,4 +9,5 @@ target 'Libero' do
 
   pod 'Parse'
   pod 'ParseFacebookUtils'
+  pod 'SCLAlertView'
 end

@@ -13,17 +13,20 @@ PODS:
     - Bolts/Tasks (~> 1.5)
     - Facebook-iOS-SDK (~> 3.24)
     - Parse (~> 1.9)
+  - SCLAlertView (0.7.0)
 
 DEPENDENCIES:
   - Parse
   - ParseFacebookUtils
+  - SCLAlertView
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseFacebookUtils: 7030f53c989fda36ad50029d90edec1327424317
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
 
-PODFILE CHECKSUM: 14449807eb5bdd94453c4be1e06cb596f0ea1def
+PODFILE CHECKSUM: babe1770315ed37f3738817580395dddbe2a8981
 
 COCOAPODS: 1.0.1
