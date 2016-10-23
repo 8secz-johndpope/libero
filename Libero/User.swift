@@ -24,10 +24,13 @@ class User: PFUser {
     // password: String?
     // username: String
     @NSManaged var emailVerified: Bool
-    @NSManaged var legue: League?
+    @NSManaged var league: League?
     @NSManaged var picture: ProfilePic?
     var pictureURL: String? {
         return self.picture?.file.url
+    }
+    var hasCompletedSurvey: Bool {
+        return false
     }
     
     var pastWorkouts: [Workout]?
@@ -113,7 +116,7 @@ class User: PFUser {
      - parameter block: A callback that will be executed on completion (when they login and the modal disapears) with the user and an error if there is one
      */
     static func loginWithFacebook(block: @escaping (User?, BackendError?) -> Void) {
-        let permissionsArray = ["user_birthday"];
+        let permissionsArray = ["user_birthday", "email"];
         
         PFFacebookUtils.logIn(withPermissions: permissionsArray) { (user, error) in
             if let user = user as? User, error == nil {
@@ -138,8 +141,7 @@ class User: PFUser {
         user.emailVerified = false
         user.pastWorkouts = []
         user.achievements = []
-        // TODO: Decide on the method we will use for placing in Legues?
-        user.legue = nil
+        user.league = nil
         
         user.signUpInBackground { (success, error) in
             if let error = error {
@@ -166,17 +168,18 @@ class User: PFUser {
             }
             
             block(user, nil)
-            
-            // Now if there wasnt an error
-            // TODO: Write the function on the server and put its name here
-//            PFCloud.callFunction(inBackground: "", withParameters: ["user": user.objectId], block: { (result, error) in
-//                if result == nil || error != nil {
-//                    block(user, BackendError.ServerError.CloudCodeFailed)
-//                }else{ // TODO: Check the result once we know what it will be
-//                    
-//                }
-//            })
         }
+    }
+    
+    private func performSignUpCompletion(block: @escaping (BackendError?) -> Void) {
+        // TODO: Add survey results
+        PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId], block: { (result, error) in
+            if error != nil {
+                block(BackendError.ServerError.CloudCodeFailed)
+            }else{
+                block(nil)
+            }
+        });
     }
     
     static func requestPasswordReset(forEmail email:String, block: @escaping (_ error: BackendError.User.PasswordReset?) -> Void) {
