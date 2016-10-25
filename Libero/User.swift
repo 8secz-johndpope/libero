@@ -24,13 +24,11 @@ class User: PFUser {
     // password: String?
     // username: String
     @NSManaged var emailVerified: Bool
+    @NSManaged var completedSetup: Bool
     @NSManaged var league: League?
     @NSManaged var picture: ProfilePic?
     var pictureURL: String? {
         return self.picture?.file.url
-    }
-    var hasCompletedSurvey: Bool {
-        return false
     }
     
     var pastWorkouts: [Workout]?
@@ -81,6 +79,8 @@ class User: PFUser {
      
      - parameter username: The user's username
      - parameter password: The user's password
+     
+     - parameter block: The callback after the login is finished (if login succeeds, user object will not be nil, and otherwise the error will describe why it failed)
      */
     static func login(withUsername username: String, andPassword password: String, block: @escaping (User?, BackendError?) -> Void) {
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
@@ -139,6 +139,7 @@ class User: PFUser {
         user.username = username
         user.password = password
         user.emailVerified = false
+        user.completedSetup = false
         user.pastWorkouts = []
         user.achievements = []
         user.league = nil
@@ -171,9 +172,8 @@ class User: PFUser {
         }
     }
     
-    private func performSignUpCompletion(block: @escaping (BackendError?) -> Void) {
-        // TODO: Add survey results
-        PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId], block: { (result, error) in
+    func finishSignUp(survey: SurveyResponse, block: @escaping (BackendError?) -> Void) {
+        PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId, "survey": ["frequency":survey.frequency.rawValue, "intensity": survey.intensity.rawValue]], block: { (result, error) in
             if error != nil {
                 block(BackendError.ServerError.CloudCodeFailed)
             }else{
@@ -197,5 +197,29 @@ class User: PFUser {
     
     static func logout(block: PFUserLogoutResultBlock?) {
         PFUser.logOutInBackground(block: block)
+    }
+    
+    class SurveyResponse {
+        var frequency: Frequency!
+        var intensity: Intensity!
+        
+        init(frequency: Frequency, intensity: Intensity) {
+            self.frequency = frequency
+            self.intensity = intensity
+        }
+        
+        enum Frequency: String {
+            case LessThanOnce
+            case Once
+            case TwoThree
+            case FourPlus
+        }
+        
+        enum Intensity: Int {
+            case Beginner = 0
+            case Intermediate = 1
+            case Advanced = 2
+            case Enthusiast = 3
+        }
     }
 }
