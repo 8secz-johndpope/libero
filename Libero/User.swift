@@ -116,12 +116,15 @@ class User: PFUser {
      - parameter block: A callback that will be executed on completion (when they login and the modal disapears) with the user and an error if there is one
      */
     static func loginWithFacebook(block: @escaping (User?, BackendError?) -> Void) {
-        let permissionsArray = ["user_birthday", "email"];
+        let permissionsArray = ["email"];
         
+        
+        PFFacebookUtils.setFacebookLoginBehavior(.useSystemAccountIfPresent)
         PFFacebookUtils.logIn(withPermissions: permissionsArray) { (user, error) in
             if let user = user as? User, error == nil {
                 block(user, nil)
             }else{
+                print(error.debugDescription)
                 block(nil, BackendError.User.Login.UnknownLoginError)
             }
         }

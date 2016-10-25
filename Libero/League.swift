@@ -32,6 +32,19 @@ class League: PFObject, PFSubclassing {
         }
     }
     
+    func getLeaderBoard(with block: @escaping ([User]?, BackendError?) -> Void) {
+        let relation = self.relation(forKey: "members")
+        let query = relation.query()
+        query.addDescendingOrder("numWorkouts")
+        query.findObjectsInBackground { (objects, error) in
+            if let _ = error {
+                block(nil, BackendError.UnknownError)
+            }else{
+                block(objects as? [User], nil)
+            }
+        }
+    }
+    
     static func parseClassName() -> String {
         return "Legue"
     }
