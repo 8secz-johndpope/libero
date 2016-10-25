@@ -174,11 +174,13 @@ class User: PFUser {
     
     func finishSignUp(survey: SurveyResponse, block: @escaping (BackendError?) -> Void) {
         PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId, "survey": ["frequency":survey.frequency.rawValue, "intensity": survey.intensity.rawValue]], block: { (result, error) in
-            if error != nil {
-                block(BackendError.ServerError.CloudCodeFailed)
-            }else{
-                block(nil)
-            }
+            self.fetchInBackground(block: { (_, error2) in
+                if error != nil || error2 != nil {
+                    block(BackendError.ServerError.CloudCodeFailed)
+                }else{
+                    block(nil)
+                }
+            })
         });
     }
     

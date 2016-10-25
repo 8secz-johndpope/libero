@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import UserNotifications
 import FBSDKCoreKit
+import ParseFacebookUtils
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -71,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PFAnalytics.trackAppOpened(launchOptions: launchOptions)
         
+        PFFacebookUtils.initializeFacebook()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
