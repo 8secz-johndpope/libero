@@ -12,10 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        User.loginWithFacebook { (user, error) in
-            print("User: \(user) with id: \(user?.objectId)")
-            print("Error: \(error)")
-        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
