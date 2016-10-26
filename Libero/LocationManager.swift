@@ -83,6 +83,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         self.method = .Single
     }
     
+    func getMultipleLocations(callback: ((CLLocation) -> Void)?) {
+        self.locationAquired = callback
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        self.method = .Multi
+    }
+    
     // Returns the distance in (meters, miles)
     func calculateDistance(start: CLLocation, end: CLLocation) -> Distance {
         let meters: CLLocationDistance = end.distance(from: start)
@@ -99,5 +106,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             locationAquired = nil
         }
+    }
+    
+    func cancelLocation() {
+        self.locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
+        locationAquired = nil
     }
 }

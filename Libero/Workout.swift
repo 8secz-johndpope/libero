@@ -9,6 +9,7 @@
 import Foundation
 import Parse
 
+
 class Workout: PFObject, PFSubclassing {
     @NSManaged var start: NSDate
     @NSManaged var duration: Float // in minutes
@@ -19,6 +20,7 @@ class Workout: PFObject, PFSubclassing {
     @NSManaged private var distance: NSNumber?
     @NSManaged private var speed: NSNumber?
     var locationData: [CLLocation] = []
+    var locationManager: LocationManager?
     var end: NSDate?
     var data: Subdata?
     
@@ -163,7 +165,24 @@ class Workout: PFObject, PFSubclassing {
     }
     
     func startLocationTracking() {
+        self.locationManager = LocationManager()
         
+        self.locationData.removeAll()
+        locationManager?.getMultipleLocations(callback: { (location) in
+            if let lastLoc = self.locationData.last {
+                let lastLegDistance = self.locationManager!.calculateDistance(start: lastLoc, end: location)
+                
+                if let data = self.data as? Subdata.Distance {
+                    data.distance += lastLegDistance.meters
+                }
+            }
+            
+            self.locationData.append(location)
+        })
+    }
+    
+    func stopLocationTracking() {
+        locationManager?.cancelLocation()
     }
     
     /**
