@@ -27,6 +27,7 @@ class User: PFUser {
     @NSManaged var completedSetup: Bool
     @NSManaged var league: League?
     @NSManaged var picture: ProfilePic?
+    @NSManaged var activeWorkout: Workout?
     var pictureURL: String? {
         return self.picture?.file.url
     }
@@ -73,6 +74,24 @@ class User: PFUser {
             }
         }
     }
+    
+    // ========= User Functions ==========
+    
+    func addWorkout(workout: Workout) {
+        if workout.isActive {
+            self.activeWorkout = workout
+        }else{
+            self.relation(forKey: "pastWorkouts").add(workout)
+            self.pastWorkouts?.append(workout)
+        }
+        
+        self.saveInBackground { (success, error) in
+            PFCloud.callFunction(inBackground: "updateWorkouts", withParameters: ["user": self])
+        }
+    }
+    
+    
+    // ========= Static Functions ==========
     
     /**
      Standard login with email and password
@@ -124,7 +143,6 @@ class User: PFUser {
             if let user = user as? User, error == nil {
                 block(user, nil)
             }else{
-                print(error.debugDescription)
                 block(nil, BackendError.User.Login.UnknownLoginError)
             }
         }
@@ -203,6 +221,8 @@ class User: PFUser {
     static func logout(block: PFUserLogoutResultBlock?) {
         PFUser.logOutInBackground(block: block)
     }
+    
+    // ========= End Static Functions ==========
     
     class SurveyResponse {
         var frequency: Frequency!

@@ -12,6 +12,8 @@
 		52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52268AD71D9F0C2D0005C759 /* ViewController.swift */; };
 		52268ADB1D9F0C2D0005C759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52268AD91D9F0C2D0005C759 /* Main.storyboard */; };
 		52268ADD1D9F0C2D0005C759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52268ADC1D9F0C2D0005C759 /* Assets.xcassets */; };
+		522840351DC14D570062EE55 /* LeaderBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522840341DC14D570062EE55 /* LeaderBoard.swift */; };
+		522840371DC171220062EE55 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522840361DC171220062EE55 /* LocationManager.swift */; };
 		52344B2E1DB576F200A4BE22 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2D1DB576F200A4BE22 /* League.swift */; };
 		52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */; };
 		525CB9F81DAEF3810050C9D2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525CB9F61DAEF3810050C9D2 /* Bolts.framework */; };
@@ -54,6 +56,8 @@
 		52268ADA1D9F0C2D0005C759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52268ADC1D9F0C2D0005C759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52268AE11D9F0C2D0005C759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		522840341DC14D570062EE55 /* LeaderBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoard.swift; sourceTree = "<group>"; };
+		522840361DC171220062EE55 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		52344B2D1DB576F200A4BE22 /* League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralEnumsAndFuncs.swift; sourceTree = "<group>"; };
 		525CB9F61DAEF3810050C9D2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Libero-gkjgmyjgieaomodiqcmyhfxsetxw/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework"; sourceTree = "<group>"; };
@@ -199,7 +203,6 @@
 				52344B2D1DB576F200A4BE22 /* League.swift */,
 				52E20C2D1DB40BF3004113E6 /* Workout.swift */,
 				52E20C2F1DB40C27004113E6 /* Achievement.swift */,
-				52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */,
 			);
 			name = "Parse Subclasses";
 			sourceTree = "<group>";
@@ -207,6 +210,9 @@
 		52D696981DBD31A400E84007 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */,
+				522840341DC14D570062EE55 /* LeaderBoard.swift */,
+				522840361DC171220062EE55 /* LocationManager.swift */,
 				52AC8E1B1DB1A7B200A5AA52 /* Parse Subclasses */,
 			);
 			name = Classes;
@@ -381,12 +387,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				52344B2E1DB576F200A4BE22 /* League.swift in Sources */,
+				522840351DC14D570062EE55 /* LeaderBoard.swift in Sources */,
 				52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */,
 				52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */,
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,
 				52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */,
 				52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */,
 				52E20C301DB40C27004113E6 /* Achievement.swift in Sources */,
+				522840371DC171220062EE55 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +454,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -495,6 +504,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -523,6 +533,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4AF06CA1D49ACAE8C738F2A7 /* Pods-Libero.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Libero/Libero.entitlements;
@@ -545,6 +556,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AD14A07E261327AAC4AFC21 /* Pods-Libero.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Libero/Libero.entitlements;

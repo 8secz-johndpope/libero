@@ -12,6 +12,7 @@ import Parse
 class Workout: PFObject, PFSubclassing {
     @NSManaged var start: NSDate
     @NSManaged var duration: Float // in minutes
+    @NSManaged var isActive: Bool
     @NSManaged private var type: String
     @NSManaged private var activity: String
     @NSManaged private var count: NSNumber?
@@ -155,6 +156,17 @@ class Workout: PFObject, PFSubclassing {
     }
     
     /**
+     Adds the workout to the user object given
+     */
+    func addToUser(user: User) {
+        user.addWorkout(workout: self)
+    }
+    
+    func startLocationTracking() {
+        
+    }
+    
+    /**
      Will save the workout in the current thread. Not recomended
      */
     override func save() throws {
@@ -177,6 +189,4 @@ class Workout: PFObject, PFSubclassing {
     static func parseClassName() -> String {
         return "Workout"
     }
-    
-    
 }
