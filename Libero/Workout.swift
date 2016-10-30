@@ -9,21 +9,24 @@
 import Foundation
 import Parse
 
+
 class Workout: PFObject, PFSubclassing {
     @NSManaged var start: NSDate
     @NSManaged var duration: Float // in minutes
+    @NSManaged var isActive: Bool
     @NSManaged private var type: String
     @NSManaged private var activity: String
     @NSManaged private var count: NSNumber?
     @NSManaged private var distance: NSNumber?
     @NSManaged private var speed: NSNumber?
     var locationData: [CLLocation] = []
+    var locationManager: LocationManager?
     var end: NSDate?
     var data: Subdata?
     
     // This is the public value which can be received and set to
     //     but when they set it I will redirect the value into the Parse managed values
-    var typeInfo: (type: WorkoutType, name: WorkoutName) {
+    var typeInfo: (type: Type, name: Name) {
         get {
             return typeValue
         }
@@ -34,21 +37,22 @@ class Workout: PFObject, PFSubclassing {
         }
     }
     // This is the actual value stored. Within this file I wont touch the one above
-    private var typeValue: (type: WorkoutType, name: WorkoutName) = (.unknown, .unknown)
+    private var typeValue: (type: Type, name: Name) = (.unknown, .unknown)
     
     // ------ Enums -------
     // This will provide an easy way to identify and set values
-    enum WorkoutType: String {
+    // We only support distance for now
+    enum `Type`: String {
         case distance
-        case repetition
         case unknown
     }
     
     // The names here are exactly what will be used in the string value
-    enum WorkoutName: String {
+    enum Name: String {
         case run
         case walk
-        case pushups
+        case swim
+        case bike
         case unknown
     }
     
@@ -58,33 +62,34 @@ class Workout: PFObject, PFSubclassing {
         
         // Clearly every activity will have a name, liking running, walking, so on
         //     so I will store that in every object
-        var activity: WorkoutName
+        var activity: Name
         
-        class Repetition: Subdata {
-            // For things like pushups and so on
-            
-            // We will likely take more data eventually
-            var count: Int
-            
-            // This will make use of the super property
-            init(activity: WorkoutName, count: Int) {
-                self.count = count
-                super.init(activity: activity)
-            }
-            
-            // The object will put the count value into the workout
-            override func save(into workout: Workout) {
-                super.save(into: workout)
-                
-                workout.count = self.count as NSNumber
-            }
-        }
+        // We have decided to not use a repetition data set yet
+//        class Repetition: Subdata {
+//            // For things like pushups and so on
+//            
+//            // We will likely take more data eventually
+//            var count: Int
+//            
+//            // This will make use of the super property
+//            init(activity: Name, count: Int) {
+//                self.count = count
+//                super.init(activity: activity)
+//            }
+//            
+//            // The object will put the count value into the workout
+//            override func save(into workout: Workout) {
+//                super.save(into: workout)
+//                
+//                workout.count = self.count as NSNumber
+//            }
+//        }
         
         class Distance: Subdata {
             var distance: Double
             var speed: Double
             
-            init(activity: WorkoutName, distance: Double, speed: Double) {
+            init(activity: Name, distance: Double, speed: Double) {
                 self.distance = distance
                 self.speed = speed
                 super.init(activity: activity)
@@ -100,7 +105,7 @@ class Workout: PFObject, PFSubclassing {
         }
         
         // This will control the creation
-        init(activity: WorkoutName) {
+        init(activity: Name) {
             self.activity = activity
         }
         
@@ -122,8 +127,8 @@ class Workout: PFObject, PFSubclassing {
     
     private func parseTypeInfo() {
         // The following parses the name and type of the object
-        let type = WorkoutType(rawValue: self.type)
-        let name = WorkoutName(rawValue: self.activity)
+        let type = Type(rawValue: self.type)
+        let name = Name(rawValue: self.activity)
         
         self.typeValue = (type != nil ? type! : .unknown, name != nil ? name! : .unknown)
         
@@ -135,10 +140,6 @@ class Workout: PFObject, PFSubclassing {
                                              speed: self.speed != nil ? self.speed!.doubleValue : 0.0)
                 break
                 
-            case .repetition:
-                self.data = Subdata.Repetition(activity: name, count: self.count != nil ? self.count!.intValue : 0)
-                break
-                
             default:
                 self.data = nil
                 break
@@ -147,13 +148,41 @@ class Workout: PFObject, PFSubclassing {
     }
     
     // Creates a new one
-    init(type: String, activity: String) {
+    init(type: Type, activity: Name) {
        super.init()
         
-        self.type = type
-        self.activity = activity
+        self.type = type.rawValue
+        self.activity = activity.rawValue
         
         parseTypeInfo()
+    }
+    
+    /**
+     Adds the workout to the user object given
+     */
+    func addToUser(user: User) {
+        user.addWorkout(workout: self)
+    }
+    
+    func startLocationTracking() {
+        self.locationManager = LocationManager()
+        
+        self.locationData.removeAll()
+        locationManager?.getMultipleLocations(callback: { (location) in
+            if let lastLoc = self.locationData.last {
+                let lastLegDistance = self.locationManager!.calculateDistance(start: lastLoc, end: location)
+                
+                if let data = self.data as? Subdata.Distance {
+                    data.distance += lastLegDistance.meters
+                }
+            }
+            
+            self.locationData.append(location)
+        })
+    }
+    
+    func stopLocationTracking() {
+        locationManager?.cancelLocation()
     }
     
     /**
@@ -179,6 +208,4 @@ class Workout: PFObject, PFSubclassing {
     static func parseClassName() -> String {
         return "Workout"
     }
-    
-    
 }

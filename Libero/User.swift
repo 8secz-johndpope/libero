@@ -24,13 +24,12 @@ class User: PFUser {
     // password: String?
     // username: String
     @NSManaged var emailVerified: Bool
+    @NSManaged var completedSetup: Bool
     @NSManaged var league: League?
     @NSManaged var picture: ProfilePic?
+    @NSManaged var activeWorkout: Workout?
     var pictureURL: String? {
         return self.picture?.file.url
-    }
-    var hasCompletedSurvey: Bool {
-        return false
     }
     
     var pastWorkouts: [Workout]?
@@ -76,11 +75,31 @@ class User: PFUser {
         }
     }
     
+    // ========= User Functions ==========
+    
+    func addWorkout(workout: Workout) {
+        if workout.isActive {
+            self.activeWorkout = workout
+        }else{
+            self.relation(forKey: "pastWorkouts").add(workout)
+            self.pastWorkouts?.append(workout)
+        }
+        
+        self.saveInBackground { (success, error) in
+            PFCloud.callFunction(inBackground: "updateWorkouts", withParameters: ["user": self])
+        }
+    }
+    
+    
+    // ========= Static Functions ==========
+    
     /**
      Standard login with email and password
      
      - parameter username: The user's username
      - parameter password: The user's password
+     
+     - parameter block: The callback after the login is finished (if login succeeds, user object will not be nil, and otherwise the error will describe why it failed)
      */
     static func login(withUsername username: String, andPassword password: String, block: @escaping (User?, BackendError?) -> Void) {
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
@@ -116,8 +135,10 @@ class User: PFUser {
      - parameter block: A callback that will be executed on completion (when they login and the modal disapears) with the user and an error if there is one
      */
     static func loginWithFacebook(block: @escaping (User?, BackendError?) -> Void) {
-        let permissionsArray = ["user_birthday", "email"];
+        let permissionsArray = ["email"];
         
+        
+        PFFacebookUtils.setFacebookLoginBehavior(.useSystemAccountIfPresent)
         PFFacebookUtils.logIn(withPermissions: permissionsArray) { (user, error) in
             if let user = user as? User, error == nil {
                 block(user, nil)
@@ -139,6 +160,7 @@ class User: PFUser {
         user.username = username
         user.password = password
         user.emailVerified = false
+        user.completedSetup = false
         user.pastWorkouts = []
         user.achievements = []
         user.league = nil
@@ -171,14 +193,15 @@ class User: PFUser {
         }
     }
     
-    private func performSignUpCompletion(block: @escaping (BackendError?) -> Void) {
-        // TODO: Add survey results
-        PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId], block: { (result, error) in
-            if error != nil {
-                block(BackendError.ServerError.CloudCodeFailed)
-            }else{
-                block(nil)
-            }
+    func finishSignUp(survey: SurveyResponse, block: @escaping (BackendError?) -> Void) {
+        PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId, "survey": ["frequency":survey.frequency.rawValue, "intensity": survey.intensity.rawValue]], block: { (result, error) in
+            self.fetchInBackground(block: { (_, error2) in
+                if error != nil || error2 != nil {
+                    block(BackendError.ServerError.CloudCodeFailed)
+                }else{
+                    block(nil)
+                }
+            })
         });
     }
     
@@ -197,5 +220,31 @@ class User: PFUser {
     
     static func logout(block: PFUserLogoutResultBlock?) {
         PFUser.logOutInBackground(block: block)
+    }
+    
+    // ========= End Static Functions ==========
+    
+    class SurveyResponse {
+        var frequency: Frequency!
+        var intensity: Intensity!
+        
+        init(frequency: Frequency, intensity: Intensity) {
+            self.frequency = frequency
+            self.intensity = intensity
+        }
+        
+        enum Frequency: String {
+            case LessThanOnce
+            case Once
+            case TwoThree
+            case FourPlus
+        }
+        
+        enum Intensity: Int {
+            case Beginner = 0
+            case Intermediate = 1
+            case Advanced = 2
+            case Enthusiast = 3
+        }
     }
 }
