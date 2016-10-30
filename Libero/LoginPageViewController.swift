@@ -42,12 +42,16 @@ class LoginPageViewController: UIViewController {
         } else {
             //if user able to login
             User.login(withUsername: username, andPassword: password) { (user, error) in
-                if(user != nil){
+                if let user = user {
                     
                     //do segue, allow them to enter app
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let tabVC = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
                     self.present(tabVC, animated: true, completion: nil)
+                    
+                    if !user.completedSetup {
+                        tabVC.performSegue(withIdentifier: "showSurvey", sender: nil)
+                    }
                 }
                     
                 else {
@@ -65,10 +69,7 @@ class LoginPageViewController: UIViewController {
                 }
             }
             
-            
-            //        }
-            //    }
-            
+
             /*
              // MARK: - Navigation
              
