@@ -9,7 +9,7 @@
         <!--Friends-->
         <scene sceneID="BII-yC-19d">
             <objects>
-                <viewController id="zBa-4T-xyg" sceneMemberID="viewController">
+                <viewController id="zBa-4T-xyg" customClass="FriendsViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RJz-uU-Jry"/>
                         <viewControllerLayoutGuide type="bottom" id="MSW-nW-PBQ"/>
@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDU-a0-eDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1229" y="-39"/>
+            <point key="canvasLocation" x="-1486" y="-188"/>
         </scene>
     </scenes>
 </document>
