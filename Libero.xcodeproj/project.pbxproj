@@ -49,6 +49,9 @@
 		7CDF75DA1DBD291B0060F1AB /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */; };
 		7CDF75DD1DBD29350060F1AB /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */; };
 		7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */; };
+		D12A9C101DC6820A0049F567 /* Workout2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12A9C0F1DC6820A0049F567 /* Workout2.storyboard */; };
+		D12A9C121DC682380049F567 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A9C111DC682380049F567 /* WorkoutCell.swift */; };
+		D12A9C141DC682710049F567 /* WorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A9C131DC682710049F567 /* WorkoutTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +105,9 @@
 		7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
 		7CDF75DC1DBD29350060F1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Leaderboard.storyboard; sourceTree = "<group>"; };
 		7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D12A9C0F1DC6820A0049F567 /* Workout2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Workout2.storyboard; sourceTree = "<group>"; };
+		D12A9C111DC682380049F567 /* WorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		D12A9C131DC682710049F567 /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewController.swift; sourceTree = "<group>"; };
 		D702992B2605FE60DDE35031 /* Pods_Libero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -190,6 +196,9 @@
 				52D696981DBD31A400E84007 /* Classes */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
+				D12A9C0F1DC6820A0049F567 /* Workout2.storyboard */,
+				D12A9C111DC682380049F567 /* WorkoutCell.swift */,
+				D12A9C131DC682710049F567 /* WorkoutTableViewController.swift */,
 				7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */,
 				7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */,
 				7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */,
@@ -316,6 +325,7 @@
 				7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */,
 				525CBA0B1DAEF39D0050C9D2 /* DocSets in Resources */,
 				525CBA141DAEF39E0050C9D2 /* README.txt in Resources */,
+				D12A9C101DC6820A0049F567 /* Workout2.storyboard in Resources */,
 				7CDF75D81DBD29080060F1AB /* Workout.storyboard in Resources */,
 				525CBA0C1DAEF39D0050C9D2 /* FacebookSDKStrings.bundle in Resources */,
 				52268ADD1D9F0C2D0005C759 /* Assets.xcassets in Resources */,
@@ -396,10 +406,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				52344B2E1DB576F200A4BE22 /* League.swift in Sources */,
+				D12A9C121DC682380049F567 /* WorkoutCell.swift in Sources */,
 				522840351DC14D570062EE55 /* LeaderBoard.swift in Sources */,
 				52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */,
 				7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */,
 				52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */,
+				D12A9C141DC682710049F567 /* WorkoutTableViewController.swift in Sources */,
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,
 				52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */,
 				7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */,

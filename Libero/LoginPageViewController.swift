@@ -42,7 +42,7 @@ class LoginPageViewController: UIViewController {
         } else {
             //if user able to login
             User.login(withUsername: username, andPassword: password) { (user, error) in
-                if(user != nil){
+                if(user == nil){
                     
                     //do segue, allow them to enter app
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)

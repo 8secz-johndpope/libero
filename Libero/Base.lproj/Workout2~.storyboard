@@ -192,12 +192,11 @@
                         <segue destination="rH9-DL-qma" kind="relationship" relationship="viewControllers" id="2RR-nW-T2a"/>
                         <segue destination="Vt5-w2-sXN" kind="relationship" relationship="viewControllers" id="ITy-8P-oIx"/>
                         <segue destination="ghj-v5-8je" kind="relationship" relationship="viewControllers" id="BhE-RF-uTD"/>
-                        <segue destination="9Tq-6F-oBk" kind="relationship" relationship="viewControllers" id="MWk-iU-i2J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vka-6b-lIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1377" y="613"/>
+            <point key="canvasLocation" x="-1468" y="636"/>
         </scene>
         <!--Friends-->
         <scene sceneID="fV3-b6-EdK">
@@ -229,6 +228,34 @@
             </objects>
             <point key="canvasLocation" x="6" y="174"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="zew-UG-VwZ">
+            <objects>
+                <tableViewController id="5nI-TB-ITm" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hyX-Ps-Jxd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KQ7-eQ-E04">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KQ7-eQ-E04" id="nBn-bP-xvd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5nI-TB-ITm" id="pB3-GZ-cbj"/>
+                            <outlet property="delegate" destination="5nI-TB-ITm" id="310-iH-nux"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yI-5v-9cc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="478"/>
+        </scene>
         <!--Achievements-->
         <scene sceneID="cUN-yR-5gU">
             <objects>
@@ -248,16 +275,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bH-2b-LTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-159" y="901"/>
-        </scene>
-        <!--Workout2-->
-        <scene sceneID="mAV-Qb-RUS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Workout2" id="9Tq-6F-oBk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bfK-YB-aqw"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sla-EM-j7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="439" y="729"/>
         </scene>
     </scenes>
 </document>

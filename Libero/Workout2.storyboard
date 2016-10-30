@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Gd-JI-CG0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="Ca4-e6-JvX">
+            <objects>
+                <tableViewController id="6Gd-JI-CG0" customClass="WorkoutTableViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" id="O6c-vp-noc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutCell" rowHeight="107" id="jYM-7d-tdW" customClass="WorkoutCell" customModule="Libero" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="107"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jYM-7d-tdW" id="3Kc-jh-2Jb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9M-Xu-X3e">
+                                            <rect key="frame" x="25" y="24" width="265" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pC-YL-xbI">
+                                            <rect key="frame" x="25" y="61" width="279" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="C9M-Xu-X3e" firstAttribute="leading" secondItem="2pC-YL-xbI" secondAttribute="leading" id="6q3-Hq-clu"/>
+                                        <constraint firstItem="C9M-Xu-X3e" firstAttribute="top" secondItem="3Kc-jh-2Jb" secondAttribute="topMargin" constant="16" id="RRJ-05-7jl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2pC-YL-xbI" secondAttribute="trailing" constant="63" id="aKx-hc-aZy"/>
+                                        <constraint firstItem="C9M-Xu-X3e" firstAttribute="leading" secondItem="3Kc-jh-2Jb" secondAttribute="leadingMargin" constant="17" id="efL-XV-5GV"/>
+                                        <constraint firstItem="2pC-YL-xbI" firstAttribute="top" secondItem="C9M-Xu-X3e" secondAttribute="bottom" constant="16" id="gxw-Ih-wbM"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="C9M-Xu-X3e" secondAttribute="trailing" constant="77" id="vAh-j0-M50"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="subtitleLbl" destination="2pC-YL-xbI" id="myM-Cc-cDy"/>
+                                    <outlet property="workoutLbl" destination="C9M-Xu-X3e" id="lZp-PF-hUL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6Gd-JI-CG0" id="tOt-JS-JAe"/>
+                            <outlet property="delegate" destination="6Gd-JI-CG0" id="B9d-VL-bOf"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="Ina-Xz-J6h"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RMA-PV-2qP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231.19999999999999" y="697.60119940029995"/>
+        </scene>
+    </scenes>
+</document>
