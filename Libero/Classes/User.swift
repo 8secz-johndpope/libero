@@ -41,38 +41,47 @@ class User: PFUser {
      */
     func initialize(_ block: @escaping (User) -> Void) {
         var done = 0
+        let todo = 6
+        func dealWithComplete() {
+            done += 1
+            
+            if done >= todo {
+                block(self)
+            }
+        }
+        
         self.relation(forKey: "pastWorkouts").query().findObjectsInBackground { (objects, error) in
             if let objects = objects as? [Workout] {
                 self.pastWorkouts = objects
             }
-            done += 1
-            
-            if done >= 3 {
-                block(self)
-            }
+            dealWithComplete()
         }
         
         self.relation(forKey: "achievements").query().findObjectsInBackground { (objects, error) in
             if let objects = objects as? [Achievement] {
                 self.achievements = objects
             }
-            done += 1
-            
-            if done >= 3 {
-                block(self)
-            }
+            dealWithComplete()
         }
         
         self.relation(forKey: "friends").query().findObjectsInBackground { (objects, error) in
             if let objects = objects as? [User] {
                 self.friends = objects
             }
-            done += 1
-            
-            if done >= 3 {
-                block(self)
-            }
+            dealWithComplete()
         }
+        
+        league?.fetchInBackground(block: { (object, error) in
+            dealWithComplete()
+        })
+        
+        picture?.fetchInBackground(block: { (object, error) in
+            dealWithComplete()
+        })
+        
+        activeWorkout?.fetchInBackground(block: { (object, erro) in
+            dealWithComplete()
+        })
     }
     
     // ========= User Functions ==========

@@ -224,7 +224,7 @@
 				522840361DC171220062EE55 /* LocationManager.swift */,
 				52AC8E1B1DB1A7B200A5AA52 /* Parse Subclasses */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		96F1D2FAEFBB10C088EE774C /* Pods */ = {
