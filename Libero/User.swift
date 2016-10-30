@@ -104,9 +104,11 @@ class User: PFUser {
     static func login(withUsername username: String, andPassword password: String, block: @escaping (User?, BackendError?) -> Void) {
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if let user = user as? User, error == nil {
-                DispatchQueue.main.async {
-                    block(user, nil)
-                }
+                user.initialize({ (user) in
+                    DispatchQueue.main.async {
+                        block(user, nil)
+                    }
+                })
             }else{
                 DispatchQueue.main.async {
                     if let error = error {
@@ -141,7 +143,9 @@ class User: PFUser {
         PFFacebookUtils.setFacebookLoginBehavior(.useSystemAccountIfPresent)
         PFFacebookUtils.logIn(withPermissions: permissionsArray) { (user, error) in
             if let user = user as? User, error == nil {
-                block(user, nil)
+                user.initialize({ (user) in
+                    block(user, nil)
+                })
             }else{
                 block(nil, BackendError.User.Login.UnknownLoginError)
             }
@@ -189,7 +193,9 @@ class User: PFUser {
                 return
             }
             
-            block(user, nil)
+            user.initialize({ (user) in
+                block(user, nil)
+            })
         }
     }
     
