@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         if let user = User.current() {
-            if user.completedSetup {
+            if user.completedSetup { // add "|| true" to skip survey
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
             }else{
