@@ -76,6 +76,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.setFacebookLoginBehavior(.useSystemAccountIfPresent)
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        if let user = User.current() {
+            if user.completedSetup {
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
+            }else{
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "surveyView")
+            }
+        }
+        
         return true
     }
 
