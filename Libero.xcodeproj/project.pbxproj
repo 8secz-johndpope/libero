@@ -42,6 +42,8 @@
 		52E20C301DB40C27004113E6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2F1DB40C27004113E6 /* Achievement.swift */; };
 		7C184FC71DC6969900EC097D /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C184FC61DC6969900EC097D /* SurveyViewController.swift */; };
 		7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C299D1DC664D70000C486 /* FriendsViewController.swift */; };
+		7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */; };
+		7C88B87D1DC819CB00DAE399 /* Former.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C88B87C1DC819CB00DAE399 /* Former.framework */; };
 		7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */; };
 		7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */; };
 		7CDF75D31DBD28B80060F1AB /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D11DBD28B80060F1AB /* Friends.storyboard */; };
@@ -51,6 +53,19 @@
 		7CDF75DD1DBD29350060F1AB /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */; };
 		7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7C88B8811DC81A0600DAE399 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4AF06CA1D49ACAE8C738F2A7 /* Pods-Libero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Libero/Pods-Libero.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +111,8 @@
 		7AD14A07E261327AAC4AFC21 /* Pods-Libero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Libero/Pods-Libero.release.xcconfig"; sourceTree = "<group>"; };
 		7C184FC61DC6969900EC097D /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		7C2C299D1DC664D70000C486 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerViewController.swift; sourceTree = "<group>"; };
+		7C88B87C1DC819CB00DAE399 /* Former.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Former.framework; path = "Pods/../build/Debug-iphoneos/Former/Former.framework"; sourceTree = "<group>"; };
 		7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPageViewController.swift; sourceTree = "<group>"; };
 		7CDF75D21DBD28B80060F1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Friends.storyboard; sourceTree = "<group>"; };
@@ -112,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C88B87D1DC819CB00DAE399 /* Former.framework in Frameworks */,
 				529317A61DBFEA72001C99A9 /* SCLAlertView.framework in Frameworks */,
 				52AC8E2C1DB1B58500A5AA52 /* FacebookSDK.framework in Frameworks */,
 				52AC8E2D1DB1B58500A5AA52 /* ParseFacebookUtils.framework in Frameworks */,
@@ -136,6 +154,7 @@
 		2FC53C7481C866D930DCEB00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C88B87C1DC819CB00DAE399 /* Former.framework */,
 				529317A51DBFEA72001C99A9 /* SCLAlertView.framework */,
 				52CAE3D51DA183CB00698CEE /* Libero.entitlements */,
 				52AC8E301DB1B5A100A5AA52 /* SystemConfiguration.framework */,
@@ -192,8 +211,9 @@
 				52D696981DBD31A400E84007 /* Classes */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
-				7C184FC61DC6969900EC097D /* SurveyViewController.swift */,
+				7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */,
 				7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */,
+				7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */,
 				7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */,
 				7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */,
 				7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */,
@@ -203,7 +223,7 @@
 				7C2C299D1DC664D70000C486 /* FriendsViewController.swift */,
 				52268ADC1D9F0C2D0005C759 /* Assets.xcassets */,
 				52268AE11D9F0C2D0005C759 /* Info.plist */,
-				7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */,
+				7C184FC61DC6969900EC097D /* SurveyViewController.swift */,
 			);
 			path = Libero;
 			sourceTree = "<group>";
@@ -253,6 +273,7 @@
 				2771226FADED05101AF01FEC /* [CP] Embed Pods Frameworks */,
 				93DA999C7044C3E8B46131E3 /* [CP] Copy Pods Resources */,
 				52344B311DB57CE300A4BE22 /* ShellScript */,
+				7C88B8811DC81A0600DAE399 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,6 +432,7 @@
 				7C184FC71DC6969900EC097D /* SurveyViewController.swift in Sources */,
 				52E20C301DB40C27004113E6 /* Achievement.swift in Sources */,
 				522840371DC171220062EE55 /* LocationManager.swift in Sources */,
+				7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +579,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FacebookSDKs-iOS-4",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Former",
 				);
 				INFOPLIST_FILE = Libero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -580,6 +603,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FacebookSDKs-iOS-4",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Former",
 				);
 				INFOPLIST_FILE = Libero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
