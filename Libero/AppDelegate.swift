@@ -112,7 +112,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 //        FBSDKAppEvents.activateApp()
         FBAppCall.handleDidBecomeActive(with: PFFacebookUtils.session())
-        print("THE USER \(User.current())")
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
