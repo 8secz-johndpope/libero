@@ -87,4 +87,25 @@ class LoginPageViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func facebookLogin(_ sender: UIButton) {
+        User.loginWithFacebook { (user, error) in
+            if let user = user {
+                //do segue, allow them to enter app
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                
+                if user.completedSetup {
+                    let tabVC = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
+                    self.present(tabVC, animated: true, completion: nil)
+                }
+                else {
+                    let formerVC = mainStoryboard.instantiateViewController(withIdentifier: "surveyView")
+                    self.present(formerVC, animated: true, completion: nil)
+                    
+                }
+            }
+        }
+    }
+    
 }
