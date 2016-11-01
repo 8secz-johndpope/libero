@@ -25,6 +25,8 @@ class User: PFUser {
     // username: String
     @NSManaged var emailVerified: Bool
     @NSManaged var completedSetup: Bool
+    @NSManaged var firstName: String
+    @NSManaged var lastName: String
     @NSManaged var league: League?
     @NSManaged var picture: ProfilePic?
     @NSManaged var activeWorkout: Workout?
@@ -41,37 +43,58 @@ class User: PFUser {
      */
     func initialize(_ block: @escaping (User) -> Void) {
         var done = 0
+        let todo = 6
+        func dealWithComplete() {
+            done += 1
+            
+            if done >= todo {
+                block(self)
+            }
+        }
+        
         self.relation(forKey: "pastWorkouts").query().findObjectsInBackground { (objects, error) in
             if let objects = objects as? [Workout] {
                 self.pastWorkouts = objects
             }
-            done += 1
-            
-            if done >= 3 {
-                block(self)
-            }
+            dealWithComplete()
         }
         
         self.relation(forKey: "achievements").query().findObjectsInBackground { (objects, error) in
             if let objects = objects as? [Achievement] {
                 self.achievements = objects
             }
-            done += 1
-            
-            if done >= 3 {
-                block(self)
-            }
+            dealWithComplete()
         }
         
         self.relation(forKey: "friends").query().findObjectsInBackground { (objects, error) in
             if let objects = objects as? [User] {
                 self.friends = objects
             }
-            done += 1
-            
-            if done >= 3 {
-                block(self)
-            }
+            dealWithComplete()
+        }
+        
+        if let league = league {
+            league.fetchInBackground(block: { (object, error) in
+                dealWithComplete()
+            })
+        }else{
+            done += 1;
+        }
+        
+        if let picture = picture {
+            picture.fetchInBackground(block: { (object, error) in
+                dealWithComplete()
+            })
+        }else{
+            done += 1;
+        }
+        
+        if let activeWorkout = activeWorkout {
+            activeWorkout.fetchInBackground(block: { (object, erro) in
+                dealWithComplete()
+            })
+        }else {
+            done += 1;
         }
     }
     
@@ -104,9 +127,11 @@ class User: PFUser {
     static func login(withUsername username: String, andPassword password: String, block: @escaping (User?, BackendError?) -> Void) {
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if let user = user as? User, error == nil {
-                DispatchQueue.main.async {
-                    block(user, nil)
-                }
+                user.initialize({ (user) in
+                    DispatchQueue.main.async {
+                        block(user, nil)
+                    }
+                })
             }else{
                 DispatchQueue.main.async {
                     if let error = error {
@@ -141,7 +166,9 @@ class User: PFUser {
         PFFacebookUtils.setFacebookLoginBehavior(.useSystemAccountIfPresent)
         PFFacebookUtils.logIn(withPermissions: permissionsArray) { (user, error) in
             if let user = user as? User, error == nil {
-                block(user, nil)
+                user.initialize({ (user) in
+                    block(user, nil)
+                })
             }else{
                 block(nil, BackendError.User.Login.UnknownLoginError)
             }
@@ -189,20 +216,27 @@ class User: PFUser {
                 return
             }
             
-            block(user, nil)
+            user.initialize({ (user) in
+                block(user, nil)
+            })
         }
     }
     
-    func finishSignUp(survey: SurveyResponse, block: @escaping (BackendError?) -> Void) {
-        PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId, "survey": ["frequency":survey.frequency.rawValue, "intensity": survey.intensity.rawValue]], block: { (result, error) in
-            self.fetchInBackground(block: { (_, error2) in
-                if error != nil || error2 != nil {
-                    block(BackendError.ServerError.CloudCodeFailed)
-                }else{
-                    block(nil)
-                }
-            })
-        });
+    func finishSignUp(survey: SurveyResponse, firstName: String, lastName: String, block: @escaping (BackendError?) -> Void) {
+        self.firstName = firstName
+        self.lastName = lastName
+        
+        self.saveInBackground { (success, error) in
+            PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId!, "survey": ["frequency":survey.frequency.rawValue, "intensity": survey.intensity.rawValue]], block: { (result, error) in
+                self.fetchInBackground(block: { (_, error2) in
+                    if error != nil || error2 != nil {
+                        block(BackendError.ServerError.CloudCodeFailed)
+                    }else{
+                        block(nil)
+                    }
+                })
+            });
+        }
     }
     
     static func requestPasswordReset(forEmail email:String, block: @escaping (_ error: BackendError.User.PasswordReset?) -> Void) {
@@ -240,11 +274,16 @@ class User: PFUser {
             self.intensity = intensity
         }
         
-        enum Frequency: String {
-            case LessThanOnce
-            case Once
-            case TwoThree
-            case FourPlus
+        init() {
+            frequency = nil
+            intensity = nil
+        }
+        
+        enum Frequency: Int {
+            case LessThanOnce = 0
+            case Once = 1
+            case TwoThree = 2
+            case FourPlus = 3
         }
         
         enum Intensity: Int {

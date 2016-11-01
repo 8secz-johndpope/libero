@@ -40,6 +40,7 @@
 		52D6969A1DBD378B00E84007 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D696991DBD378B00E84007 /* GoogleService-Info.plist */; };
 		52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2D1DB40BF3004113E6 /* Workout.swift */; };
 		52E20C301DB40C27004113E6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2F1DB40C27004113E6 /* Achievement.swift */; };
+		7C184FC71DC6969900EC097D /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C184FC61DC6969900EC097D /* SurveyViewController.swift */; };
 		7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C299D1DC664D70000C486 /* FriendsViewController.swift */; };
 		7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */; };
 		7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */; };
@@ -52,6 +53,9 @@
 		D12A9C101DC6820A0049F567 /* Workout2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12A9C0F1DC6820A0049F567 /* Workout2.storyboard */; };
 		D12A9C121DC682380049F567 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A9C111DC682380049F567 /* WorkoutCell.swift */; };
 		D12A9C141DC682710049F567 /* WorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A9C131DC682710049F567 /* WorkoutTableViewController.swift */; };
+		D12A9C161DC6906A0049F567 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A9C151DC6906A0049F567 /* LeaderboardTableViewController.swift */; };
+		D12A9C1A1DC6920B0049F567 /* LeaderboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A9C191DC6920B0049F567 /* LeaderboardCell.swift */; };
+		D12A9C1C1DC6939A0049F567 /* Leaderboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12A9C1B1DC6939A0049F567 /* Leaderboard2.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +100,7 @@
 		52E20C2D1DB40BF3004113E6 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		52E20C2F1DB40C27004113E6 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		7AD14A07E261327AAC4AFC21 /* Pods-Libero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Libero/Pods-Libero.release.xcconfig"; sourceTree = "<group>"; };
+		7C184FC61DC6969900EC097D /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		7C2C299D1DC664D70000C486 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPageViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +113,9 @@
 		D12A9C0F1DC6820A0049F567 /* Workout2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Workout2.storyboard; sourceTree = "<group>"; };
 		D12A9C111DC682380049F567 /* WorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
 		D12A9C131DC682710049F567 /* WorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewController.swift; sourceTree = "<group>"; };
+		D12A9C151DC6906A0049F567 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
+		D12A9C191DC6920B0049F567 /* LeaderboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCell.swift; sourceTree = "<group>"; };
+		D12A9C1B1DC6939A0049F567 /* Leaderboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Leaderboard2.storyboard; sourceTree = "<group>"; };
 		D702992B2605FE60DDE35031 /* Pods_Libero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,13 +203,17 @@
 				52268AD51D9F0C2D0005C759 /* AppDelegate.swift */,
 				52D696981DBD31A400E84007 /* Classes */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
+				D12A9C151DC6906A0049F567 /* LeaderboardTableViewController.swift */,
+				D12A9C191DC6920B0049F567 /* LeaderboardCell.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
 				D12A9C0F1DC6820A0049F567 /* Workout2.storyboard */,
 				D12A9C111DC682380049F567 /* WorkoutCell.swift */,
 				D12A9C131DC682710049F567 /* WorkoutTableViewController.swift */,
+				7C184FC61DC6969900EC097D /* SurveyViewController.swift */,
 				7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */,
 				7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */,
 				7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */,
+				D12A9C1B1DC6939A0049F567 /* Leaderboard2.storyboard */,
 				7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */,
 				7CDF75D61DBD29080060F1AB /* Workout.storyboard */,
 				7CDF75D41DBD28C60060F1AB /* Profile.storyboard */,
@@ -233,7 +245,7 @@
 				522840361DC171220062EE55 /* LocationManager.swift */,
 				52AC8E1B1DB1A7B200A5AA52 /* Parse Subclasses */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		96F1D2FAEFBB10C088EE774C /* Pods */ = {
@@ -324,6 +336,7 @@
 				7CDF75DD1DBD29350060F1AB /* Leaderboard.storyboard in Resources */,
 				7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */,
 				525CBA0B1DAEF39D0050C9D2 /* DocSets in Resources */,
+				D12A9C1C1DC6939A0049F567 /* Leaderboard2.storyboard in Resources */,
 				525CBA141DAEF39E0050C9D2 /* README.txt in Resources */,
 				D12A9C101DC6820A0049F567 /* Workout2.storyboard in Resources */,
 				7CDF75D81DBD29080060F1AB /* Workout.storyboard in Resources */,
@@ -410,6 +423,8 @@
 				522840351DC14D570062EE55 /* LeaderBoard.swift in Sources */,
 				52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */,
 				7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */,
+				D12A9C1A1DC6920B0049F567 /* LeaderboardCell.swift in Sources */,
+				D12A9C161DC6906A0049F567 /* LeaderboardTableViewController.swift in Sources */,
 				52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */,
 				D12A9C141DC682710049F567 /* WorkoutTableViewController.swift in Sources */,
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,
@@ -417,6 +432,7 @@
 				7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */,
 				7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */,
 				52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */,
+				7C184FC71DC6969900EC097D /* SurveyViewController.swift in Sources */,
 				52E20C301DB40C27004113E6 /* Achievement.swift in Sources */,
 				522840371DC171220062EE55 /* LocationManager.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  WorkoutTableViewController.swift
+//  LeaderboardTableViewController.swift
 //  Libero
 //
 //  Created by Daniel Moder on 10/30/16.
@@ -8,13 +8,35 @@
 
 import UIKit
 
-class WorkoutTableViewController: UITableViewController {
-    
-    let workouts = ["Run", "Bike", "Swim"]
+class LeaderboardTableViewController: UITableViewController {
 
+    var leaders: [User] = []
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let query = Leaderboard.Query()
+        
+        query.complete { (leaders, error) in
+            if let leaders = leaders{
+                self.leaders = leaders
+            }
+            self.tableView.reloadData()
+        }
+        
+        
+        
+        // make call to
+        // call tableview.reloaddata()
 
+        
+        
+        
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,19 +56,23 @@ class WorkoutTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workouts.count
+        return leaders.count
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "workoutCell", for: indexPath) as! WorkoutCell
-        
-        cell.workoutLbl.text = workouts[indexPath.row]
-        cell.subtitleLbl.text = workouts[indexPath.row]
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCell", for: indexPath) as! LeaderboardCell
+        
+        let leader = self.leaders[indexPath.row]
+        
+        
+        
+        cell.name.text = leader.
+        cell.score.text =
+        
         return cell
     }
-    
+
 
     /*
     // Override to support conditional editing of the table view.

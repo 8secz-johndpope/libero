@@ -14,7 +14,7 @@ class Leaderboard {
      A static class that deals with the leaderboard
      
      Example code for getting global walking leaderboards:
-         var query = Leaderboard.Query()
+         let query = Leaderboard.Query()
          query.activity = .walk
          
          query.complete() { (users, error) in
