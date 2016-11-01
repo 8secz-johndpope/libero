@@ -30,6 +30,7 @@ class User: PFUser {
     @NSManaged var league: League?
     @NSManaged var picture: ProfilePic?
     @NSManaged var activeWorkout: Workout?
+    @NSManaged var numWorkouts: NSNumber?
     var pictureURL: String? {
         return self.picture?.file.url
     }

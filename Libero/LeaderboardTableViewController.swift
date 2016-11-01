@@ -25,18 +25,7 @@ class LeaderboardTableViewController: UITableViewController {
             }
             self.tableView.reloadData()
         }
-        
-        
-        
-        // make call to
-        // call tableview.reloaddata()
 
-        
-        
-        
-        
-        
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -65,10 +54,9 @@ class LeaderboardTableViewController: UITableViewController {
         
         let leader = self.leaders[indexPath.row]
         
-        
-        
-        cell.name.text = leader.
-        cell.score.text =
+        cell.rank.text = String (indexPath.row + 1)
+        cell.name.text = "\(leader.firstName) \(leader.lastName)"
+        cell.score.text = "Workouts completed: \(leader.numWorkouts ?? 0)"
         
         return cell
     }

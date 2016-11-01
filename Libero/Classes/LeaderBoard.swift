@@ -52,7 +52,7 @@ class Leaderboard {
          Will complete the query and return all the users in order of the leaderboard
          */
         func complete(_ block: @escaping ([User]?, BackendError?) -> Void) {
-            var query = PFQuery(className: "User")
+            var query = User.query()!
             if let league = league {
                 query = league.relation(forKey: "members").query()
             }
