@@ -270,7 +270,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "DALI Lab";
 				TargetAttributes = {
 					52268AD11D9F0C2D0005C759 = {
