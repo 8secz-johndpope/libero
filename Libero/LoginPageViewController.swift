@@ -48,7 +48,7 @@ class LoginPageViewController: UIViewController {
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     
                     
-                    if user.completedSetup {
+                    if user.completedSetup || AppDelegate.shouldSkipSurvey() {
                         let tabVC = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
                         self.present(tabVC, animated: true, completion: nil)
                     }

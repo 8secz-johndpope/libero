@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    static func shouldSkipSurvey() -> Bool {
+        let val = ProcessInfo.processInfo.environment["skipSurvey"]
+        return !(val != nil && val! == "yes")
+    }
+    
 //    private func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
 //        if (error.code == 3010) {
 //            print("Push notifications are not supported in the iOS Simulator.");
@@ -77,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         if let user = User.current() {
-            if user.completedSetup { // add "|| true" to skip survey
+            if user.completedSetup || AppDelegate.shouldSkipSurvey() { // add skipSurvey to environment variables to skip survey
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
             }else{
