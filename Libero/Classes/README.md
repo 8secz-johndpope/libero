@@ -169,7 +169,7 @@ This function will deal with the survey results and complete the signup process!
 
 Usage:
 
-See [SurveyResponse](http://example.com “Title”) for more on initializing
+See [SurveyResponse](https://github.com/dali-lab/libero/tree/master/Libero/Classes#surveyresponse-class “SurveyResponse class”) for more on initializing
 
 ```swift
 let response = User.SurveyResponse()
@@ -189,7 +189,7 @@ user.finishSignUp(response) { (error) in
 
 Arguments:
 
-- response: [User.SurveyResponse](http://example.com "Title") (link unconnected until documentation is written)
+- response: [User.SurveyResponse](https://github.com/dali-lab/libero/tree/master/Libero/Classes#surveyresponse-class “SurveyResponse class”) (link unconnected until documentation is written)
 	- The response object you generated
 - block: Function([BackendError](http://example.com "Title")?)
 	- The callback function for completion. If the error object is non-nil there was an error!
