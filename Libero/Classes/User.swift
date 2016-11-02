@@ -271,15 +271,15 @@ class User: PFUser {
         var firstName: String
         var lastName: String
         
-        init(frequency: Frequency, intensity: Intensity) {
-            self.frequency = frequency
-            self.intensity = intensity
-        }
-        
-        init(firstName: String, lastName: String) {
-            self.firstName = firstName
-            self.lastName = lastName
-        }
+//        init(frequency: Frequency, intensity: Intensity) {
+//            self.frequency = frequency
+//            self.intensity = intensity
+//        }
+//        
+//        init(firstName: String, lastName: String) {
+//            self.firstName = firstName
+//            self.lastName = lastName
+//        }
         
         init(firstName: String, lastName: String, frequency: Frequency, intensity: Intensity) {
             self.firstName = firstName

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		09D17186BD4A47E38F8C39DC /* Pods_Libero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D702992B2605FE60DDE35031 /* Pods_Libero.framework */; };
+		440797111DC9772F0034CDF0 /* Workout2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4407970F1DC9772F0034CDF0 /* Workout2.storyboard */; };
+		440797131DC977B10034CDF0 /* WorkoutSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */; };
+		440797151DC978380034CDF0 /* WorkoutSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440797141DC978380034CDF0 /* WorkoutSelectCell.swift */; };
+		440797171DC979B50034CDF0 /* DifficultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */; };
 		52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52268AD51D9F0C2D0005C759 /* AppDelegate.swift */; };
 		52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52268AD71D9F0C2D0005C759 /* ViewController.swift */; };
 		52268ADB1D9F0C2D0005C759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52268AD91D9F0C2D0005C759 /* Main.storyboard */; };
@@ -68,6 +72,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		440797101DC9772F0034CDF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Workout2.storyboard; sourceTree = "<group>"; };
+		440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSelectTableViewController.swift; sourceTree = "<group>"; };
+		440797141DC978380034CDF0 /* WorkoutSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSelectCell.swift; sourceTree = "<group>"; };
+		440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyTableViewController.swift; sourceTree = "<group>"; };
 		4AF06CA1D49ACAE8C738F2A7 /* Pods-Libero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Libero/Pods-Libero.debug.xcconfig"; sourceTree = "<group>"; };
 		52268AD21D9F0C2D0005C759 /* Libero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Libero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52268AD51D9F0C2D0005C759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -207,10 +215,14 @@
 		52268AD41D9F0C2D0005C759 /* Libero */ = {
 			isa = PBXGroup;
 			children = (
+				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
+				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
+				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
 				52268AD51D9F0C2D0005C759 /* AppDelegate.swift */,
 				52D696981DBD31A400E84007 /* Classes */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
+				4407970F1DC9772F0034CDF0 /* Workout2.storyboard */,
 				7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */,
 				7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */,
 				7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */,
@@ -340,6 +352,7 @@
 				7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */,
 				525CBA0B1DAEF39D0050C9D2 /* DocSets in Resources */,
 				525CBA141DAEF39E0050C9D2 /* README.txt in Resources */,
+				440797111DC9772F0034CDF0 /* Workout2.storyboard in Resources */,
 				7CDF75D81DBD29080060F1AB /* Workout.storyboard in Resources */,
 				525CBA0C1DAEF39D0050C9D2 /* FacebookSDKStrings.bundle in Resources */,
 				52268ADD1D9F0C2D0005C759 /* Assets.xcassets in Resources */,
@@ -426,11 +439,14 @@
 				52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */,
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,
 				52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */,
+				440797131DC977B10034CDF0 /* WorkoutSelectTableViewController.swift in Sources */,
 				7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */,
 				7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */,
 				52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */,
+				440797171DC979B50034CDF0 /* DifficultyTableViewController.swift in Sources */,
 				7C184FC71DC6969900EC097D /* SurveyViewController.swift in Sources */,
 				52E20C301DB40C27004113E6 /* Achievement.swift in Sources */,
+				440797151DC978380034CDF0 /* WorkoutSelectCell.swift in Sources */,
 				522840371DC171220062EE55 /* LocationManager.swift in Sources */,
 				7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */,
 			);
@@ -439,6 +455,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4407970F1DC9772F0034CDF0 /* Workout2.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				440797101DC9772F0034CDF0 /* Base */,
+			);
+			name = Workout2.storyboard;
+			sourceTree = "<group>";
+		};
 		52268AD91D9F0C2D0005C759 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
