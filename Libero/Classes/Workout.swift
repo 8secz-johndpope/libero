@@ -19,7 +19,7 @@ class Workout: PFObject, PFSubclassing {
     @NSManaged private var count: NSNumber?
     @NSManaged private var distance: NSNumber?
     @NSManaged private var speed: NSNumber?
-    var locationData: [CLLocation] = []
+    var locationData: [(loc: CLLocation, date: NSDate)] = []
     var locationManager: LocationManager?
     var end: NSDate?
     var data: Subdata?
@@ -177,7 +177,7 @@ class Workout: PFObject, PFSubclassing {
                 }
             }
             
-            self.locationData.append(location)
+            self.locationData.append((loc: location, date: NSDate()))
         })
     }
     

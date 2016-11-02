@@ -292,8 +292,66 @@ Properties:
 
 
 ## Workout
+A class to control all Workout backend and local functionality
 
-_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+Properties:
+
+- start: NSDate
+- duration: Float
+	- In minutes
+- isActive: Bool
+- locationData: [(CLLocation, NSDate)]
+	- If there has been any location data recorded, it will be here
+- end: NSDate?
+- data: [Subdata](#subdata)?
+	- This is all the data having to do with the different kinds of activity. For now there is only one subclass: Distance, which contains distance and speed values.
+- typeInfo: (type: [Type](#type-enum), name: [Name](#name-enum))
+	- This variable will help identify the workout type, like between distance and other things, and between a run, walk, swim, bike, or unknown
+
+#### Functions
+##### addToUser
+
+Adds the workout to the user using the User.addWorkout function
+
+Arguments:
+
+- user: User
+
+##### startLocationTracking
+
+Begins to track the phone using GPS and will save all the location data.
+
+##### stopLocationTracking
+
+Stops location tracking
+
+#### Classes and enums
+##### Type Enum
+This is just an easy way to notate what type of activity it is. Possible values are shown below. The enum is based on String, so the raw value for each will be the same as the name.
+
+	distance
+	unknown
+##### Name Enum
+This is just an easy way to notate what more specific of activity it is. This one will distinguish between things like running, walking, and so on. Possible values are shown below. The enum is based on String, so the raw value for each will be the same as the name.
+
+	run
+	walk
+	swim
+	bike
+	unknown
+##### Subdata Class
+A class to simply provide templates for the different types of activities. Since for now we only have distance type activities there is only one subclass: [Distance](#subdata.distance).
+
+Properties:
+
+- activity: [Workout.Name](#name-enum)
+
+##### Subdata.Distance
+
+Properties:
+
+- distance: Double
+- speed: Double
 
 ## League
 
