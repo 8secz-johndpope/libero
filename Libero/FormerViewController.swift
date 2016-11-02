@@ -11,26 +11,79 @@ import Former
 
 class FormerViewController: FormViewController {
 
+    
+    @IBAction func submitPressed(_ sender: Any) {
+        
+        print(firstName)
+        print(lastName)
+        print(workoutFrequency)
+        print(intensity)
+        
+        //do segue, allow them to enter app
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let tabVC = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
+        self.present(tabVC, animated: true, completion: nil)
+
+        
+//        let response = User.SurveyResponse(firstName: firstName, lastName: lastName, frequency: User.SurveyResponse.Frequency(rawValue: workoutFrequency)!, intensity: User.SurveyResponse.Intensity(rawValue: intensity)!)
+        
+//        // When you are done:
+//        guard let user = User.current() else {
+//            return
+//        }
+//        user.finishSignUp(survey: response) { (error) in
+//            if error != nil {
+//                print("boo")
+//                // Something went wrong!
+//            }else{
+//                print("yay")
+//                // All's fine!
+//            }
+//        }
+        
+    }
+    
+    var firstName = ""
+    var lastName = ""
+    var workoutFrequency = 0
+    var intensity = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let firstNameTextFieldRow = TextFieldRowFormer<FormTextFieldCell>()
-            .configure { row in
-                row.rowHeight = 44
-                row.placeholder = "First Name"
-            }.onSelected { row in
-                // Do Something
-                
+        let createHeader: ((String) -> ViewFormer) = { text in
+            return LabelViewFormer<FormLabelHeaderView>()
+                .configure {
+                    $0.text = text
+                    $0.viewHeight = 44
+            }
         }
         
-        let lastNameTextFieldRow = TextFieldRowFormer<FormTextFieldCell>()
+        
+        let firstNameTextFieldRow = TextFieldRowFormer<FormTextFieldCell>() {
+                $0.titleLabel.text = "First Name"
+            }
             .configure { row in
                 row.rowHeight = 44
-                row.placeholder = "Last Name"
+                row.placeholder = "Enter your first name"
+            }.onSelected { row in
+                
+        }.onTextChanged { (nameText) in
+            self.firstName = nameText
+        }
+        
+        let lastNameTextFieldRow = TextFieldRowFormer<FormTextFieldCell>() {
+                $0.titleLabel.text = "Last Initial"
+            }
+            .configure { row in
+                row.rowHeight = 44
+                row.placeholder = "Enter your last initial"
             }.onSelected { row in
                 row.cell.textField.becomeFirstResponder()
                 
+        }.onTextChanged { (lastText) in
+            self.lastName = lastText
         }
         
         let activityLevels = ["Beginner", "Intermediate", "Advanced", "Enthusiast"]
@@ -42,10 +95,10 @@ class FormerViewController: FormViewController {
                     InlinePickerItem(title: activityLevels[$0], value: Int($0))
                 }
             }.onValueChanged { item in
-                // Do Something
+                self.intensity = item.value!
         }
         
-        let workoutFrequency = ["<1 per week", "1 per week", "2-3 per week", "4+ per week"]
+        let workoutFrequency = ["Less than 1 per week", "1 per week", "2-3 per week", "4+ per week"]
         
         let workoutFreqPicker = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
             $0.titleLabel.text = "Workout Frequency"
@@ -54,13 +107,16 @@ class FormerViewController: FormViewController {
                     InlinePickerItem(title: workoutFrequency[$0], value: Int($0))
                 }
             }.onValueChanged { item in
+                self.workoutFrequency = item.value!
                 // Do Something
         }
 
-        let section1 = SectionFormer(rowFormer: firstNameTextFieldRow)
-        former.append(sectionFormer: section1)
-        let section2 = SectionFormer(rowFormer: lastNameTextFieldRow)
-        former.append(sectionFormer: section2)
+        let nameSection = SectionFormer(rowFormers: [firstNameTextFieldRow, lastNameTextFieldRow]).set(headerViewFormer: createHeader("Tell us a bit about yourself"))
+        
+//        let section1 = SectionFormer(rowFormers: firstNameTextFieldRow)
+        former.append(sectionFormer: nameSection)
+//        let section2 = SectionFormer(rowFormer: lastNameTextFieldRow)
+//        former.append(sectionFormer: section2)
         let section3 = SectionFormer(rowFormer: activityLevelPicker)
         former.append(sectionFormer: section3)
         let section4 = SectionFormer(rowFormer: workoutFreqPicker)
@@ -70,13 +126,6 @@ class FormerViewController: FormViewController {
         
         // Create Headers and Footers
         
-        let createHeader: ((String) -> ViewFormer) = { text in
-            return LabelViewFormer<FormLabelHeaderView>()
-                .configure {
-                    $0.text = text
-                    $0.viewHeight = 44
-            }
-        }
         
 
 
