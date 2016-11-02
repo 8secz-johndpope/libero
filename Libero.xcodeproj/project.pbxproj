@@ -40,6 +40,7 @@
 		52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC8E191DB1A76500A5AA52 /* User.swift */; };
 		52AC8E2C1DB1B58500A5AA52 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC8E2A1DB1B58500A5AA52 /* FacebookSDK.framework */; };
 		52AC8E2D1DB1B58500A5AA52 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC8E2B1DB1B58500A5AA52 /* ParseFacebookUtils.framework */; };
+		52AF99E41DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */; };
 		52CAE3D71DA183D300698CEE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CAE3D61DA183D300698CEE /* HealthKit.framework */; };
 		52D6969A1DBD378B00E84007 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D696991DBD378B00E84007 /* GoogleService-Info.plist */; };
 		52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2D1DB40BF3004113E6 /* Workout.swift */; };
@@ -111,6 +112,7 @@
 		52AC8E2B1DB1B58500A5AA52 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Libero-gkjgmyjgieaomodiqcmyhfxsetxw/Build/Products/Debug-iphonesimulator/ParseFacebookUtils/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		52AC8E2E1DB1B59900A5AA52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		52AC8E301DB1B5A100A5AA52 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveWorkoutViewController.swift; sourceTree = "<group>"; };
 		52CAE3D51DA183CB00698CEE /* Libero.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Libero.entitlements; path = Libero/Libero.entitlements; sourceTree = "<group>"; };
 		52CAE3D61DA183D300698CEE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		52D696991DBD378B00E84007 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -215,14 +217,15 @@
 		52268AD41D9F0C2D0005C759 /* Libero */ = {
 			isa = PBXGroup;
 			children = (
-				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
-				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
-				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
 				52268AD51D9F0C2D0005C759 /* AppDelegate.swift */,
 				52D696981DBD31A400E84007 /* Classes */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
 				4407970F1DC9772F0034CDF0 /* Workout2.storyboard */,
+				52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */,
+				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
+				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
+				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
 				7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */,
 				7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */,
 				7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */,
@@ -312,6 +315,9 @@
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
@@ -448,6 +454,7 @@
 				52E20C301DB40C27004113E6 /* Achievement.swift in Sources */,
 				440797151DC978380034CDF0 /* WorkoutSelectCell.swift in Sources */,
 				522840371DC171220062EE55 /* LocationManager.swift in Sources */,
+				52AF99E41DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift in Sources */,
 				7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

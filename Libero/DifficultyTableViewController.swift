@@ -11,6 +11,7 @@ import UIKit
 class DifficultyTableViewController: UITableViewController {
     
     let difficulties = ["Easy", "Medium", "Hard"]
+    var workout: Workout!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,19 @@ class DifficultyTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        self.workout.typeInfo.difficulty = Workout.Difficulty(rawValue: indexPath.row) ?? .unknown
+        
+        let sb = UIStoryboard(name: "Workout2", bundle: nil)
+        let activeVC = sb.instantiateViewController(withIdentifier: "activeWorkoutView") as! ActiveWorkoutViewController
+        
+        activeVC.workout = self.workout
+        
+        self.navigationController?.pushViewController(activeVC, animated: true)
     }
     
 

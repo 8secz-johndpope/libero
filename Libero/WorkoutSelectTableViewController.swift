@@ -11,6 +11,7 @@ import UIKit
 class WorkoutSelectTableViewController: UITableViewController {
     
     let workoutList = ["Run", "Bike", "Swim"]
+    var workout = Workout()
     
 
     override func viewDidLoad() {
@@ -54,6 +55,9 @@ class WorkoutSelectTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Workout2", bundle: nil)
         let diffVC = sb.instantiateViewController(withIdentifier: "difficultyTableView") as! DifficultyTableViewController
+        
+        workout.typeInfo.name = Workout.Name(rawValue: workoutList[indexPath.row].lowercased()) ?? .unknown
+        diffVC.workout = self.workout
         
         self.navigationController?.pushViewController(diffVC, animated: true)
     }

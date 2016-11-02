@@ -12,6 +12,7 @@
         <!--Workout-->
         <scene sceneID="vLx-29-4oR">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUH-Oh-ZLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2Fr-6R-uJy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gyg-90-Pm5"/>
@@ -25,13 +26,13 @@
                     <navigationItem key="navigationItem" title="Workout" id="S5a-Mq-iph"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XUH-Oh-ZLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="637"/>
+            <point key="canvasLocation" x="673" y="643"/>
         </scene>
         <!--Workout-->
         <scene sceneID="kHE-Jy-5mv">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rx-3T-Aj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WFQ-lK-uQL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workout" id="5w1-LP-hy7"/>
                     <toolbarItems/>
@@ -44,7 +45,6 @@
                         <segue destination="2Fr-6R-uJy" kind="relationship" relationship="rootViewController" id="xdL-UN-fyS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4rx-3T-Aj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-60" y="642.72863568215894"/>
         </scene>

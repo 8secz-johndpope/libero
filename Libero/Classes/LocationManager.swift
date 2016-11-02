@@ -57,16 +57,16 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         self.locationManager.delegate = self
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
+        self.locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
     }
     
     init(answeredCallback: @escaping ()->Void) {
         super.init()
         self.answeredCallback = answeredCallback
         self.locationManager.delegate = self
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
+        self.locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
     }
     
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -74,19 +74,24 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         if let answeredCallback = answeredCallback {
             answeredCallback()
         }
+        if locationAquired != nil {
+            self.locationManager.startUpdatingLocation()
+        }
     }
     
     func getOneLocation(callback: ((CLLocation) -> Void)?) {
         self.locationAquired = callback
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
+        self.locationManager.startUpdatingLocation()
         self.method = .Single
     }
     
     func getMultipleLocations(callback: ((CLLocation) -> Void)?) {
         self.locationAquired = callback
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
+        self.locationManager.startUpdatingLocation()
         self.method = .Multi
     }
     
@@ -97,15 +102,18 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         return Distance(distance: meters)
     }
     
-    private func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location: CLLocation = locations.last, let locationAquired = locationAquired {
-            locationAquired(location)
-        }
-        if method == .Single {
-            manager.stopUpdatingLocation()
-            locationManager.stopUpdatingLocation()
-            locationAquired = nil
-        }
+//    private func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if let location: CLLocation = locations.last, let locationAquired = locationAquired {
+//            locationAquired(location)
+//        }
+//        if method == .Single {
+//            self.cancelLocation()
+//        }
+//    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Encountered an error when getting the location!")
+        print(error)
     }
     
     func cancelLocation() {

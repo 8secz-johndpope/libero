@@ -15,7 +15,7 @@ class Achievement: PFObject, PFSubclassing {
     
     static func calculateAchievements(user: User) {
         // TODO: write achievements cloud function
-        PFCloud.callFunction(inBackground: "calculateAchievements", withParameters: ["user": user.objectId]) { (result, error) in
+        PFCloud.callFunction(inBackground: "calculateAchievements", withParameters: ["user": user.objectId!]) { (result, error) in
             // TODO: deal with result
         }
     }

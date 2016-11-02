@@ -11,11 +11,12 @@ import Parse
 
 
 class Workout: PFObject, PFSubclassing {
-    @NSManaged var start: NSDate
+    @NSManaged var start: NSDate?
     @NSManaged var duration: Float // in minutes
     @NSManaged var isActive: Bool
     @NSManaged private var type: String
     @NSManaged private var activity: String
+    @NSManaged private var difficulty: NSNumber
     @NSManaged private var count: NSNumber?
     @NSManaged private var distance: NSNumber?
     @NSManaged private var speed: NSNumber?
@@ -23,10 +24,11 @@ class Workout: PFObject, PFSubclassing {
     var locationManager: LocationManager?
     var end: NSDate?
     var data: Subdata?
+    var timer: Timer?
     
     // This is the public value which can be received and set to
     //     but when they set it I will redirect the value into the Parse managed values
-    var typeInfo: (type: Type, name: Name) {
+    var typeInfo: (type: Type, name: Name, difficulty: Difficulty) {
         get {
             return typeValue
         }
@@ -34,10 +36,11 @@ class Workout: PFObject, PFSubclassing {
             self.typeValue = newValue
             self.type = newValue.type.rawValue
             self.activity = newValue.name.rawValue
+            self.difficulty = NSNumber(integerLiteral: newValue.difficulty.rawValue)
         }
     }
     // This is the actual value stored. Within this file I wont touch the one above
-    private var typeValue: (type: Type, name: Name) = (.unknown, .unknown)
+    private var typeValue: (type: Type, name: Name, difficulty: Difficulty) = (.unknown, .unknown, .unknown)
     
     // ------ Enums -------
     // This will provide an easy way to identify and set values
@@ -53,6 +56,13 @@ class Workout: PFObject, PFSubclassing {
         case walk
         case swim
         case bike
+        case unknown
+    }
+    
+    enum Difficulty: Int {
+        case easy
+        case medium
+        case hard
         case unknown
     }
     
@@ -114,8 +124,34 @@ class Workout: PFObject, PFSubclassing {
          */
         func save(into workout: Workout) {
             workout.activity = self.activity.rawValue
-            workout.typeValue = (workout.typeValue.type, self.activity)
+            workout.typeValue = (workout.typeValue.type, self.activity, workout.typeValue.difficulty)
         }
+    }
+    
+    func getDuration() -> TimeInterval {
+        return ((self.end as? Date) ?? Date()).timeIntervalSince((self.start as? Date) ?? Date())
+    }
+    
+    func startWorkout() {
+        self.isActive = true
+        self.start = NSDate()
+        self.end = nil
+    }
+    
+    func endWorkout() {
+        self.isActive = false
+        self.end = NSDate()
+    }
+    
+    func startTimer(block: @escaping (_ timer: Timer) -> Void) {
+        timer = Timer(timeInterval: 0.01, repeats: true, block: block)
+        
+        RunLoop.current.add(timer!, forMode: .commonModes)
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
     }
     
     //
@@ -129,8 +165,9 @@ class Workout: PFObject, PFSubclassing {
         // The following parses the name and type of the object
         let type = Type(rawValue: self.type)
         let name = Name(rawValue: self.activity)
+        let difficulty = Difficulty(rawValue: self.difficulty.intValue)
         
-        self.typeValue = (type != nil ? type! : .unknown, name != nil ? name! : .unknown)
+        self.typeValue = (type ?? .unknown, name ?? .unknown, difficulty ?? .unknown)
         
         if let type = type, let name = name {
             switch type {
@@ -174,6 +211,8 @@ class Workout: PFObject, PFSubclassing {
                 
                 if let data = self.data as? Subdata.Distance {
                     data.distance += lastLegDistance.meters
+                }else{
+                    self.data = Subdata.Distance(activity: self.typeValue.name, distance: 0.0, speed: 0.0)
                 }
             }
             
@@ -200,7 +239,7 @@ class Workout: PFObject, PFSubclassing {
         // This will consolidate all parsed data into Parse managed values
         self.data?.save(into: self)
         // I am going to force it to update itself, just so the Parse managed values reflect it
-        self.typeInfo = (self.typeInfo.type, self.typeInfo.name)
+        self.typeInfo = self.typeValue
         
         super.saveInBackground(block: block)
     }
