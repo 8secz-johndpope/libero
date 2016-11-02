@@ -74,8 +74,8 @@ class RegistrationPageViewController: UIViewController {
                     self.present(tabVC, animated: true, completion: nil)
                 }
                 else {
-                    let formerVC = mainStoryboard.instantiateViewController(withIdentifier: "surveyView")
-                    self.present(formerVC, animated: true, completion: nil)
+                    let navVC = mainStoryboard.instantiateViewController(withIdentifier: "formerNav") as! UINavigationController
+                    self.present(navVC, animated: true, completion: nil)
                     
                 }
             }

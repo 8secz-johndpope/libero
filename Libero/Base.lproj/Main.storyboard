@@ -197,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="-2306" y="1379"/>
         </scene>
-        <!--Former View Controller-->
+        <!--Survey-->
         <scene sceneID="2Q8-he-3Qi">
             <objects>
-                <viewController storyboardIdentifier="surveyView" id="3FW-jg-40L" customClass="FormerViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="surveyView" title="Survey" id="3FW-jg-40L" customClass="FormerViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a0J-RB-PvP"/>
                         <viewControllerLayoutGuide type="bottom" id="aBM-wY-z4h"/>
@@ -210,10 +210,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Survey" id="Zq5-yg-yVV">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="dUR-nn-BGG">
+                            <connections>
+                                <action selector="submitPressed:" destination="3FW-jg-40L" id="Xdb-te-EpB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naE-IK-4fV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1468" y="1379"/>
+            <point key="canvasLocation" x="-873" y="1366"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nSH-Ab-oN4">
@@ -285,6 +292,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bH-2b-LTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-159" y="901"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I81-oz-rnV">
+            <objects>
+                <navigationController storyboardIdentifier="formerNav" automaticallyAdjustsScrollViewInsets="NO" id="hPj-zI-02b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Hm-XS-NuQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3FW-jg-40L" kind="relationship" relationship="rootViewController" id="9Zb-Tm-4qM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Crr-9N-XUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1537" y="1366"/>
         </scene>
     </scenes>
 </document>

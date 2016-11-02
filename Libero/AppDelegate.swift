@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static func shouldSkipSurvey() -> Bool {
         let val = ProcessInfo.processInfo.environment["skipSurvey"]
-        return !(val != nil && val! == "yes")
+        return val != nil && val! == "yes"
     }
     
 //    private func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
             }else{
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "surveyView")
+                self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "formerNav") as! UINavigationController
             }
         }
         
