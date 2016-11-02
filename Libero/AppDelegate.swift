@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    static func shouldSkipSurvey() -> Bool {
+        let val = ProcessInfo.processInfo.environment["skipSurvey"]
+        return !(val != nil && val! == "yes")
+    }
+    
 //    private func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
 //        if (error.code == 3010) {
 //            print("Push notifications are not supported in the iOS Simulator.");
@@ -76,6 +81,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.setFacebookLoginBehavior(.useSystemAccountIfPresent)
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        if let user = User.current() {
+            if user.completedSetup || AppDelegate.shouldSkipSurvey() { // add skipSurvey to environment variables to skip survey
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
+            }else{
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "surveyView")
+            }
+        }
+        
         return true
     }
 
@@ -97,7 +112,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 //        FBSDKAppEvents.activateApp()
         FBAppCall.handleDidBecomeActive(with: PFFacebookUtils.session())
-        print("THE USER \(User.current())")
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {

@@ -228,7 +228,7 @@ class User: PFUser {
         self.lastName = lastName
         
         self.saveInBackground { (success, error) in
-            PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["user": self.objectId!, "survey": ["frequency":survey.frequency.rawValue, "intensity": survey.intensity.rawValue]], block: { (result, error) in
+            PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["userId": self.objectId!, "survey": ["frequency":survey.frequency.rawValue, "intensity": survey.intensity.rawValue]], block: { (result, error) in
                 self.fetchInBackground(block: { (_, error2) in
                     if error != nil || error2 != nil {
                         block(BackendError.ServerError.CloudCodeFailed)

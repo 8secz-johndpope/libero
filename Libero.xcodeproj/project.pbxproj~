@@ -225,11 +225,14 @@
 				D12A9C151DC6906A0049F567 /* LeaderboardTableViewController.swift */,
 				D12A9C191DC6920B0049F567 /* LeaderboardCell.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
+<<<<<<< HEAD
 				D12A9C0F1DC6820A0049F567 /* Workout2.storyboard */,
 				D12A9C111DC682380049F567 /* WorkoutCell.swift */,
 				D12A9C131DC682710049F567 /* WorkoutTableViewController.swift */,
 				7C184FC61DC6969900EC097D /* SurveyViewController.swift */,
+=======
 				7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */,
+>>>>>>> b566bdeb3273985db61b35f29eaf79fbc2380b1d
 				7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */,
 				7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */,
 				7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */,
