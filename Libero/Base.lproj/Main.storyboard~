@@ -235,12 +235,9 @@
                         <segue destination="rH9-DL-qma" kind="relationship" relationship="viewControllers" id="2RR-nW-T2a"/>
                         <segue destination="Vt5-w2-sXN" kind="relationship" relationship="viewControllers" id="ITy-8P-oIx"/>
                         <segue destination="ghj-v5-8je" kind="relationship" relationship="viewControllers" id="BhE-RF-uTD"/>
-<<<<<<< HEAD
                         <segue destination="9Tq-6F-oBk" kind="relationship" relationship="viewControllers" id="MWk-iU-i2J"/>
                         <segue destination="giS-yf-LY9" kind="presentation" identifier="showSurvey" id="gLQ-Q3-WmE"/>
                         <segue destination="GiF-TE-zeh" kind="relationship" relationship="viewControllers" id="7Ue-Up-P1i"/>
-=======
->>>>>>> b566bdeb3273985db61b35f29eaf79fbc2380b1d
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vka-6b-lIK" userLabel="First Responder" sceneMemberID="firstResponder"/>

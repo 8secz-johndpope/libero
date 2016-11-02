@@ -1,17 +1,18 @@
 //
-//  WorkoutTableViewController.swift
+//  DifficultyTVC.swift
 //  Libero
 //
-//  Created by Daniel Moder on 10/30/16.
+//  Created by Daniel Moder on 11/1/16.
 //  Copyright © 2016 DALI Lab. All rights reserved.
 //
 
 import UIKit
 
-class WorkoutTableViewController: UITableViewController {
-    
-    let workouts = ["Run", "Bike", "Swim"]
+class DifficultyTVC: UITableViewController {
 
+    let modes = ["Workout Weenie", "Average Athlete", "Hardcore Hunk"]
+    let descriptions = ["easy", "medium", "hard"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,43 +31,26 @@ class WorkoutTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workouts.count
+        // #warning Incomplete implementation, return the number of rows
+        return modes.count
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "workoutCell", for: indexPath) as! WorkoutCell
-        
-        cell.workoutLbl.text = workouts[indexPath.row]
-        cell.subtitleLbl.text = workouts[indexPath.row]
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "difficultyCell", for: indexPath) as! DifficultyCell
+
+        cell.Difficulty.text = modes[indexPath.row]
+        cell.Description.text = descriptions[indexPath.row]
+        
         return cell
     }
-    
-    
-    
-    
-    func prepare(for segue: UIStoryboardSegue, sender: WorkoutCell) {
-        let controller = segue.destination as! DifficultyTVC
-        controller.
-        
-    }
 
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-        
-        performSegue(withIdentifier: "workout", sender: workouts[indexPath.row])
-        
-    }
-    
-    
-    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

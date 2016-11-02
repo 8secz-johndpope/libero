@@ -58,6 +58,8 @@
 		D12A9C161DC6906A0049F567 /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A9C151DC6906A0049F567 /* LeaderboardTableViewController.swift */; };
 		D12A9C1A1DC6920B0049F567 /* LeaderboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A9C191DC6920B0049F567 /* LeaderboardCell.swift */; };
 		D12A9C1C1DC6939A0049F567 /* Leaderboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12A9C1B1DC6939A0049F567 /* Leaderboard2.storyboard */; };
+		D145F1151DC970A500C78F72 /* DifficultyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145F1141DC970A500C78F72 /* DifficultyTVC.swift */; };
+		D145F1171DC9713C00C78F72 /* DifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145F1161DC9713C00C78F72 /* DifficultyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +135,8 @@
 		D12A9C151DC6906A0049F567 /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
 		D12A9C191DC6920B0049F567 /* LeaderboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCell.swift; sourceTree = "<group>"; };
 		D12A9C1B1DC6939A0049F567 /* Leaderboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Leaderboard2.storyboard; sourceTree = "<group>"; };
+		D145F1141DC970A500C78F72 /* DifficultyTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyTVC.swift; sourceTree = "<group>"; };
+		D145F1161DC9713C00C78F72 /* DifficultyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyCell.swift; sourceTree = "<group>"; };
 		D702992B2605FE60DDE35031 /* Pods_Libero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -226,9 +230,10 @@
 				D12A9C191DC6920B0049F567 /* LeaderboardCell.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
 				D12A9C0F1DC6820A0049F567 /* Workout2.storyboard */,
+				D145F1141DC970A500C78F72 /* DifficultyTVC.swift */,
+				D145F1161DC9713C00C78F72 /* DifficultyCell.swift */,
 				D12A9C111DC682380049F567 /* WorkoutCell.swift */,
 				D12A9C131DC682710049F567 /* WorkoutTableViewController.swift */,
-				7C184FC61DC6969900EC097D /* SurveyViewController.swift */,
 				7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */,
 				7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */,
 				7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */,
@@ -415,7 +420,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		93DA999C7044C3E8B46131E3 /* [CP] Copy Pods Resources */ = {
@@ -442,6 +447,7 @@
 			files = (
 				52344B2E1DB576F200A4BE22 /* League.swift in Sources */,
 				D12A9C121DC682380049F567 /* WorkoutCell.swift in Sources */,
+				D145F1171DC9713C00C78F72 /* DifficultyCell.swift in Sources */,
 				522840351DC14D570062EE55 /* LeaderBoard.swift in Sources */,
 				52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */,
 				7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */,
@@ -457,6 +463,7 @@
 				7C184FC71DC6969900EC097D /* SurveyViewController.swift in Sources */,
 				52E20C301DB40C27004113E6 /* Achievement.swift in Sources */,
 				522840371DC171220062EE55 /* LocationManager.swift in Sources */,
+				D145F1151DC970A500C78F72 /* DifficultyTVC.swift in Sources */,
 				7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
