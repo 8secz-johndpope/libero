@@ -170,7 +170,7 @@ class Workout: PFObject, PFSubclassing {
         self.locationData.removeAll()
         locationManager?.getMultipleLocations(callback: { (location) in
             if let lastLoc = self.locationData.last {
-                let lastLegDistance = self.locationManager!.calculateDistance(start: lastLoc, end: location)
+                let lastLegDistance = self.locationManager!.calculateDistance(start: lastLoc.loc, end: location)
                 
                 if let data = self.data as? Subdata.Distance {
                     data.distance += lastLegDistance.meters
