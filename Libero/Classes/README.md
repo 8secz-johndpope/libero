@@ -99,6 +99,80 @@ Arguments:
 
 The function requestPasswordReset will request from the server that the given email be sent a password reset form.
 
-UNDOCUMENTED: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+
+##### logout
+
+The function logout will log the user out from the device
+
+Usage:
+
+```swift
+User.logout { () in 
+	
+}
+```
+
+_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+
+##### isLoggedIn
+
+Returns Boolean that is true when there is a user
+
+##### isValidEmail
+
+Returns Boolean that is true when the email given is a valid email
+
+Usage:
+
+```swift
+let email = “some@email.com”
+
+if User.isValidEmail(email) {
+	// It’s valid
+}
+```
+
+Arguments:
+
+- email: String
+	- The email you want to check
+
+##### finishSignUp
+
+This function will deal with the survey results and complete the signup process! This one is a bit more complicated because it uses the User.SurveyResponse object
+
+Usage:
+
+```swift
+let response = User.SurveyResponse()
+response.firstName = "John"
+response.lastName = "Kotz"
+response.frequency = .LessThanOnce
+// Or you could do this:
+response.frequncy = User.SurveyResponse.Frequency(rawValue: 0)
+// Those two are identical in effect
+
+response.intensity = .Intermediate
+// Same here
+response.intensity = User.SurveyResponse.Frequency(rawValue: 1)
+
+// When you are done:
+guard let user = User.current() else {
+	return
+}
+user.finishSignUp(response) { (error) in 
+	if let error = error {
+		// Something went wrong!	
+	}else{
+		// All's fine!	
+	}
+}
+```
+
+Arguments:
+
+- response: [User.SurveyResponse](http://example.com "Title")
+	- 
 
 #### 
