@@ -169,7 +169,7 @@ This function will deal with the survey results and complete the signup process!
 
 Usage:
 
-See [SurveyResponse](#surveyResponse) for more on initializing
+See [SurveyResponse](#head1234) for more on initializing
 
 ```swift
 let response = User.SurveyResponse()
@@ -189,7 +189,7 @@ user.finishSignUp(response) { (error) in
 
 Arguments:
 
-- response: [User.SurveyResponse](#surveyResponse) (link unconnected until documentation is written)
+- response: [User.SurveyResponse](#head1234) (link unconnected until documentation is written)
 	- The response object you generated
 - block: Function([BackendError](http://example.com "Title")?)
 	- The callback function for completion. If the error object is non-nil there was an error!
@@ -216,7 +216,7 @@ Arguments:
 
 Pulls all extraneous data from the server and saves it locally.
 
-#### SurveyResponse class<a name=“surveyResponse”></a>
+#### <a name=“head1234”></a>SurveyResponse class
 
 Properties:
 
