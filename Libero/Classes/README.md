@@ -9,6 +9,31 @@ This document is the documentation for all the backend classes written by John K
 
 The first class is the User. It controls all login and authentication with the server. There a number of functions that you cannot perform without a user object because you must be authenticated. Most of the actual authentication will be dealt with for you, but there are a couple of things you will need to interact with.
 
+#### Properties
+
+- emailVerified: Bool
+	- True if the email has been verified
+- completedSetup: Bool
+	- True if the user has completed setup
+- firstName: String
+	- The first name of the user
+- lastName: String
+	- The last name of the user
+- league: League?
+	- The league the user is in. Can be nil if the user hasn’t been placed
+- picture: User.ProfilePic?
+	- The profile picture for the user. Use pictureURL to get the picture
+- activeWorkout: Workout?
+	- The active workout if there is one
+- pictureURL: String?
+	- The URL to the image the user has for their profile
+- pastWorkouts: [Workout]?
+	- A list of workouts that have been completed by this user, if loaded
+- achievements: [Achievement]?
+	- A list of achievements the user has completed, if loaded
+- friends: [User]?
+	- A list of users the user has friended, if loaded
+
 #### Authentication functions:
 
 ##### login
@@ -172,7 +197,29 @@ user.finishSignUp(response) { (error) in
 
 Arguments:
 
-- response: [User.SurveyResponse](http://example.com "Title")
-	- 
+- response: [User.SurveyResponse](http://example.com "Title") (link unconnected until documentation is written)
+	- The response object you generated
+- block: Function([BackendError](http://example.com "Title")?)
+	- The callback function for completion. If the error object is non-nil there was an error!
 
-#### 
+#### Other User Functions
+
+##### addWorkout
+
+Adds the given workout to the user. If the workout is marked as active it will save the workout as the active workout (in the activeWorkout value).
+
+Usage:
+
+```swift
+// user is a User object, and workout a Workout object
+user.addWorkout(workout)
+```
+
+Arguments:
+
+- workout: Workout
+	- The workout that you want added
+
+##### initialize
+
+Pulls all extraneous data from the server and saves it locally.
