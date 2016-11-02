@@ -169,18 +169,10 @@ This function will deal with the survey results and complete the signup process!
 
 Usage:
 
+See [SurveyResponse](http://example.com “Title”) for more on initializing
+
 ```swift
 let response = User.SurveyResponse()
-response.firstName = "John"
-response.lastName = "Kotz"
-response.frequency = .LessThanOnce
-// Or you could do this:
-response.frequncy = User.SurveyResponse.Frequency(rawValue: 0)
-// Those two are identical in effect
-
-response.intensity = .Intermediate
-// Same here
-response.intensity = User.SurveyResponse.Frequency(rawValue: 1)
 
 // When you are done:
 guard let user = User.current() else {
@@ -223,3 +215,42 @@ Arguments:
 ##### initialize
 
 Pulls all extraneous data from the server and saves it locally.
+
+#### SurveyResponse class
+
+Properties:
+
+- frequency: Frequency!
+- intensity: Intensity!
+- firstName: String
+- lastName: String
+
+Frequency: This is an enum on Ints that describes values as follows:
+
+	LessThanOnce = 0
+	Once = 1
+	TwoThree = 2
+	FourPlus = 3
+
+Intensity: This is an enum on Ints that describes values as follows:
+
+	Beginner = 0
+	Intermediate = 1
+	Advanced = 2
+	Enthusiast = 3
+
+Usage:
+
+```swift
+let response = User.SurveyResponse() 
+response.firstName = "John"
+response.lastName = "Kotz"
+response.frequency = .LessThanOnce
+// Or you could do this:
+response.frequncy = User.SurveyResponse.Frequency(rawValue: 0)
+// Those two are identical in effect
+
+response.intensity = .Intermediate
+// Same here
+response.intensity = User.SurveyResponse.Frequency(rawValue: 1)
+```
