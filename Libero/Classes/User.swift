@@ -222,9 +222,9 @@ class User: PFUser {
         }
     }
     
-    func finishSignUp(survey: SurveyResponse, firstName: String, lastName: String, block: @escaping (BackendError?) -> Void) {
-        self.firstName = firstName
-        self.lastName = lastName
+    func finishSignUp(survey: SurveyResponse, block: @escaping (BackendError?) -> Void) {
+        self.firstName = survey.firstName
+        self.lastName = survey.lastName
         
         self.saveInBackground { (success, error) in
             PFCloud.callFunction(inBackground: "onSignUp", withParameters: ["userId": self.objectId!, "survey": ["frequency":survey.frequency.rawValue, "intensity": survey.intensity.rawValue]], block: { (result, error) in
@@ -239,7 +239,7 @@ class User: PFUser {
         }
     }
     
-    static func requestPasswordReset(forEmail email:String, block: @escaping (_ error: BackendError.User.PasswordReset?) -> Void) {
+    static func requestPasswordReset(forEmail email: String, block: @escaping (_ error: BackendError.User.PasswordReset?) -> Void) {
         PFUser.requestPasswordResetForEmail(inBackground: email) { (success, error) in
             if let error = error {
                 print("Error \(error._code): \(error.localizedDescription)")
@@ -268,8 +268,23 @@ class User: PFUser {
     class SurveyResponse {
         var frequency: Frequency!
         var intensity: Intensity!
+        var firstName: String
+        var lastName: String
         
         init(frequency: Frequency, intensity: Intensity) {
+            self.frequency = frequency
+            self.intensity = intensity
+        }
+        
+        init(firstName: String, lastName: String) {
+            self.firstName = firstName
+            self.lastName = lastName
+        }
+        
+        init(firstName: String, lastName: String, frequency: Frequency, intensity: Intensity) {
+            self.firstName = firstName
+            self.lastName = lastName
+            
             self.frequency = frequency
             self.intensity = intensity
         }
@@ -277,6 +292,8 @@ class User: PFUser {
         init() {
             frequency = nil
             intensity = nil
+            firstName = ""
+            lastName = ""
         }
         
         enum Frequency: Int {
