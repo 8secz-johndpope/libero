@@ -2,10 +2,7 @@
 
 This document is the documentation for all the backend classes written by John Kotz.
 
-## Classes
-
-
-### User
+## User
 
 The first class is the User. It controls all login and authentication with the server. There a number of functions that you cannot perform without a user object because you must be authenticated. Most of the actual authentication will be dealt with for you, but there are a couple of things you will need to interact with.
 
@@ -63,9 +60,9 @@ Arguments:
 	- The username for the user
 - password: String
 	- The password for the user
-- block: Function(User?, BackendError?)
+- block: Function(User?, [BackendError](#backenderror)?)
 	- The function you pass here will be called when the process is done. The arguments are an optional user and an optional error. The user object will be non-nil when you have successfully logged in, and can be used like any user object.
-	- If the user is nil then it failed to login, and the BackendError will be able to describe that better
+	- If the user is nil then it failed to login, and the [BackendError](#backenderror) will be able to describe that better
 
 ##### loginWithFacebook
 
@@ -86,7 +83,7 @@ User.loginWithFacebook() { (user, error) in
 
 Arguments:
 
-- block: Function(User?, BackendError?)
+- block: Function(User?, [BackendError](#backenderror)?)
 	- The function you pass here will be called when the process is done. The user object will be non-nil if login was successful. If it is not, error will non-nil and will explain it.
 
 
@@ -116,7 +113,7 @@ Arguments:
 	- The username for the user
 - password: String
 	- The password for the user
-- block: Function(User?, BackendError?)
+- block: Function(User?, [BackendError](#backenderror)?)
 	- This function will be called when it is done in the same way as the other two login functions
 
 
@@ -191,7 +188,7 @@ Arguments:
 
 - response: [User.SurveyResponse](#surveyresponse-class) (link unconnected until documentation is written)
 	- The response object you generated
-- block: Function([BackendError](http://example.com "Title")?)
+- block: Function([BackendError](#backenderror)?)
 	- The callback function for completion. If the error object is non-nil there was an error!
 
 #### Other User Functions
@@ -254,3 +251,41 @@ response.intensity = .Intermediate
 // Same here
 response.intensity = User.SurveyResponse.Frequency(rawValue: 1)
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+## Leaderboard
+
+The Leaderboard class is a static class that will perform queries for leaderboards. In order to do this you will need to create a query object, set the parts you want to search on, and then complete the query. Each bit you add to a query will compound the query, so for example a query without anything set will get the global leaderboard.
+
+Usage:
+
+```swift
+let query = Leaderboard.Query()
+query.activity = .walk
+query.league = // some league
+
+query.complete { (users, error) in 
+	if let users = users {
+		// Succeeded!
+	}else{
+		// Encountered an error!
+	}
+}
+```
+
+Properties:
+
+- activity: Workout.Name?
+	- An optional name for an activity. Will make the query order by number of that type of workout
+- league: League?
+	- An optional league to search in. Will make the resulting leaderboard be the leaderboard for that league
