@@ -38,7 +38,7 @@ class ActiveWorkoutViewController: UIViewController {
             workout.startWorkout()
             workout.startLocationTracking()
             
-            workout.startTimer { (_) in
+            workout.startTimer { (_, _) in
                 self.updateLabels()
             }
         }else{

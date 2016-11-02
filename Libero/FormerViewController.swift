@@ -18,29 +18,29 @@ class FormerViewController: FormViewController {
         print(lastName)
         print(workoutFrequency)
         print(intensity)
-        
-        //do segue, allow them to enter app
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
-        let tabVC = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
-        self.present(tabVC, animated: true, completion: nil)
 
         
-//        let response = User.SurveyResponse(firstName: firstName, lastName: lastName, frequency: User.SurveyResponse.Frequency(rawValue: workoutFrequency)!, intensity: User.SurveyResponse.Intensity(rawValue: intensity)!)
+        let response = User.SurveyResponse(firstName: firstName, lastName: lastName, frequency: User.SurveyResponse.Frequency(rawValue: workoutFrequency)!, intensity: User.SurveyResponse.Intensity(rawValue: intensity)!)
         
-//        // When you are done:
-//        guard let user = User.current() else {
-//            return
-//        }
-//        user.finishSignUp(survey: response) { (error) in
-//            if error != nil {
-//                print("boo")
-//                // Something went wrong!
-//            }else{
-//                print("yay")
-//                // All's fine!
-//            }
-//        }
+        // When you are done:
+        guard let user = User.current() else {
+            return
+        }
+        user.finishSignUp(survey: response) { (error) in
+            if error != nil {
+                print("boo")
+                // Something went wrong!
+            }else{
+                print("yay")
+                // All's fine!
+                
+                //do segue, allow them to enter app
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let tabVC = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
+                self.present(tabVC, animated: true, completion: nil)
+            }
+        }
         
     }
     

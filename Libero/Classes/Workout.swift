@@ -143,8 +143,10 @@ class Workout: PFObject, PFSubclassing {
         self.end = NSDate()
     }
     
-    func startTimer(block: @escaping (_ timer: Timer) -> Void) {
-        timer = Timer(timeInterval: 0.01, repeats: true, block: block)
+    func startTimer(block: @escaping (_ interval: TimeInterval) -> Void) {
+        timer = Timer(timeInterval: 0.01, repeats: true, block: { (timer) in
+            block(self.getDuration())
+        });
         
         RunLoop.current.add(timer!, forMode: .commonModes)
     }

@@ -321,9 +321,45 @@ Arguments:
 
 Begins to track the phone using GPS and will save all the location data.
 
+__NOTE__: Location tracking is not working for now (for unknown reason). Call this anyway, but the data.distance and locationData properties will not be effected until the bug is fixed
+
 ##### stopLocationTracking
 
 Stops location tracking
+
+##### getDuration
+Gets the amount of time between the start and end dates. If the workout is active it will be between start and the current date. If neither start or end is set, the interval will be 0.
+
+Returns: TimeInterval (a double in seconds)
+
+##### startWorkout
+Begins the workout. This will make the workout active (meaning that the isActive property will be true), and set the start date.
+
+##### endWorkout
+Ends the workout. This will solidify the ending of the workout to being the time it was called.
+
+##### startTimer
+The Workout class will deal with the timer for interface timers. Call this function with a block and that block will be called every 0.01 seconds, or 1 millisecond.
+
+__NOTE__: This doesn’t start the workout
+
+Usage:
+
+```swift
+workout.startTimer { (interval) in 
+	// Interval is the time between start and stop
+}
+```
+
+Arguments:
+
+- block: Function(TimeInterval)
+	- The function that will be called each 0.01 seconds with the current time interval
+
+##### stopTimer
+Stops the Workout timer
+
+__NOTE__: This doesn’t end the workout
 
 #### Classes and enums
 ##### Type Enum
@@ -338,6 +374,13 @@ This is just an easy way to notate what more specific of activity it is. This on
 	walk
 	swim
 	bike
+	unknown
+##### Difficulty Enum
+Another easy type for the difficult
+
+	easy
+	medium
+	hard
 	unknown
 ##### Subdata Class
 A class to simply provide templates for the different types of activities. Since for now we only have distance type activities there is only one subclass: [Distance](#subdatadistance).
