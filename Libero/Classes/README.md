@@ -340,7 +340,7 @@ This is just an easy way to notate what more specific of activity it is. This on
 	bike
 	unknown
 ##### Subdata Class
-A class to simply provide templates for the different types of activities. Since for now we only have distance type activities there is only one subclass: [Distance](#subdata-distance).
+A class to simply provide templates for the different types of activities. Since for now we only have distance type activities there is only one subclass: [Distance](#subdatadistance).
 
 Properties:
 
