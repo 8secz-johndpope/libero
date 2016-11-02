@@ -206,7 +206,7 @@ user.addWorkout(workout)
 
 Arguments:
 
-- workout: Workout
+- workout: [Workout](#workout)
 	- The workout that you want added
 
 ##### initialize
@@ -285,7 +285,40 @@ query.complete { (users, error) in
 
 Properties:
 
-- activity: Workout.Name?
+- activity: [Workout](#workout).[Name](#name)?
 	- An optional name for an activity. Will make the query order by number of that type of workout
-- league: League?
+- league: [League](#league)?
 	- An optional league to search in. Will make the resulting leaderboard be the leaderboard for that league
+
+
+## Workout
+
+_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+
+## League
+
+_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+
+## Achievement
+This class hasn’t been expanded on much, and we don’t event have the code yet for calculating these achievements
+
+_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+
+#### Properties:
+
+- name: String
+
+#### Functions
+
+##### calculateAchievements
+
+Will calculate the achievements for the user
+
+Arguments:
+
+- user: User
+
+## Other
+### BackendError
+
+_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
