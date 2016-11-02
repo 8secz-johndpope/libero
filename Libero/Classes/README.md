@@ -6,7 +6,7 @@ This document is the documentation for all the backend classes written by John K
 
 The first class is the User. It controls all login and authentication with the server. There a number of functions that you cannot perform without a user object because you must be authenticated. Most of the actual authentication will be dealt with for you, but there are a couple of things you will need to interact with.
 
-#### Properties
+### Properties
 
 - emailVerified: Bool
 	- True if the email has been verified
@@ -31,9 +31,9 @@ The first class is the User. It controls all login and authentication with the s
 - friends: [User]?
 	- A list of users the user has friended, if loaded
 
-#### Authentication functions:
+### Authentication functions:
 
-##### login
+#### login
 
 The login function will log the device in using the given credentials
 
@@ -64,7 +64,7 @@ Arguments:
 	- The function you pass here will be called when the process is done. The arguments are an optional user and an optional error. The user object will be non-nil when you have successfully logged in, and can be used like any user object.
 	- If the user is nil then it failed to login, and the [BackendError](#backenderror) will be able to describe that better
 
-##### loginWithFacebook
+#### loginWithFacebook
 
 The loginWithFacebook function will open the Facebook login system in Safari when called. When the user is done logging in, the app will automatically reopen. The block will execute on completion of the login process
 
@@ -87,7 +87,7 @@ Arguments:
 	- The function you pass here will be called when the process is done. The user object will be non-nil if login was successful. If it is not, error will non-nil and will explain it.
 
 
-##### signUp
+#### signUp
 
 The function signUp will create a user using the given credentials.
 
@@ -117,13 +117,13 @@ Arguments:
 	- This function will be called when it is done in the same way as the other two login functions
 
 
-##### requestPasswordReset
+#### requestPasswordReset
 
 The function requestPasswordReset will request from the server that the given email be sent a password reset form.
 
 _UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
 
-##### logout
+#### logout
 
 The function logout will log the user out from the device
 
@@ -137,11 +137,11 @@ User.logout { () in
 
 _UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
 
-##### isLoggedIn
+#### isLoggedIn
 
 Returns Boolean that is true when there is a user
 
-##### isValidEmail
+#### isValidEmail
 
 Returns Boolean that is true when the email given is a valid email
 
@@ -160,7 +160,7 @@ Arguments:
 - email: String
 	- The email you want to check
 
-##### finishSignUp
+#### finishSignUp
 
 This function will deal with the survey results and complete the signup process! This one is a bit more complicated because it uses the User.SurveyResponse object
 
@@ -191,9 +191,9 @@ Arguments:
 - block: Function([BackendError](#backenderror)?)
 	- The callback function for completion. If the error object is non-nil there was an error!
 
-#### Other User Functions
+### Other User Functions
 
-##### addWorkout
+#### addWorkout
 
 Adds the given workout to the user. If the workout is marked as active it will save the workout as the active workout (in the activeWorkout value).
 
@@ -209,11 +209,11 @@ Arguments:
 - workout: [Workout](#workout)
 	- The workout that you want added
 
-##### initialize
+#### initialize
 
 Pulls all extraneous data from the server and saves it locally.
 
-#### SurveyResponse class
+### SurveyResponse class
 
 Properties:
 
@@ -308,8 +308,8 @@ Properties:
 - typeInfo: (type: [Type](#type-enum), name: [Name](#name-enum))
 	- This variable will help identify the workout type, like between distance and other things, and between a run, walk, swim, bike, or unknown
 
-#### Functions
-##### addToUser
+### Functions
+#### addToUser
 
 Adds the workout to the user using the User.addWorkout function
 
@@ -317,28 +317,28 @@ Arguments:
 
 - user: User
 
-##### startLocationTracking
+#### startLocationTracking
 
 Begins to track the phone using GPS and will save all the location data.
 
 __NOTE__: Location tracking is not working for now (for unknown reason). Call this anyway, but the data.distance and locationData properties will not be effected until the bug is fixed
 
-##### stopLocationTracking
+#### stopLocationTracking
 
 Stops location tracking
 
-##### getDuration
+#### getDuration
 Gets the amount of time between the start and end dates. If the workout is active it will be between start and the current date. If neither start or end is set, the interval will be 0.
 
 Returns: TimeInterval (a double in seconds)
 
-##### startWorkout
+#### startWorkout
 Begins the workout. This will make the workout active (meaning that the isActive property will be true), and set the start date.
 
-##### endWorkout
+#### endWorkout
 Ends the workout. This will solidify the ending of the workout to being the time it was called.
 
-##### startTimer
+#### startTimer
 The Workout class will deal with the timer for interface timers. Call this function with a block and that block will be called every 0.01 seconds, or 1 millisecond.
 
 __NOTE__: This doesn’t start the workout
@@ -356,18 +356,18 @@ Arguments:
 - block: Function(TimeInterval)
 	- The function that will be called each 0.01 seconds with the current time interval
 
-##### stopTimer
+#### stopTimer
 Stops the Workout timer
 
 __NOTE__: This doesn’t end the workout
 
-#### Classes and enums
-##### Type Enum
+### Classes and enums
+#### Type Enum
 This is just an easy way to notate what type of activity it is. Possible values are shown below. The enum is based on String, so the raw value for each will be the same as the name.
 
 	distance
 	unknown
-##### Name Enum
+#### Name Enum
 This is just an easy way to notate what more specific of activity it is. This one will distinguish between things like running, walking, and so on. Possible values are shown below. The enum is based on String, so the raw value for each will be the same as the name.
 
 	run
@@ -375,21 +375,21 @@ This is just an easy way to notate what more specific of activity it is. This on
 	swim
 	bike
 	unknown
-##### Difficulty Enum
+#### Difficulty Enum
 Another easy type for the difficult
 
 	easy
 	medium
 	hard
 	unknown
-##### Subdata Class
+#### Subdata Class
 A class to simply provide templates for the different types of activities. Since for now we only have distance type activities there is only one subclass: [Distance](#subdatadistance).
 
 Properties:
 
 - activity: [Workout.Name](#name-enum)
 
-##### Subdata.Distance
+#### Subdata.Distance
 
 Properties:
 
@@ -405,13 +405,13 @@ This class hasn’t been expanded on much, and we don’t event have the code ye
 
 _UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
 
-#### Properties:
+### Properties:
 
 - name: String
 
-#### Functions
+### Functions
 
-##### calculateAchievements
+#### calculateAchievements
 
 Will calculate the achievements for the user
 
