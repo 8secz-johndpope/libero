@@ -303,7 +303,7 @@ Properties:
 - locationData: [(CLLocation, NSDate)]
 	- If there has been any location data recorded, it will be here
 - end: NSDate?
-- data: [Subdata](#subdata)?
+- data: [Subdata](#subdata-class)?
 	- This is all the data having to do with the different kinds of activity. For now there is only one subclass: Distance, which contains distance and speed values.
 - typeInfo: (type: [Type](#type-enum), name: [Name](#name-enum))
 	- This variable will help identify the workout type, like between distance and other things, and between a run, walk, swim, bike, or unknown
