@@ -46,16 +46,16 @@
 		52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2D1DB40BF3004113E6 /* Workout.swift */; };
 		52E20C301DB40C27004113E6 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E20C2F1DB40C27004113E6 /* Achievement.swift */; };
 		7C184FC71DC6969900EC097D /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C184FC61DC6969900EC097D /* SurveyViewController.swift */; };
+		7C2B3DEE1DCFA7FD00DFDCC2 /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2B3DED1DCFA7FD00DFDCC2 /* Leaderboard.storyboard */; };
+		7C2B3DF21DCFAD3700DFDCC2 /* MyActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2B3DF11DCFAD3700DFDCC2 /* MyActivity.storyboard */; };
+		7C2B3DFC1DCFAF8E00DFDCC2 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2B3DFB1DCFAF8E00DFDCC2 /* Friends.storyboard */; };
+		7C2B3DFE1DCFB10F00DFDCC2 /* MyActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */; };
 		7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C299D1DC664D70000C486 /* FriendsViewController.swift */; };
 		7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */; };
 		7C88B87D1DC819CB00DAE399 /* Former.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C88B87C1DC819CB00DAE399 /* Former.framework */; };
 		7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */; };
 		7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */; };
-		7CDF75D31DBD28B80060F1AB /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D11DBD28B80060F1AB /* Friends.storyboard */; };
-		7CDF75D51DBD28C60060F1AB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D41DBD28C60060F1AB /* Profile.storyboard */; };
-		7CDF75D81DBD29080060F1AB /* Workout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D61DBD29080060F1AB /* Workout.storyboard */; };
 		7CDF75DA1DBD291B0060F1AB /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */; };
-		7CDF75DD1DBD29350060F1AB /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */; };
 		7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -120,16 +120,16 @@
 		52E20C2F1DB40C27004113E6 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		7AD14A07E261327AAC4AFC21 /* Pods-Libero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Libero/Pods-Libero.release.xcconfig"; sourceTree = "<group>"; };
 		7C184FC61DC6969900EC097D /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
+		7C2B3DED1DCFA7FD00DFDCC2 /* Leaderboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Leaderboard.storyboard; sourceTree = "<group>"; };
+		7C2B3DF11DCFAD3700DFDCC2 /* MyActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyActivity.storyboard; sourceTree = "<group>"; };
+		7C2B3DFB1DCFAF8E00DFDCC2 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityCell.swift; sourceTree = "<group>"; };
 		7C2C299D1DC664D70000C486 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerViewController.swift; sourceTree = "<group>"; };
 		7C88B87C1DC819CB00DAE399 /* Former.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Former.framework; path = "Pods/../build/Debug-iphoneos/Former/Former.framework"; sourceTree = "<group>"; };
 		7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPageViewController.swift; sourceTree = "<group>"; };
-		7CDF75D21DBD28B80060F1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Friends.storyboard; sourceTree = "<group>"; };
-		7CDF75D41DBD28C60060F1AB /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		7CDF75D71DBD29080060F1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Workout.storyboard; sourceTree = "<group>"; };
 		7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
-		7CDF75DC1DBD29350060F1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Leaderboard.storyboard; sourceTree = "<group>"; };
 		7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D702992B2605FE60DDE35031 /* Pods_Libero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,21 +221,21 @@
 				52D696981DBD31A400E84007 /* Classes */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
+				7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */,
+				7C2B3DFB1DCFAF8E00DFDCC2 /* Friends.storyboard */,
+				7C2C299D1DC664D70000C486 /* FriendsViewController.swift */,
+				7C2B3DF11DCFAD3700DFDCC2 /* MyActivity.storyboard */,
+				7C2B3DED1DCFA7FD00DFDCC2 /* Leaderboard.storyboard */,
 				4407970F1DC9772F0034CDF0 /* Workout2.storyboard */,
 				52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */,
 				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
 				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
+				7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */,
 				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
 				7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */,
 				7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */,
 				7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */,
 				7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */,
-				7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */,
-				7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */,
-				7CDF75D61DBD29080060F1AB /* Workout.storyboard */,
-				7CDF75D41DBD28C60060F1AB /* Profile.storyboard */,
-				7CDF75D11DBD28B80060F1AB /* Friends.storyboard */,
-				7C2C299D1DC664D70000C486 /* FriendsViewController.swift */,
 				52268ADC1D9F0C2D0005C759 /* Assets.xcassets */,
 				52268AE11D9F0C2D0005C759 /* Info.plist */,
 				7C184FC61DC6969900EC097D /* SurveyViewController.swift */,
@@ -351,22 +351,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2B3DEE1DCFA7FD00DFDCC2 /* Leaderboard.storyboard in Resources */,
 				525CBA151DAEF39E0050C9D2 /* Samples in Resources */,
-				7CDF75D51DBD28C60060F1AB /* Profile.storyboard in Resources */,
 				52D6969A1DBD378B00E84007 /* GoogleService-Info.plist in Resources */,
-				7CDF75DD1DBD29350060F1AB /* Leaderboard.storyboard in Resources */,
 				7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */,
+				7C2B3DFC1DCFAF8E00DFDCC2 /* Friends.storyboard in Resources */,
 				525CBA0B1DAEF39D0050C9D2 /* DocSets in Resources */,
 				525CBA141DAEF39E0050C9D2 /* README.txt in Resources */,
 				440797111DC9772F0034CDF0 /* Workout2.storyboard in Resources */,
-				7CDF75D81DBD29080060F1AB /* Workout.storyboard in Resources */,
 				525CBA0C1DAEF39D0050C9D2 /* FacebookSDKStrings.bundle in Resources */,
 				52268ADD1D9F0C2D0005C759 /* Assets.xcassets in Resources */,
 				7CDF75DA1DBD291B0060F1AB /* Achievements.storyboard in Resources */,
 				525CBA131DAEF39E0050C9D2 /* LICENSE.txt in Resources */,
-				7CDF75D31DBD28B80060F1AB /* Friends.storyboard in Resources */,
 				525CBA091DAEF39D0050C9D2 /* AccountKitStrings.bundle in Resources */,
 				52268ADB1D9F0C2D0005C759 /* Main.storyboard in Resources */,
+				7C2B3DF21DCFAD3700DFDCC2 /* MyActivity.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +412,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		93DA999C7044C3E8B46131E3 /* [CP] Copy Pods Resources */ = {
@@ -446,6 +445,7 @@
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,
 				52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */,
 				440797131DC977B10034CDF0 /* WorkoutSelectTableViewController.swift in Sources */,
+				7C2B3DFE1DCFB10F00DFDCC2 /* MyActivityCell.swift in Sources */,
 				7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */,
 				7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */,
 				52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */,
@@ -476,30 +476,6 @@
 				52268ADA1D9F0C2D0005C759 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7CDF75D11DBD28B80060F1AB /* Friends.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7CDF75D21DBD28B80060F1AB /* Base */,
-			);
-			name = Friends.storyboard;
-			sourceTree = "<group>";
-		};
-		7CDF75D61DBD29080060F1AB /* Workout.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7CDF75D71DBD29080060F1AB /* Base */,
-			);
-			name = Workout.storyboard;
-			sourceTree = "<group>";
-		};
-		7CDF75DB1DBD29350060F1AB /* Leaderboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7CDF75DC1DBD29350060F1AB /* Base */,
-			);
-			name = Leaderboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

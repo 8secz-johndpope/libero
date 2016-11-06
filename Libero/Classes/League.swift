@@ -33,6 +33,6 @@ class League: PFObject, PFSubclassing {
     }
     
     static func parseClassName() -> String {
-        return "Legue"
+        return "League"
     }
 }
