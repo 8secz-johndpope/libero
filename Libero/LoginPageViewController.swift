@@ -15,6 +15,7 @@ class LoginPageViewController: UIViewController {
     @IBOutlet weak var passwordTextfield: UITextField!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,6 +25,20 @@ class LoginPageViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        usernameTextfield.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
+    }
+    
+    @IBAction func cancelPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func showPassword(_ sender: Any) {
+        usernameTextfield.resignFirstResponder()
+        passwordTextfield.becomeFirstResponder()
     }
     
     @IBAction func loginButtonTapped(_ sender: AnyObject) {
@@ -51,9 +66,7 @@ class LoginPageViewController: UIViewController {
                     if user.completedSetup || AppDelegate.shouldSkipSurvey() {
                         let tabVC = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
                         self.present(tabVC, animated: true, completion: nil)
-                    }
-                    else {
-                        print("Hello")
+                    } else {
                         let navVC = mainStoryboard.instantiateViewController(withIdentifier: "formerNav") as! UINavigationController
                         
                         self.present(navVC, animated: true, completion: nil)
@@ -87,26 +100,6 @@ class LoginPageViewController: UIViewController {
              }
              */
             
-        }
-    }
-    
-    @IBAction func facebookLogin(_ sender: UIButton) {
-        User.loginWithFacebook { (user, error) in
-            if let user = user {
-                //do segue, allow them to enter app
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                
-                if user.completedSetup {
-                    let tabVC = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
-                    self.present(tabVC, animated: true, completion: nil)
-                }
-                else {
-                    let formerVC = mainStoryboard.instantiateViewController(withIdentifier: "surveyView")
-                    self.present(formerVC, animated: true, completion: nil)
-                    
-                }
-            }
         }
     }
     

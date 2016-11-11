@@ -23,25 +23,57 @@ class RegistrationPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        usernameTextfield.resignFirstResponder()
+        emailTextfield.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
+        confirmPasswordTextfield.resignFirstResponder()
+    }
+    
+    @IBAction func cancelPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func showNextTextFeild(_ sender: UITextField) {
+        switch sender {
+        case self.usernameTextfield:
+            emailTextfield.becomeFirstResponder()
+            break
+            
+        case self.emailTextfield:
+            passwordTextfield.becomeFirstResponder()
+            break
+            
+        case passwordTextfield:
+            confirmPasswordTextfield.becomeFirstResponder()
+            break
+            
+        case confirmPasswordTextfield:
+            self.registerButton(sender)
+            break
+        default:
+            return
+        }
+    }
     
     
-    @IBAction func registerButton(_ sender: UIButton) {
-        guard let username = usernameTextfield.text else {
+    @IBAction func registerButton(_ sender: AnyObject) {
+        guard let username = usernameTextfield.text, username != "" else {
             let alert = SCLAlertView()
             alert.showError("Incomplete", subTitle: "Please enter a username.")
             return
         }
-        guard let email = emailTextfield.text else {
+        guard let email = emailTextfield.text, email != "" else {
             let alert = SCLAlertView()
             alert.showError("Incomplete", subTitle: "Please enter an e-mail address.")
             return
         }
-        guard let password = passwordTextfield.text else {
+        guard let password = passwordTextfield.text, password != "" else {
             let alert = SCLAlertView()
             alert.showError("Incomplete", subTitle: "Please enter a password.")
             return
         }
-        guard let password2 = confirmPasswordTextfield.text else {
+        guard let password2 = confirmPasswordTextfield.text, password2 != "" else {
             let alert = SCLAlertView()
             alert.showError("Incomplete", subTitle: "Please confirm password.")
             return

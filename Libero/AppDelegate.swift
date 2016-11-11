@@ -84,14 +84,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.setFacebookLoginBehavior(.useSystemAccountIfPresent)
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if let user = User.current() {
             if user.completedSetup || AppDelegate.shouldSkipSurvey() { // add skipSurvey to environment variables to skip survey
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "tabController")
             }else{
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "formerNav") as! UINavigationController
             }
+        }else{
+//            self.window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "formerNav")
         }
         
         return true
