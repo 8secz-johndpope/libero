@@ -163,7 +163,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="v1y-MM-e80" eventType="editingDidEndOnExit" id="ZaA-EB-6J4"/>
-                                    <action selector="passwordChanged:" destination="v1y-MM-e80" eventType="editingChanged" id="p7d-Pl-Gt6"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPm-AC-3AQ">
@@ -396,11 +395,11 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="pbC-Hv-rGb" kind="relationship" relationship="viewControllers" id="VuA-pp-vgn"/>
                         <segue destination="d9z-9C-7sX" kind="relationship" relationship="viewControllers" id="Kda-Pd-OaY"/>
-                        <segue destination="nJ2-Tz-dht" kind="relationship" relationship="viewControllers" id="jWq-F5-amb"/>
-                        <segue destination="6AJ-4s-zng" kind="relationship" relationship="viewControllers" id="eUE-Lw-3nu"/>
                         <segue destination="YYb-ug-xSa" kind="relationship" relationship="viewControllers" id="N4d-QR-UNg"/>
+                        <segue destination="pbC-Hv-rGb" kind="relationship" relationship="viewControllers" id="VuA-pp-vgn"/>
+                        <segue destination="6AJ-4s-zng" kind="relationship" relationship="viewControllers" id="eUE-Lw-3nu"/>
+                        <segue destination="nJ2-Tz-dht" kind="relationship" relationship="viewControllers" id="jWq-F5-amb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vka-6b-lIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -431,7 +430,7 @@
         <scene sceneID="FUt-6t-Sq9">
             <objects>
                 <navigationController id="YYb-ug-xSa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="YDp-Qh-09R"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends" id="YDp-Qh-09R"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CSm-eL-4d1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -448,7 +447,7 @@
         <scene sceneID="dlf-hD-v6y">
             <objects>
                 <navigationController id="6AJ-4s-zng" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyActivity" id="oZT-O7-kM9"/>
+                    <tabBarItem key="tabBarItem" title="MyActivity" image="user" id="oZT-O7-kM9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jFg-1x-i4J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -475,7 +474,7 @@
         <scene sceneID="fab-7s-30g">
             <objects>
                 <navigationController id="nJ2-Tz-dht" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Achievements" id="2ya-VM-coD"/>
+                    <tabBarItem key="tabBarItem" title="Achievements" image="medal" id="2ya-VM-coD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HgZ-ko-0ao">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -502,7 +501,7 @@
         <scene sceneID="24f-8P-Y1N">
             <objects>
                 <navigationController id="d9z-9C-7sX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Leaderboard" id="5BK-zL-4QM"/>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="leaderboard" id="5BK-zL-4QM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qoh-xL-Qnd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -547,7 +546,7 @@
         <scene sceneID="NiJ-sj-c4I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pbC-Hv-rGb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Workout" id="aov-Yz-5d6"/>
+                    <tabBarItem key="tabBarItem" title="Workout" image="speed" id="aov-Yz-5d6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gOI-Sx-gVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -565,6 +564,11 @@
     </scenes>
     <resources>
         <image name="darkLoginButton" width="311" height="71"/>
+        <image name="friends" width="30" height="30"/>
+        <image name="leaderboard" width="30" height="20"/>
         <image name="loginBackgroundRect" width="375" height="399"/>
+        <image name="medal" width="30" height="37"/>
+        <image name="speed" width="31" height="31"/>
+        <image name="user" width="25" height="26"/>
     </resources>
 </document>
