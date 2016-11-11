@@ -61,7 +61,7 @@ class ActiveWorkoutViewController: UIViewController {
         }
         
         if let distance = (workout.data as? Workout.Subdata.Distance)?.distance {
-            self.distanceLabel.text = "\(distance)"
+            self.distanceLabel.text = String(format: "%.1f", distance.miles)
         }
     }
 }

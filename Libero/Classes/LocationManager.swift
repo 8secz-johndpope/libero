@@ -22,6 +22,10 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             self.distanceInMeters = distance
         }
         
+        func addToDistance(distance: Distance) -> Distance {
+            return Distance(distance: self.distanceInMeters + distance.distanceInMeters)
+        }
+        
         var meters: Double {
             set {self.distanceInMeters = newValue}
             get {return self.distanceInMeters}
@@ -102,14 +106,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         return Distance(distance: meters)
     }
     
-//    private func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        if let location: CLLocation = locations.last, let locationAquired = locationAquired {
-//            locationAquired(location)
-//        }
-//        if method == .Single {
-//            self.cancelLocation()
-//        }
-//    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location: CLLocation = locations.last, let locationAquired = locationAquired {
+            locationAquired(location)
+        }
+        if method == .Single {
+            self.cancelLocation()
+        }
+    }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Encountered an error when getting the location!")

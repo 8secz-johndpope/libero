@@ -36,6 +36,7 @@
 		525CBA131DAEF39E0050C9D2 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 525CBA051DAEF39D0050C9D2 /* LICENSE.txt */; };
 		525CBA141DAEF39E0050C9D2 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 525CBA061DAEF39D0050C9D2 /* README.txt */; };
 		525CBA151DAEF39E0050C9D2 /* Samples in Resources */ = {isa = PBXBuildFile; fileRef = 525CBA071DAEF39D0050C9D2 /* Samples */; };
+		526C2A351DD3EAD500057C65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526C2A341DD3EAD400057C65 /* CoreLocation.framework */; };
 		529317A61DBFEA72001C99A9 /* SCLAlertView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529317A51DBFEA72001C99A9 /* SCLAlertView.framework */; };
 		52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AC8E191DB1A76500A5AA52 /* User.swift */; };
 		52AC8E2C1DB1B58500A5AA52 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC8E2A1DB1B58500A5AA52 /* FacebookSDK.framework */; };
@@ -104,6 +105,7 @@
 		525CBA051DAEF39D0050C9D2 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = "FacebookSDKs-iOS-4/LICENSE.txt"; sourceTree = "<group>"; };
 		525CBA061DAEF39D0050C9D2 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = "FacebookSDKs-iOS-4/README.txt"; sourceTree = "<group>"; };
 		525CBA071DAEF39D0050C9D2 /* Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Samples; path = "FacebookSDKs-iOS-4/Samples"; sourceTree = "<group>"; };
+		526C2A341DD3EAD400057C65 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		529317A51DBFEA72001C99A9 /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Libero-gkjgmyjgieaomodiqcmyhfxsetxw/Build/Products/Debug-iphonesimulator/SCLAlertView/SCLAlertView.framework"; sourceTree = "<group>"; };
 		52AC8E191DB1A76500A5AA52 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52AC8E211DB1B29700A5AA52 /* Libero-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Libero-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526C2A351DD3EAD500057C65 /* CoreLocation.framework in Frameworks */,
 				7C88B87D1DC819CB00DAE399 /* Former.framework in Frameworks */,
 				529317A61DBFEA72001C99A9 /* SCLAlertView.framework in Frameworks */,
 				52AC8E2C1DB1B58500A5AA52 /* FacebookSDK.framework in Frameworks */,
@@ -164,6 +167,7 @@
 		2FC53C7481C866D930DCEB00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				526C2A341DD3EAD400057C65 /* CoreLocation.framework */,
 				7C88B87C1DC819CB00DAE399 /* Former.framework */,
 				529317A51DBFEA72001C99A9 /* SCLAlertView.framework */,
 				52CAE3D51DA183CB00698CEE /* Libero.entitlements */,
@@ -412,7 +416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		93DA999C7044C3E8B46131E3 /* [CP] Copy Pods Resources */ = {

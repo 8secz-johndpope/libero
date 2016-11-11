@@ -96,10 +96,10 @@ class Workout: PFObject, PFSubclassing {
 //        }
         
         class Distance: Subdata {
-            var distance: Double
+            var distance: LocationManager.Distance
             var speed: Double
             
-            init(activity: Name, distance: Double, speed: Double) {
+            init(activity: Name, distance: LocationManager.Distance, speed: Double) {
                 self.distance = distance
                 self.speed = speed
                 super.init(activity: activity)
@@ -109,7 +109,7 @@ class Workout: PFObject, PFSubclassing {
             override func save(into workout: Workout) {
                 super.save(into: workout)
                 
-                workout.distance = self.distance as NSNumber
+                workout.distance = self.distance.meters as NSNumber
                 workout.speed = self.speed as NSNumber
             }
         }
@@ -175,7 +175,7 @@ class Workout: PFObject, PFSubclassing {
             switch type {
             case .distance:
                 self.data = Subdata.Distance(activity: name,
-                                             distance: self.distance != nil ? self.distance!.doubleValue : 0.0,
+                                             distance: LocationManager.Distance(distance: (self.distance == nil) ? 0.0 : self.distance!.doubleValue),
                                              speed: self.speed != nil ? self.speed!.doubleValue : 0.0)
                 break
                 
@@ -212,9 +212,9 @@ class Workout: PFObject, PFSubclassing {
                 let lastLegDistance = self.locationManager!.calculateDistance(start: lastLoc.loc, end: location)
                 
                 if let data = self.data as? Subdata.Distance {
-                    data.distance += lastLegDistance.meters
+                    data.distance = lastLegDistance.addToDistance(distance: data.distance)
                 }else{
-                    self.data = Subdata.Distance(activity: self.typeValue.name, distance: 0.0, speed: 0.0)
+                    self.data = Subdata.Distance(activity: self.typeValue.name, distance: LocationManager.Distance(distance: 0.0), speed: 0.0)
                 }
             }
             
