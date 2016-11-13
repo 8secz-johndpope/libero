@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uvU-zu-kIX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uvU-zu-kIX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,13 +30,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIBERO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r18-SX-HCl">
-                                <rect key="frame" x="58" y="49" width="259" height="98.5"/>
+                                <rect key="frame" x="58" y="49" width="259" height="99"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="72"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXERCISE REINVENTED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOx-jI-Tvs">
-                                <rect key="frame" x="47.5" y="126" width="279" height="33"/>
+                                <rect key="frame" x="48" y="127" width="279" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -546,7 +546,7 @@
         <scene sceneID="NiJ-sj-c4I">
             <objects>
                 <navigationController storyboardIdentifier="workoutNavController" automaticallyAdjustsScrollViewInsets="NO" id="pbC-Hv-rGb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Workout" image="speed" id="aov-Yz-5d6"/>
+                    <tabBarItem key="tabBarItem" title="Workout" image="speed" selectedImage="RUN" id="aov-Yz-5d6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gOI-Sx-gVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -563,6 +563,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="RUN" width="31" height="31"/>
         <image name="darkLoginButton" width="311" height="71"/>
         <image name="friends" width="30" height="30"/>
         <image name="leaderboard" width="30" height="20"/>

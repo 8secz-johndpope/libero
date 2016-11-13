@@ -11,4 +11,5 @@ target 'Libero' do
   pod 'ParseFacebookUtils'
   pod 'SCLAlertView'
   pod 'Former'
+  pod 'SwiftHEXColors'
 end

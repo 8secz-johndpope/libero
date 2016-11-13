@@ -10,7 +10,7 @@ import UIKit
 
 class MyActivityTableViewController: UITableViewController {
     
-    let activityList = ["Monday Morning Run", "Tuesday Evening Jog", "Wednesday Walk"]
+    let activityList = ["Monday Morning Bike", "Tuesday Evening Jog", "Wednesday Evening Walk"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +58,10 @@ class MyActivityTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 300
+            return 217
             
         default:
-            return 130
+            return 84
         }
     }
     

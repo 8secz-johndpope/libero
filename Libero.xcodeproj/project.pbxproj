@@ -53,6 +53,7 @@
 		7C2B3DFC1DCFAF8E00DFDCC2 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2B3DFB1DCFAF8E00DFDCC2 /* Friends.storyboard */; };
 		7C2B3DFE1DCFB10F00DFDCC2 /* MyActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */; };
 		7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C299D1DC664D70000C486 /* FriendsViewController.swift */; };
+		7C51D8771DD8FD6700B31DC7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51D8761DD8FD6700B31DC7 /* Global.swift */; };
 		7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */; };
 		7C88B87D1DC819CB00DAE399 /* Former.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C88B87C1DC819CB00DAE399 /* Former.framework */; };
 		7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */; };
@@ -130,6 +131,7 @@
 		7C2B3DFB1DCFAF8E00DFDCC2 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityCell.swift; sourceTree = "<group>"; };
 		7C2C299D1DC664D70000C486 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		7C51D8761DD8FD6700B31DC7 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerViewController.swift; sourceTree = "<group>"; };
 		7C88B87C1DC819CB00DAE399 /* Former.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Former.framework; path = "Pods/../build/Debug-iphoneos/Former/Former.framework"; sourceTree = "<group>"; };
 		7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				52D696981DBD31A400E84007 /* Classes */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
+				7C51D8761DD8FD6700B31DC7 /* Global.swift */,
 				7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */,
 				7C2B3DFB1DCFAF8E00DFDCC2 /* Friends.storyboard */,
 				7C2C299D1DC664D70000C486 /* FriendsViewController.swift */,
@@ -254,10 +257,6 @@
 		523F36731DD8E513001DB332 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				4407970F1DC9772F0034CDF0 /* Workout2.storyboard */,
-				52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */,
-				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
-				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
 				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
 			);
 			name = Workout;
@@ -473,6 +472,7 @@
 				7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */,
 				52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */,
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,
+				7C51D8771DD8FD6700B31DC7 /* Global.swift in Sources */,
 				52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */,
 				440797131DC977B10034CDF0 /* WorkoutSelectTableViewController.swift in Sources */,
 				7C2B3DFE1DCFB10F00DFDCC2 /* MyActivityCell.swift in Sources */,
