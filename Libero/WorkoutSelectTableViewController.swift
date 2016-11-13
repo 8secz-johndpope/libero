@@ -53,13 +53,16 @@ class WorkoutSelectTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Workout2", bundle: nil)
-        let diffVC = sb.instantiateViewController(withIdentifier: "difficultyTableView") as! DifficultyTableViewController
         
         workout.typeInfo.name = Workout.Name(rawValue: workoutList[indexPath.row].lowercased()) ?? .unknown
-        diffVC.workout = self.workout
         
-        self.navigationController?.pushViewController(diffVC, animated: true)
+        self.performSegue(withIdentifier: "choseWorkoutType", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? DifficultyTableViewController {
+            dest.workout = self.workout
+        }
     }
     
 

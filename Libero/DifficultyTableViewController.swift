@@ -57,12 +57,13 @@ class DifficultyTableViewController: UITableViewController {
         
         self.workout.typeInfo.difficulty = Workout.Difficulty(rawValue: indexPath.row) ?? .unknown
         
-        let sb = UIStoryboard(name: "Workout2", bundle: nil)
-        let activeVC = sb.instantiateViewController(withIdentifier: "activeWorkoutView") as! ActiveWorkoutViewController
-        
-        activeVC.workout = self.workout
-        
-        self.navigationController?.pushViewController(activeVC, animated: true)
+        self.performSegue(withIdentifier: "startWorkout", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? ActiveWorkoutViewController {
+            dest.workout = self.workout
+        }
     }
     
 

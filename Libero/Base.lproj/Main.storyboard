@@ -545,7 +545,7 @@
         <!--Workout-->
         <scene sceneID="NiJ-sj-c4I">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pbC-Hv-rGb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="workoutNavController" automaticallyAdjustsScrollViewInsets="NO" id="pbC-Hv-rGb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workout" image="speed" id="aov-Yz-5d6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gOI-Sx-gVG">

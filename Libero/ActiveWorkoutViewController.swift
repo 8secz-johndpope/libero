@@ -22,8 +22,6 @@ class ActiveWorkoutViewController: UIViewController {
         
         timeLabel.text = "00:00:00"
         distanceLabel.text = "0.0"
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ActiveWorkoutViewController.cancel))
         
         if workout.isActive {
             self.updateLabels()
@@ -35,10 +33,19 @@ class ActiveWorkoutViewController: UIViewController {
     }
     
     func cancel() {
+        self.beginButton.setTitle("Begin", for: .normal)
+        workout.endWorkout()
+        workout.stopLocationTracking()
         
+        workout.stopTimer()
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func beginPressed(_ sender: UIButton) {
+        
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(ActiveWorkoutViewController.cancel))
         if !workout.isActive {
             sender.setTitle("End", for: .normal)
             workout.startWorkout()

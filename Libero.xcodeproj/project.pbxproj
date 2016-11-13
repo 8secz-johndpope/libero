@@ -232,12 +232,8 @@
 				7C2C299D1DC664D70000C486 /* FriendsViewController.swift */,
 				7C2B3DF11DCFAD3700DFDCC2 /* MyActivity.storyboard */,
 				7C2B3DED1DCFA7FD00DFDCC2 /* Leaderboard.storyboard */,
-				4407970F1DC9772F0034CDF0 /* Workout2.storyboard */,
-				52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */,
-				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
-				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
+				523F36731DD8E513001DB332 /* Workout */,
 				7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */,
-				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
 				52F362E31DD6560100B25D04 /* Login */,
 				7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */,
 				7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */,
@@ -246,6 +242,18 @@
 				7C184FC61DC6969900EC097D /* SurveyViewController.swift */,
 			);
 			path = Libero;
+			sourceTree = "<group>";
+		};
+		523F36731DD8E513001DB332 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				4407970F1DC9772F0034CDF0 /* Workout2.storyboard */,
+				52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */,
+				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
+				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
+				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
+			);
+			name = Workout;
 			sourceTree = "<group>";
 		};
 		52AC8E1B1DB1A7B200A5AA52 /* Parse Subclasses */ = {

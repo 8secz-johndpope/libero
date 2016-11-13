@@ -14,7 +14,7 @@
         <!--Start Workout-->
         <scene sceneID="exH-Ss-ccm">
             <objects>
-                <tableViewController id="uvd-Xk-QQk" customClass="WorkoutSelectTableViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="workoutTop" id="uvd-Xk-QQk" customClass="WorkoutSelectTableViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" id="76E-bW-XBu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,10 +63,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Start Workout" id="I66-8Y-Ptw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="IVv-hv-17N" kind="show" identifier="choseWorkoutType" id="KTl-qd-fbN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8SL-KR-0Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="842"/>
+            <point key="canvasLocation" x="-113" y="842"/>
         </scene>
         <!--Difficulty Table View Controller-->
         <scene sceneID="bpA-RS-UaZ">
@@ -118,6 +121,9 @@
                             <outlet property="delegate" destination="IVv-hv-17N" id="E8w-Ll-pJZ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="XO3-wn-lnB" kind="show" identifier="startWorkout" id="2hU-ZQ-e6u"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppe-Oj-UlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2e-mX-M1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="842"/>
+            <point key="canvasLocation" x="1474" y="842"/>
         </scene>
     </scenes>
     <resources>
