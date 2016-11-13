@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -54,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrh-wh-lku">
-                                <rect key="frame" x="36" y="478" width="303" height="62"/>
+                                <rect key="frame" x="36" y="478" width="303" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Yrh-wh-lku" secondAttribute="height" multiplier="303:63" id="cvv-3D-z5G"/>
                                 </constraints>
@@ -67,7 +68,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4e-Kw-fw0">
-                                <rect key="frame" x="114" y="548" width="147" height="40"/>
+                                <rect key="frame" x="114" y="549" width="147" height="40"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -430,9 +431,15 @@
             <objects>
                 <navigationController id="YYb-ug-xSa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="friends" id="YDp-Qh-09R"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CSm-eL-4d1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="CSm-eL-4d1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="L9r-5O-DlC" kind="relationship" relationship="rootViewController" id="OdH-GI-8CS"/>
@@ -447,9 +454,16 @@
             <objects>
                 <navigationController id="6AJ-4s-zng" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="MyActivity" image="user" id="oZT-O7-kM9"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jFg-1x-i4J">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="jFg-1x-i4J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="laI-7X-own" kind="relationship" relationship="rootViewController" id="CYu-n8-8Pf"/>
@@ -508,9 +522,16 @@
             <objects>
                 <navigationController id="d9z-9C-7sX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Leaderboard" image="leaderboard" id="5BK-zL-4QM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qoh-xL-Qnd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Qoh-xL-Qnd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="9Iy-B7-jJW" kind="relationship" relationship="rootViewController" id="v5H-kc-qow"/>
@@ -552,11 +573,18 @@
         <scene sceneID="NiJ-sj-c4I">
             <objects>
                 <navigationController storyboardIdentifier="workoutNavController" automaticallyAdjustsScrollViewInsets="NO" id="pbC-Hv-rGb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Workout" image="speed" selectedImage="RUN" id="aov-Yz-5d6"/>
+                    <tabBarItem key="tabBarItem" title="Workout" image="RUN" id="aov-Yz-5d6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gOI-Sx-gVG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="gOI-Sx-gVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -575,7 +603,6 @@
         <image name="friends" width="30" height="30"/>
         <image name="leaderboard" width="30" height="20"/>
         <image name="loginBackgroundRect" width="375" height="399"/>
-        <image name="speed" width="31" height="31"/>
         <image name="user" width="25" height="26"/>
     </resources>
 </document>

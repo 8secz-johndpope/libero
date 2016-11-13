@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--LEADERBOARD-->
         <scene sceneID="qVM-y7-xeu">
             <objects>
-                <tableViewController id="4ym-AJ-wNw" sceneMemberID="viewController">
+                <tableViewController title="LEADERBOARD" id="4ym-AJ-wNw" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ztj-Jc-PYp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,6 @@
                             <outlet property="delegate" destination="4ym-AJ-wNw" id="Y2d-ph-o0c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Qe8-kt-w3E"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qfo-vY-hNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

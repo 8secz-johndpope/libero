@@ -8,6 +8,7 @@
 
 import UIKit
 import SCLAlertView
+import DZNEmptyDataSet
 
 class MyActivityTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
@@ -26,8 +27,6 @@ class MyActivityTableViewController: UITableViewController, DZNEmptyDataSetSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        L.setUpNavBar(navBar: navigationController!.navigationBar)
         
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uvd-Xk-QQk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uvd-Xk-QQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Start Workout-->
+        <!--WORKOUT-->
         <scene sceneID="exH-Ss-ccm">
             <objects>
-                <tableViewController storyboardIdentifier="workoutTop" id="uvd-Xk-QQk" customClass="WorkoutSelectTableViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="workoutTop" title="WORKOUT" id="uvd-Xk-QQk" customClass="WorkoutSelectTableViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" id="76E-bW-XBu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                         <constraint firstItem="xjQ-oc-74n" firstAttribute="leading" secondItem="ltS-Ax-jf4" secondAttribute="leading" id="jcQ-DS-YHe"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.24558860479283193" green="0.26178576901689454" blue="0.28612775259067358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="workoutSubtitle" destination="ltS-Ax-jf4" id="bar-4Z-cyc"/>
                                     <outlet property="workoutTitle" destination="xjQ-oc-74n" id="UIP-Hv-BOy"/>
@@ -61,7 +61,6 @@
                             <outlet property="delegate" destination="uvd-Xk-QQk" id="pXb-AB-p2l"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Start Workout" id="I66-8Y-Ptw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="IVv-hv-17N" kind="show" identifier="choseWorkoutType" id="KTl-qd-fbN"/>
@@ -69,7 +68,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8SL-KR-0Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-           <point key="canvasLocation" x="-113" y="842"/>
+            <point key="canvasLocation" x="-113" y="842"/>
         </scene>
         <!--Difficulty Table View Controller-->
         <scene sceneID="bpA-RS-UaZ">

@@ -17,9 +17,9 @@ class L {
     
     
     class func setUpNavBar(navBar: UINavigationBar) {
-        navBar.barTintColor = L.grey
-//        navBar.isTranslucent = true
-        navBar.tintColor = UIColor.white
-        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Black", size:20)!, NSForegroundColorAttributeName: UIColor.white]
+//        navBar.barTintColor = L.grey
+////        navBar.isTranslucent = true
+//        navBar.tintColor = UIColor.white
+//        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Black", size:20)!, NSForegroundColorAttributeName: UIColor.white]
     }
 }
