@@ -59,6 +59,7 @@
 		7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */; };
 		7CDF75DA1DBD291B0060F1AB /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */; };
 		7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */; };
+		7CF1A6811DD8DD780071AF2A /* MyActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1A6801DD8DD780071AF2A /* MyActivityTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -135,6 +136,7 @@
 		7CC214861DC6610300CFE9D3 /* RegistrationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPageViewController.swift; sourceTree = "<group>"; };
 		7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
 		7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7CF1A6801DD8DD780071AF2A /* MyActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityTableViewController.swift; sourceTree = "<group>"; };
 		D702992B2605FE60DDE35031 /* Pods_Libero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -233,6 +235,11 @@
 				7C2B3DF11DCFAD3700DFDCC2 /* MyActivity.storyboard */,
 				7C2B3DED1DCFA7FD00DFDCC2 /* Leaderboard.storyboard */,
 				523F36731DD8E513001DB332 /* Workout */,
+				4407970F1DC9772F0034CDF0 /* Workout2.storyboard */,
+				52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */,
+				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
+				7CF1A6801DD8DD780071AF2A /* MyActivityTableViewController.swift */,
+				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
 				7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */,
 				52F362E31DD6560100B25D04 /* Login */,
 				7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */,
@@ -435,7 +442,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		93DA999C7044C3E8B46131E3 /* [CP] Copy Pods Resources */ = {
@@ -477,6 +484,7 @@
 				52E20C301DB40C27004113E6 /* Achievement.swift in Sources */,
 				52F362E21DD655E600B25D04 /* LoginMethodViewController.swift in Sources */,
 				440797151DC978380034CDF0 /* WorkoutSelectCell.swift in Sources */,
+				7CF1A6811DD8DD780071AF2A /* MyActivityTableViewController.swift in Sources */,
 				522840371DC171220062EE55 /* LocationManager.swift in Sources */,
 				52AF99E41DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift in Sources */,
 				7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */,

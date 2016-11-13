@@ -10,6 +10,7 @@ import UIKit
 
 class MyActivityCell: UITableViewCell {
 
+    @IBOutlet weak var activityTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
