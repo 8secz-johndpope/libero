@@ -11,7 +11,28 @@ import Parse
 
 class Achievement: PFObject, PFSubclassing {
     @NSManaged var name: String
+    @NSManaged private var myType: String
     
+    var type: TypeEnum {
+        get {
+            return TypeEnum(rawValue: self.myType) ?? .unknown
+        }
+        set {
+            myType = newValue.rawValue
+        }
+    }
+    
+    override init() {
+        super.init()
+        self.name = ""
+        self.myType = ""
+    }
+    
+    init(name: String, type: TypeEnum) {
+        super.init()
+        self.name = name
+        self.type = type
+    }
     
     static func calculateAchievements(user: User) {
         // TODO: write achievements cloud function
@@ -22,5 +43,14 @@ class Achievement: PFObject, PFSubclassing {
     
     static func parseClassName() -> String {
         return "Achievement"
+    }
+    
+    
+    enum TypeEnum: String {
+        case first
+        case second
+        case third
+        case fourth
+        case unknown
     }
 }
