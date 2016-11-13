@@ -14,12 +14,12 @@ class AchievementsViewController: UIViewController, UICollectionViewDelegate, UI
     var achievements: [Achievement] = []
     
     override func viewDidLoad() {
-        var test1 = Achievement(name: "100 miles run", type: .first)
-        var test2 = Achievement(name: "20 miles swim", type: .second)
-        var test3 = Achievement(name: "20 miles swim", type: .second)
-        var test4 = Achievement(name: "20 miles swim", type: .second)
-        var test5 = Achievement(name: "20 miles swim", type: .second)
+        var test1 = Achievement(name: "10 miles run", type: .first)
+        var test2 = Achievement(name: "25 miles run", type: .second)
+        var test3 = Achievement(name: "50 miles run", type: .third)
+        var test4 = Achievement(name: "100 miles run", type: .fourth)
         
+        achievements = [test1, test2, test3, test4]
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -27,15 +27,18 @@ class AchievementsViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return achievements.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "acheivementCell", for: indexPath) as! AchievementCollectionCell
         
-        cell.type = .first
+        let achievement = self.achievements[indexPath.row]
         
-        return UICollectionViewCell()
+        cell.type = achievement.type
+        cell.descriptionText = achievement.name
+        
+        return cell
     }
 }
 

@@ -14,7 +14,7 @@
         <!--ACHIEVEMENTS-->
         <scene sceneID="q7R-5Z-hpz">
             <objects>
-                <viewController title="ACHIEVEMENTS" id="PZt-0o-XRd" sceneMemberID="viewController">
+                <viewController title="ACHIEVEMENTS" id="PZt-0o-XRd" customClass="AchievementsViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M1o-OH-Wnb"/>
                         <viewControllerLayoutGuide type="bottom" id="mt0-J0-sYb"/>
@@ -47,7 +47,7 @@
                                                         <constraint firstAttribute="height" constant="66" id="BpJ-O5-ouf"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Miles Run" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDy-N2-mXr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Miles Run" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bDy-N2-mXr">
                                                     <rect key="frame" x="0.0" y="74" width="88" height="51"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

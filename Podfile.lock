@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DZNEmptyDataSet (1.8.1)
   - Facebook-iOS-SDK (3.24.4):
     - Bolts (~> 1.2)
   - Former (1.5.0)
@@ -18,6 +19,7 @@ PODS:
   - SwiftHEXColors (1.0.4)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet
   - Former
   - Parse
   - ParseFacebookUtils
@@ -26,6 +28,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
   Former: 8f9f41e51eceb75e47b4275147795ec477b121ec
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
@@ -33,6 +36,6 @@ SPEC CHECKSUMS:
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
 
-PODFILE CHECKSUM: 820dff8a2a131677bd1a8d79bf8160e65c9ac725
+PODFILE CHECKSUM: 1b1889acf609e118134e7a285f6195ed42cb20f5
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
