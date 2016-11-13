@@ -5,15 +5,15 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Activity-->
+        <!--MY ACTIVITY-->
         <scene sceneID="GN8-vS-0OZ">
             <objects>
-                <tableViewController title="My Activity" id="rCn-7u-gKe" customClass="MyActivityTableViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="MY ACTIVITY" id="rCn-7u-gKe" customClass="MyActivityTableViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ck4-0Z-AGx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,7 +179,7 @@
                             <outlet property="delegate" destination="rCn-7u-gKe" id="rZN-aH-wat"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Activity" id="uGf-oV-rhp"/>
+                    <navigationItem key="navigationItem" title="MY ACTIVITY" id="uGf-oV-rhp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVw-95-XP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

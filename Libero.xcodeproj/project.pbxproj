@@ -54,6 +54,7 @@
 		7C2B3DFE1DCFB10F00DFDCC2 /* MyActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */; };
 		7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C299D1DC664D70000C486 /* FriendsViewController.swift */; };
 		7C51D8771DD8FD6700B31DC7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51D8761DD8FD6700B31DC7 /* Global.swift */; };
+		7C51D87A1DD9033C00B31DC7 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C51D8791DD9033C00B31DC7 /* UIScrollView+EmptyDataSet.m */; };
 		7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */; };
 		7C88B87D1DC819CB00DAE399 /* Former.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C88B87C1DC819CB00DAE399 /* Former.framework */; };
 		7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */; };
@@ -132,6 +133,8 @@
 		7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityCell.swift; sourceTree = "<group>"; };
 		7C2C299D1DC664D70000C486 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		7C51D8761DD8FD6700B31DC7 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		7C51D8781DD9033C00B31DC7 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+EmptyDataSet.h"; path = "../../Downloads/DZNEmptyDataSet-master/Source/UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		7C51D8791DD9033C00B31DC7 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+EmptyDataSet.m"; path = "../../Downloads/DZNEmptyDataSet-master/Source/UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerViewController.swift; sourceTree = "<group>"; };
 		7C88B87C1DC819CB00DAE399 /* Former.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Former.framework; path = "Pods/../build/Debug-iphoneos/Former/Former.framework"; sourceTree = "<group>"; };
 		7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 			children = (
 				52AC8E211DB1B29700A5AA52 /* Libero-Bridging-Header.h */,
 				52D696991DBD378B00E84007 /* GoogleService-Info.plist */,
+				7C51D8781DD9033C00B31DC7 /* UIScrollView+EmptyDataSet.h */,
+				7C51D8791DD9033C00B31DC7 /* UIScrollView+EmptyDataSet.m */,
 				52268AD41D9F0C2D0005C759 /* Libero */,
 				52268AD31D9F0C2D0005C759 /* Products */,
 				96F1D2FAEFBB10C088EE774C /* Pods */,
@@ -479,6 +484,7 @@
 				7C2C299E1DC664D70000C486 /* FriendsViewController.swift in Sources */,
 				7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */,
 				52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */,
+				7C51D87A1DD9033C00B31DC7 /* UIScrollView+EmptyDataSet.m in Sources */,
 				440797171DC979B50034CDF0 /* DifficultyTableViewController.swift in Sources */,
 				7C184FC71DC6969900EC097D /* SurveyViewController.swift in Sources */,
 				52E20C301DB40C27004113E6 /* Achievement.swift in Sources */,

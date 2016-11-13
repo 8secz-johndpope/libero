@@ -9,14 +9,29 @@
 import UIKit
 import SCLAlertView
 
-class MyActivityTableViewController: UITableViewController {
+class MyActivityTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     let activityList = ["Monday Morning Bike", "Tuesday Evening Jog", "Wednesday Evening Walk"]
+    
+    
+    /** Start Empty Data Protocol */
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "No Results"
+        let attrs = [NSFontAttributeName: UIFont(name: "Avenir", size: 23)!]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         L.setUpNavBar(navBar: navigationController!.navigationBar)
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -58,6 +73,7 @@ class MyActivityTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return activityList.count+1
+//        return 0
     }
 
 
@@ -84,6 +100,13 @@ class MyActivityTableViewController: UITableViewController {
         default:
             return 84
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.row == 0 {
+            return nil
+        }
+        return indexPath
     }
     
     /*
