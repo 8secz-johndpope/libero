@@ -15,12 +15,14 @@ PODS:
     - Facebook-iOS-SDK (~> 3.24)
     - Parse (~> 1.9)
   - SCLAlertView (0.7.0)
+  - SwiftHEXColors (1.0.4)
 
 DEPENDENCIES:
   - Former
   - Parse
   - ParseFacebookUtils
   - SCLAlertView
+  - SwiftHEXColors
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -29,7 +31,8 @@ SPEC CHECKSUMS:
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseFacebookUtils: 7030f53c989fda36ad50029d90edec1327424317
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
 
-PODFILE CHECKSUM: 5e556075ecd4bc184e1a15573a614f7322227249
+PODFILE CHECKSUM: 820dff8a2a131677bd1a8d79bf8160e65c9ac725
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.0.1

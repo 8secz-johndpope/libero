@@ -12,4 +12,5 @@ target 'Libero' do
   pod 'SCLAlertView'
   pod 'Former'
   pod 'SwiftHEXColors'
+  pod 'DZNEmptyDataSet'
 end

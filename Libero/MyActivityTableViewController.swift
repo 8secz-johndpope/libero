@@ -15,6 +15,9 @@ class MyActivityTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        L.setUpNavBar(navBar: navigationController!.navigationBar)
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
