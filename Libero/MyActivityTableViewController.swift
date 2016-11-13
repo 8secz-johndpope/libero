@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class MyActivityTableViewController: UITableViewController {
     
@@ -20,12 +21,29 @@ class MyActivityTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(MyActivityTableViewController.logout))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func logout() {
+        User.logout { (error) in
+            if let _ = error {
+                let alert = SCLAlertView()
+                alert.showError("Failed to Logout!", subTitle: "")
+            }else{
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginViewController = mainStoryboard.instantiateViewController(withIdentifier: "login")
+                
+                self.present(loginViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
 
     // MARK: - Table view data source
 

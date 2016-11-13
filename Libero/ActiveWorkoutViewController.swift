@@ -39,7 +39,7 @@ class ActiveWorkoutViewController: UIViewController {
         
         workout.stopTimer()
         
-        self.navigationController?.popToRootViewController(animated: true)
+        let _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func beginPressed(_ sender: UIButton) {
