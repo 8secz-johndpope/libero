@@ -14,7 +14,7 @@
         <!--Login Method View Controller-->
         <scene sceneID="qLu-bl-vMR">
             <objects>
-                <viewController id="uvU-zu-kIX" customClass="LoginMethodViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="uvU-zu-kIX" customClass="LoginMethodViewController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KnY-sJ-hil"/>
                         <viewControllerLayoutGuide type="bottom" id="QqI-ez-uLV"/>

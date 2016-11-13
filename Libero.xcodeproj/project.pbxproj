@@ -254,10 +254,6 @@
 		523F36731DD8E513001DB332 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				4407970F1DC9772F0034CDF0 /* Workout2.storyboard */,
-				52AF99E31DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift */,
-				440797121DC977B10034CDF0 /* WorkoutSelectTableViewController.swift */,
-				440797141DC978380034CDF0 /* WorkoutSelectCell.swift */,
 				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
 			);
 			name = Workout;
@@ -442,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		93DA999C7044C3E8B46131E3 /* [CP] Copy Pods Resources */ = {
