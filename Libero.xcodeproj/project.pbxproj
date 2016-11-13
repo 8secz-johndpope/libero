@@ -20,6 +20,7 @@
 		522840371DC171220062EE55 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522840361DC171220062EE55 /* LocationManager.swift */; };
 		52344B2E1DB576F200A4BE22 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2D1DB576F200A4BE22 /* League.swift */; };
 		52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */; };
+		523F36751DD8FE23001DB332 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F36741DD8FE23001DB332 /* AchievementsViewController.swift */; };
 		525CB9F81DAEF3810050C9D2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525CB9F61DAEF3810050C9D2 /* Bolts.framework */; };
 		525CB9F91DAEF3810050C9D2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525CB9F71DAEF3810050C9D2 /* Parse.framework */; };
 		525CBA081DAEF39D0050C9D2 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525CB9FA1DAEF39D0050C9D2 /* AccountKit.framework */; };
@@ -92,6 +93,7 @@
 		522840361DC171220062EE55 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		52344B2D1DB576F200A4BE22 /* League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralEnumsAndFuncs.swift; sourceTree = "<group>"; };
+		523F36741DD8FE23001DB332 /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		525CB9F61DAEF3810050C9D2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Libero-gkjgmyjgieaomodiqcmyhfxsetxw/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework"; sourceTree = "<group>"; };
 		525CB9F71DAEF3810050C9D2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Libero-gkjgmyjgieaomodiqcmyhfxsetxw/Build/Products/Debug-iphonesimulator/Parse/Parse.framework"; sourceTree = "<group>"; };
 		525CB9FA1DAEF39D0050C9D2 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = "FacebookSDKs-iOS-4/AccountKit.framework"; sourceTree = "<group>"; };
@@ -232,7 +234,7 @@
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
 				7C51D8761DD8FD6700B31DC7 /* Global.swift */,
-				7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */,
+				523F36761DD8FE27001DB332 /* Acheivements */,
 				7C2B3DFB1DCFAF8E00DFDCC2 /* Friends.storyboard */,
 				7C2C299D1DC664D70000C486 /* FriendsViewController.swift */,
 				7C2B3DF11DCFAD3700DFDCC2 /* MyActivity.storyboard */,
@@ -260,6 +262,15 @@
 				440797161DC979B50034CDF0 /* DifficultyTableViewController.swift */,
 			);
 			name = Workout;
+			sourceTree = "<group>";
+		};
+		523F36761DD8FE27001DB332 /* Acheivements */ = {
+			isa = PBXGroup;
+			children = (
+				7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */,
+				523F36741DD8FE23001DB332 /* AchievementsViewController.swift */,
+			);
+			name = Acheivements;
 			sourceTree = "<group>";
 		};
 		52AC8E1B1DB1A7B200A5AA52 /* Parse Subclasses */ = {
@@ -487,6 +498,7 @@
 				7CF1A6811DD8DD780071AF2A /* MyActivityTableViewController.swift in Sources */,
 				522840371DC171220062EE55 /* LocationManager.swift in Sources */,
 				52AF99E41DCA58A400C0B2A8 /* ActiveWorkoutViewController.swift in Sources */,
+				523F36751DD8FE23001DB332 /* AchievementsViewController.swift in Sources */,
 				7C88B87B1DC8124A00DAE399 /* FormerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
