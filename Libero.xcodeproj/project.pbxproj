@@ -140,12 +140,9 @@
 		7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
 		7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7CF1A6801DD8DD780071AF2A /* MyActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityTableViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		C6D10E351DDCF197003FD994 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-=======
 		7CF9EC991DDCF79400E9D13C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		7CF9EC9B1DDCF88A00E9D13C /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
->>>>>>> 5a6f4e4d3f5183073ee38d37d99f9888ff7d83f2
 		D702992B2605FE60DDE35031 /* Pods_Libero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
