@@ -64,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         application.registerForRemoteNotifications()
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         User.registerSubclass()
         User.ProfilePic.registerSubclass()
         League.registerSubclass()

@@ -60,9 +60,11 @@
 		7CDF75DA1DBD291B0060F1AB /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */; };
 		7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */; };
 		7CF1A6811DD8DD780071AF2A /* MyActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1A6801DD8DD780071AF2A /* MyActivityTableViewController.swift */; };
-		C6D10E361DDCF197003FD994 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D10E351DDCF197003FD994 /* TabBarController.swift */; };
 		7CF9EC9A1DDCF79400E9D13C /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9EC991DDCF79400E9D13C /* FriendsTableViewController.swift */; };
 		7CF9EC9C1DDCF88A00E9D13C /* LeaderboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9EC9B1DDCF88A00E9D13C /* LeaderboardTableViewController.swift */; };
+		C60862751DDCFE4C0050F38F /* LeaderboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60862741DDCFE4C0050F38F /* LeaderboardCell.swift */; };
+		C60862771DDCFF370050F38F /* Leaderboard2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60862761DDCFF370050F38F /* Leaderboard2ViewController.swift */; };
+		C6D10E361DDCF197003FD994 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D10E351DDCF197003FD994 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -140,9 +142,11 @@
 		7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
 		7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7CF1A6801DD8DD780071AF2A /* MyActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityTableViewController.swift; sourceTree = "<group>"; };
-		C6D10E351DDCF197003FD994 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7CF9EC991DDCF79400E9D13C /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		7CF9EC9B1DDCF88A00E9D13C /* LeaderboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewController.swift; sourceTree = "<group>"; };
+		C60862741DDCFE4C0050F38F /* LeaderboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardCell.swift; sourceTree = "<group>"; };
+		C60862761DDCFF370050F38F /* Leaderboard2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboard2ViewController.swift; sourceTree = "<group>"; };
+		C6D10E351DDCF197003FD994 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D702992B2605FE60DDE35031 /* Pods_Libero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -327,7 +331,9 @@
 			isa = PBXGroup;
 			children = (
 				7C2B3DED1DCFA7FD00DFDCC2 /* Leaderboard.storyboard */,
+				C60862741DDCFE4C0050F38F /* LeaderboardCell.swift */,
 				7CF9EC9B1DDCF88A00E9D13C /* LeaderboardTableViewController.swift */,
+				C60862761DDCFF370050F38F /* Leaderboard2ViewController.swift */,
 			);
 			name = Leaderboard;
 			sourceTree = "<group>";
@@ -378,7 +384,7 @@
 				TargetAttributes = {
 					52268AD11D9F0C2D0005C759 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 94P93XVBFP;
+						DevelopmentTeam = JKFU2K9BZM;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -479,7 +485,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		93DA999C7044C3E8B46131E3 /* [CP] Copy Pods Resources */ = {
@@ -510,11 +516,13 @@
 				7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */,
 				52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */,
 				C6D10E361DDCF197003FD994 /* TabBarController.swift in Sources */,
+				C60862771DDCFF370050F38F /* Leaderboard2ViewController.swift in Sources */,
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,
 				7C51D8771DD8FD6700B31DC7 /* Global.swift in Sources */,
 				52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */,
 				440797131DC977B10034CDF0 /* WorkoutSelectTableViewController.swift in Sources */,
 				7C2B3DFE1DCFB10F00DFDCC2 /* MyActivityCell.swift in Sources */,
+				C60862751DDCFE4C0050F38F /* LeaderboardCell.swift in Sources */,
 				7CB177441DBD403D00DA09AA /* LoginPageViewController.swift in Sources */,
 				52E20C2E1DB40BF3004113E6 /* Workout.swift in Sources */,
 				7CF9EC9C1DDCF88A00E9D13C /* LeaderboardTableViewController.swift in Sources */,
@@ -654,7 +662,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Libero/Libero.entitlements;
-				DEVELOPMENT_TEAM = 94P93XVBFP;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JKFU2K9BZM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FacebookSDKs-iOS-4",
@@ -664,6 +673,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DALI.Libero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Libero-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -678,7 +689,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Libero/Libero.entitlements;
-				DEVELOPMENT_TEAM = 94P93XVBFP;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JKFU2K9BZM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FacebookSDKs-iOS-4",

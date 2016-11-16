@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="217"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FMp-Ia-vBb" id="Huk-ap-quH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="216.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRI-0f-fwA">
@@ -111,13 +111,20 @@
                                     <outlet property="numOfWorkouts" destination="xRI-0f-fwA" id="Bdk-h4-XF5"/>
                                     <outlet property="winsLabel" destination="4BU-u6-bmt" id="4PM-Xf-APA"/>
                                     <outlet property="workoutLabel" destination="FXh-ew-oPB" id="lLj-Yu-Jyn"/>
+                                    <outletCollection property="labels" destination="xRI-0f-fwA" collectionClass="NSMutableArray" id="Cl1-nv-D7M"/>
+                                    <outletCollection property="labels" destination="xRI-0f-fwA" collectionClass="NSMutableArray" id="L9w-Fs-8bh"/>
+                                    <outletCollection property="labels" destination="FXh-ew-oPB" collectionClass="NSMutableArray" id="9oC-xs-yKM"/>
+                                    <outletCollection property="labels" destination="J2b-IP-MVE" collectionClass="NSMutableArray" id="7bJ-aY-bbF"/>
+                                    <outletCollection property="labels" destination="4BU-u6-bmt" collectionClass="NSMutableArray" id="MgL-wx-gVh"/>
+                                    <outletCollection property="labels" destination="Lvo-N0-bOp" collectionClass="NSMutableArray" id="cBj-YC-h6G"/>
+                                    <outletCollection property="labels" destination="XTj-jM-JJz" collectionClass="NSMutableArray" id="yM1-JB-5eR"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myActivityCell" rowHeight="84" id="CoF-Ex-cdz" customClass="MyActivityCell" customModule="Libero" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="245" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CoF-Ex-cdz" id="1hY-sI-VBX">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="83.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="83"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYN-cF-qXk">

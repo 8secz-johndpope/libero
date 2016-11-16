@@ -11,6 +11,7 @@ import UIKit
 class WorkoutSelectTableViewController: UITableViewController {
     
     let workoutList = ["Run", "Bike", "Swim", "Circuit"]
+    let subList = ["Go get it", "Just do it", "Go big or go home", "Beast Mode"]
     var workout = Workout()
     
 
@@ -48,7 +49,7 @@ class WorkoutSelectTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "workoutCell", for: indexPath) as! WorkoutSelectCell
         
         cell.workoutTitle.text = workoutList[indexPath.row].uppercased()
-        cell.workoutSubtitle.text = workoutList[indexPath.row]
+        cell.workoutSubtitle.text = subList[indexPath.row]
         cell.backgroundImage.image = UIImage(named: "workout_\(indexPath.row + 1)")
         
 

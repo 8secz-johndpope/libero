@@ -15,6 +15,8 @@ class MyActivityTableViewController: UITableViewController, DZNEmptyDataSetSourc
     let activityList = ["Monday Morning Bike", "Tuesday Evening Jog", "Wednesday Evening Walk"]
     
     
+    
+    
     /** Start Empty Data Protocol */
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "No Results"
@@ -33,7 +35,7 @@ class MyActivityTableViewController: UITableViewController, DZNEmptyDataSetSourc
         tableView.tableFooterView = UIView()
         
         L.setUpNavBar(navBar: (self.navigationController?.navigationBar)!)
-
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -82,6 +84,10 @@ class MyActivityTableViewController: UITableViewController, DZNEmptyDataSetSourc
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "myHeaderCell") as! MyActivityHeaderCell
+            
+            for label in cell.labels {
+                label.textColor = L.grey
+            }
             
             return cell
         default:
@@ -173,7 +179,7 @@ class MyActivityHeaderCell: UITableViewCell {
     @IBOutlet weak var numOfMedals: UILabel!
     @IBOutlet weak var medalsLabel: UILabel!
     
-    
+    @IBOutlet var labels: [UILabel]!
     
     
 }
