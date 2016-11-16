@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rCn-7u-gKe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rCn-7u-gKe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRI-0f-fwA">
-                                            <rect key="frame" x="141" y="22" width="92" height="96"/>
+                                            <rect key="frame" x="141" y="28" width="92" height="96"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="92" id="wNA-In-tbh"/>
                                             </constraints>
@@ -36,7 +36,7 @@
                                                     <attributes>
                                                         <color key="NSBackgroundColor" red="1" green="0.94509803920000002" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                                         <color key="NSColor" red="0.2361419226" green="0.2384799614" blue="0.2384799614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="50" name="Avenir-Black"/>
+                                                        <font key="NSFont" size="70" name="Avenir-Black"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -44,7 +44,7 @@
                                             <color key="highlightedColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXh-ew-oPB">
-                                            <rect key="frame" x="126" y="92" width="123" height="34"/>
+                                            <rect key="frame" x="126" y="102" width="123" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="123" id="Uc4-ef-LhB"/>
                                             </constraints>
@@ -95,12 +95,12 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="4BU-u6-bmt" secondAttribute="trailing" constant="32" id="Kxi-Iv-gqX"/>
                                         <constraint firstItem="Lvo-N0-bOp" firstAttribute="leading" secondItem="Huk-ap-quH" secondAttribute="leadingMargin" constant="46" id="Q99-oq-zXw"/>
                                         <constraint firstItem="Lvo-N0-bOp" firstAttribute="centerX" secondItem="XTj-jM-JJz" secondAttribute="centerX" id="RgR-7O-LTP"/>
-                                        <constraint firstItem="FXh-ew-oPB" firstAttribute="top" secondItem="Huk-ap-quH" secondAttribute="topMargin" constant="84" id="S32-6Y-ptl"/>
-                                        <constraint firstItem="xRI-0f-fwA" firstAttribute="top" secondItem="Huk-ap-quH" secondAttribute="topMargin" constant="14" id="mjD-yk-eFR"/>
+                                        <constraint firstItem="FXh-ew-oPB" firstAttribute="top" secondItem="Huk-ap-quH" secondAttribute="topMargin" constant="94" id="S32-6Y-ptl"/>
+                                        <constraint firstItem="xRI-0f-fwA" firstAttribute="top" secondItem="Huk-ap-quH" secondAttribute="topMargin" constant="20" id="mjD-yk-eFR"/>
                                         <constraint firstItem="XTj-jM-JJz" firstAttribute="baseline" secondItem="4BU-u6-bmt" secondAttribute="baseline" id="nDb-Q2-6s2"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="J2b-IP-MVE" secondAttribute="trailing" constant="36" id="tYh-03-u79"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="FXh-ew-oPB" secondAttribute="bottom" constant="82" id="x2A-Vs-fXh"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="xRI-0f-fwA" secondAttribute="bottom" constant="90" id="zgd-5M-Hwb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="FXh-ew-oPB" secondAttribute="bottom" constant="72" id="x2A-Vs-fXh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xRI-0f-fwA" secondAttribute="bottom" constant="84" id="zgd-5M-Hwb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.90980392156862744" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

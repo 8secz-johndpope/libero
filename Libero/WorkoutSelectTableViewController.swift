@@ -10,12 +10,14 @@ import UIKit
 
 class WorkoutSelectTableViewController: UITableViewController {
     
-    let workoutList = ["Run", "Bike", "Swim"]
+    let workoutList = ["Run", "Bike", "Swim", "Circuit"]
     var workout = Workout()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        L.setUpNavBar(navBar: (self.navigationController?.navigationBar)!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -47,6 +49,8 @@ class WorkoutSelectTableViewController: UITableViewController {
         
         cell.workoutTitle.text = workoutList[indexPath.row].uppercased()
         cell.workoutSubtitle.text = workoutList[indexPath.row]
+        cell.backgroundImage.image = UIImage(named: "workout_\(indexPath.row + 1)")
+        
 
         return cell
     }

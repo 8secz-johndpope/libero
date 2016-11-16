@@ -15,6 +15,7 @@ class DifficultyTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -46,6 +47,7 @@ class DifficultyTableViewController: UITableViewController {
         
         cell.workoutTitle.text = difficulties[indexPath.row].uppercased()
         cell.workoutSubtitle.text = difficulties[indexPath.row]
+        cell.backgroundImage.image = UIImage(named: "workout_\(indexPath.row + 1)")
 
         // Configure the cell...
 

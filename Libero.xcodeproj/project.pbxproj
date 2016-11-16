@@ -61,6 +61,7 @@
 		7CDF75DA1DBD291B0060F1AB /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */; };
 		7CDF75DF1DBD31850060F1AB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */; };
 		7CF1A6811DD8DD780071AF2A /* MyActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1A6801DD8DD780071AF2A /* MyActivityTableViewController.swift */; };
+		C6D10E361DDCF197003FD994 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D10E351DDCF197003FD994 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -139,6 +140,7 @@
 		7CDF75D91DBD291B0060F1AB /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
 		7CDF75DE1DBD31850060F1AB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7CF1A6801DD8DD780071AF2A /* MyActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityTableViewController.swift; sourceTree = "<group>"; };
+		C6D10E351DDCF197003FD994 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D702992B2605FE60DDE35031 /* Pods_Libero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Libero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -231,6 +233,7 @@
 				52268AD51D9F0C2D0005C759 /* AppDelegate.swift */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
+				C6D10E351DDCF197003FD994 /* TabBarController.swift */,
 				52D696981DBD31A400E84007 /* Classes */,
 				523F36761DD8FE27001DB332 /* Acheivements */,
 				52ADB5791DD92E91004C3CCB /* Friends */,
@@ -495,6 +498,7 @@
 				52268AD81D9F0C2D0005C759 /* ViewController.swift in Sources */,
 				7CC214871DC6610300CFE9D3 /* RegistrationPageViewController.swift in Sources */,
 				52268AD61D9F0C2D0005C759 /* AppDelegate.swift in Sources */,
+				C6D10E361DDCF197003FD994 /* TabBarController.swift in Sources */,
 				52AC8E1A1DB1A76500A5AA52 /* User.swift in Sources */,
 				7C51D8771DD8FD6700B31DC7 /* Global.swift in Sources */,
 				52344B301DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift in Sources */,

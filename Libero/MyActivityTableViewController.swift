@@ -32,6 +32,8 @@ class MyActivityTableViewController: UITableViewController, DZNEmptyDataSetSourc
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         
+        L.setUpNavBar(navBar: (self.navigationController?.navigationBar)!)
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
