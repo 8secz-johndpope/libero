@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class FriendsViewController: UIViewController {
+class FriendsViewController: UIViewController,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "No Results"
+        let attrs = [NSFontAttributeName: UIFont(name: "Avenir", size: 23)!]
+        return NSAttributedString(string: str, attributes: attrs)
+    
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        emptyDataSetSource = self
+        emptyDataSetDelegate = self
+        tableFooterView = UIView()
         
         L.setUpNavBar(navBar: (self.navigationController?.navigationBar)!)
         // Do any additional setup after loading the view.
@@ -21,6 +32,7 @@ class FriendsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
