@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uvU-zu-kIX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uvU-zu-kIX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -383,7 +383,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="nSH-Ab-oN4">
             <objects>
-                <tabBarController storyboardIdentifier="tabController" id="4yz-fb-NJQ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabController" id="4yz-fb-NJQ" customClass="TabBarController" customModule="Libero" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lT4-e6-qWI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -431,7 +431,7 @@
             <objects>
                 <navigationController id="YYb-ug-xSa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="friends" id="YDp-Qh-09R"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="CSm-eL-4d1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="CSm-eL-4d1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -454,7 +454,7 @@
             <objects>
                 <navigationController id="6AJ-4s-zng" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="MyActivity" image="user" id="oZT-O7-kM9"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="jFg-1x-i4J">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jFg-1x-i4J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -522,7 +522,7 @@
             <objects>
                 <navigationController id="d9z-9C-7sX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Leaderboard" image="leaderboard" id="5BK-zL-4QM"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Qoh-xL-Qnd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Qoh-xL-Qnd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
@@ -575,7 +575,7 @@
                 <navigationController storyboardIdentifier="workoutNavController" automaticallyAdjustsScrollViewInsets="NO" id="pbC-Hv-rGb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workout" image="RUN" id="aov-Yz-5d6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="gOI-Sx-gVG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gOI-Sx-gVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>

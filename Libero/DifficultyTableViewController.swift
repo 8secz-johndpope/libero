@@ -11,16 +11,12 @@ import UIKit
 class DifficultyTableViewController: UITableViewController {
     
     let difficulties = ["Easy", "Medium", "Hard"]
+    let subLabels = ["2 miles", "5 miles", "10 miles"]
     var workout: Workout!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +41,8 @@ class DifficultyTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "difficultyCell", for: indexPath) as! WorkoutSelectCell
         
         cell.workoutTitle.text = difficulties[indexPath.row].uppercased()
-        cell.workoutSubtitle.text = difficulties[indexPath.row]
+        cell.workoutSubtitle.text = subLabels[indexPath.row]
+        cell.backgroundImage.image = UIImage(named: "workout_\(indexPath.row + 1)")
 
         // Configure the cell...
 

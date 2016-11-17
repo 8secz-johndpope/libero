@@ -14,6 +14,10 @@ class AchievementsViewController: UIViewController, UICollectionViewDelegate, UI
     var achievements: [(acheivement: Achievement, completed: Bool)] = []
     
     override func viewDidLoad() {
+        
+        L.setUpNavBar(navBar: (self.navigationController?.navigationBar)!)
+        view.backgroundColor = L.grey
+        
         let test1 = (acheivement: Achievement(name: "10 miles run", type: .first), completed: true)
         let test2 = (acheivement: Achievement(name: "25 miles run", type: .second), completed: true)
         let test3 = (acheivement: Achievement(name: "50 miles run", type: .third), completed: false)
@@ -35,6 +39,8 @@ class AchievementsViewController: UIViewController, UICollectionViewDelegate, UI
         let test4C = (acheivement: Achievement(name: "100 miles walk", type: .fourth), completed: false)
         
         achievements = [test1, test2, test3, test4, test1A, test2A, test3A, test4A, test1B, test2B, test3B, test4B, test1C, test2C, test3C, test4C]
+        
+        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

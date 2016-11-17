@@ -1,30 +1,29 @@
 //
-//  FriendsViewController.swift
+//  TabBarController.swift
 //  Libero
 //
-//  Created by Nitasha Kochar on 10/30/16.
+//  Created by ArminM on 11/16/16.
 //  Copyright © 2016 DALI Lab. All rights reserved.
 //
 
 import UIKit
-import DZNEmptyDataSet
 
-class FriendsViewController: UIViewController,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
-    
-    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let str = "No Results"
-        let attrs = [NSFontAttributeName: UIFont(name: "Avenir", size: 23)!]
-        return NSAttributedString(string: str, attributes: attrs)
-    
-    }
+class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        emptyDataSetSource = self
-        emptyDataSetDelegate = self
-        tableFooterView = UIView()
         
-        L.setUpNavBar(navBar: (self.navigationController?.navigationBar)!)
+        UITabBar.appearance().tintColor = L.yellow
+        
+        // Sets the default color of the background of the UITabBar
+        UITabBar.appearance().barTintColor = L.grey
+        tabBar.isTranslucent = false
+
+        for tabBarItem in tabBar.items!
+        {
+            tabBarItem.title = ""
+            tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -32,7 +31,6 @@ class FriendsViewController: UIViewController,DZNEmptyDataSetSource, DZNEmptyDat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 
     /*

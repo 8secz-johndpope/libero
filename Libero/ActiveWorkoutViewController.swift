@@ -20,6 +20,8 @@ class ActiveWorkoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = L.grey
+        
         timeLabel.text = "00:00:00"
         distanceLabel.text = "0.0"
         

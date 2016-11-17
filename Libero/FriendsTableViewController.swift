@@ -13,7 +13,7 @@ class FriendsTableViewController: UITableViewController, DZNEmptyDataSetDelegate
     
     /** Start Empty Data Protocol */
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let str = "You have no friends! Add some friends."
+        let str = "You haven't made any friends yet! You can make friends by following a workout partner"
         let attrs = [NSFontAttributeName: UIFont(name: "Avenir", size: 23)!]
         return NSAttributedString(string: str, attributes: attrs)
     }
@@ -24,7 +24,8 @@ class FriendsTableViewController: UITableViewController, DZNEmptyDataSetDelegate
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         
-        
+        L.setUpNavBar(navBar: (self.navigationController?.navigationBar)!)
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
