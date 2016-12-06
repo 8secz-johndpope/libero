@@ -178,6 +178,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="activityTitle" destination="XHf-w2-CZP" id="JQ9-VJ-Foc"/>
+                                    <outlet property="dateLabel" destination="XoA-OG-9xl" id="ipO-3y-uHK"/>
+                                    <outlet property="descriptionLabel" destination="2Rv-ne-7M3" id="pgN-aJ-oGC"/>
+                                    <outlet property="myImageView" destination="Quu-eF-ajx" id="dBb-wd-mei"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

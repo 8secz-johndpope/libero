@@ -104,13 +104,23 @@ class User: PFUser {
         if workout.isActive {
             self.activeWorkout = workout
         }else{
-            self.relation(forKey: "pastWorkouts").add(workout)
+            let relation = self.relation(forKey: "pastWorkouts")
+            relation.query().findObjectsInBackground(block: { (objects, error) in
+                relation.add(workout)
+                self.saveInBackground { (success, error) in
+                    
+                }
+            })
+            
+            if self.pastWorkouts == nil {
+                self.pastWorkouts = []
+            }
+            
+            
             self.pastWorkouts?.append(workout)
         }
         
-        self.saveInBackground { (success, error) in
-            PFCloud.callFunction(inBackground: "updateWorkouts", withParameters: ["user": self])
-        }
+        
     }
     
     

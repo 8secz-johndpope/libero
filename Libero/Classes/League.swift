@@ -20,7 +20,7 @@ class League: PFObject, PFSubclassing {
     /**
      Gets all the users in the legue and stores them locally for operations
      */
-    func loadMembers(with block: ((_ members: [User]?, _ error: Error?) -> Void)?) {
+    private func loadMembers(with block: ((_ members: [User]?, _ error: Error?) -> Void)?) {
         let relation = self.relation(forKey: "members")
         relation.query().findObjectsInBackground { (objects, error) in
             let objects = objects as? [User]

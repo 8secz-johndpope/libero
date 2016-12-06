@@ -58,8 +58,9 @@ class WorkoutSelectTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let name = Workout.Name(rawValue: workoutList[indexPath.row].lowercased()) ?? .unknown
         
-        workout.typeInfo.name = Workout.Name(rawValue: workoutList[indexPath.row].lowercased()) ?? .unknown
+        workout.setName(name: name)
         
         self.performSegue(withIdentifier: "choseWorkoutType", sender: nil)
     }

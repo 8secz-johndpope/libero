@@ -34,13 +34,6 @@ class Achievement: PFObject, PFSubclassing {
         self.type = type
     }
     
-    static func calculateAchievements(user: User) {
-        // TODO: write achievements cloud function
-        PFCloud.callFunction(inBackground: "calculateAchievements", withParameters: ["user": user.objectId!]) { (result, error) in
-            // TODO: deal with result
-        }
-    }
-    
     static func parseClassName() -> String {
         return "Achievement"
     }

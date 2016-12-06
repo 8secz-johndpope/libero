@@ -66,6 +66,10 @@ class Workout: PFObject, PFSubclassing {
         case unknown
     }
     
+    func setName(name: Name) {
+        self.typeInfo = (type: self.typeInfo.type, name: name, difficulty: self.typeInfo.difficulty)
+    }
+    
     // ---- Data Subclassing ----
     class Subdata {
         // This class will provide a super class for different types of activity data

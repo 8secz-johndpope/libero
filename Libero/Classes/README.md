@@ -121,7 +121,24 @@ Arguments:
 
 The function requestPasswordReset will request from the server that the given email be sent a password reset form.
 
-_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+Usage:
+
+```swift
+User.requestPasswordReset(forEmail: “example@gmail.com”) { (error) in 
+	if error != nil {
+		// Failed
+	} else {
+		// Succeeded
+	}
+}
+```
+
+Arguments:
+
+- email: String
+	- The email for the user
+- block: Function([BackendError](#backenderror).User.PasswordReset?)
+	- Called when done
 
 #### logout
 
@@ -130,12 +147,15 @@ The function logout will log the user out from the device
 Usage:
 
 ```swift
-User.logout { () in 
+User.logout() { () in 
 	
 }
 ```
 
-_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+Arguments:
+
+- block: Function(NSError?) (PFUserLogoutResultBlock)
+	- Called when the logout is complete
 
 #### isLoggedIn
 
@@ -321,8 +341,6 @@ Arguments:
 
 Begins to track the phone using GPS and will save all the location data.
 
-__NOTE__: Location tracking is not working for now (for unknown reason). Call this anyway, but the data.distance and locationData properties will not be effected until the bug is fixed
-
 #### stopLocationTracking
 
 Stops location tracking
@@ -396,30 +414,147 @@ Properties:
 - distance: Double
 - speed: Double
 
+
+
+
+
 ## League
 
-_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+### Properties:
+
+- name: String
+	- The name of the League
+- members: [User]?
+	- A list of users in the League. Will be nil if the data hasn’t been loaded yet
+
+### Functions
+
+#### initialize
+Initializes the league object. This includes loading all the members in the league
+
+
+
+
+
 
 ## Achievement
 This class hasn’t been expanded on much, and we don’t event have the code yet for calculating these achievements
-
-_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
 
 ### Properties:
 
 - name: String
 
+### Classes and enums
+
+#### TypeEnum
+An enumeration to keep track of what stage (aka type) of achievement this is:
+
+	first
+	second
+	third
+	fourth
+	unknown
+
 ### Functions
 
-#### calculateAchievements
+#### init
 
-Will calculate the achievements for the user
+Initializes the object. There are two overloads:
+
+##### 1:
+Usage:
+
+```swift
+Achievement()
+```
+
+##### 2:
+Usage:
+
+```swift
+Achievement(“10 miles run”, .first)
+```
 
 Arguments:
 
-- user: User
+- name: String
+	- The name of the achievement
+- type: [Achievement.TypeEnum](#typeenum)
+	- An enumeration that defines type. This will define the type of image that will be used for the acheivement
+
+
+
 
 ## Other
 ### BackendError
 
-_UNDOCUMENTED_: This entry is incomplete! This is probably because John hasn’t yet finalized the syntax for it. Contact him for more info.
+I haven’t had time to write a thorough documentation for this class, but I have included the code that initializes plus a number of clarifying comments
+
+```swift
+class BackendError: Error, CustomStringConvertible {
+    
+    // This is a messy way to make an enumeration, but this way I get to make subclasses of the error
+    class User: BackendError {
+        // Some of the overall errors
+        static let UnknownUserError = User("unknown_user_error")
+        
+        // Errors occured when signing up
+        class SignUp: BackendError.User {
+            static let UsernameExists: SignUp = SignUp("username_exists")
+            static let InvalidUsername: SignUp = SignUp("invalid_username")
+            
+            override init(_ val: String) {
+                // The ending value will be "Backend Error: user-signup-\(val)"
+                super.init("signup-\(val)")
+            }
+        }
+        
+        // Errors occured when logging in
+        class Login: BackendError.User {
+            static let UnknownLogin = Login("unknown_login")
+            static let UnknownLoginError = Login("unknown_error")
+            
+            override init(_ val: String) {
+                // The ending value will be "Backend Error: user-login-\(val)"
+                super.init("login-\(val)")
+            }
+        }
+        
+        // Errors occured when resetting password
+        class PasswordReset: BackendError.User {
+            static let UnknownPasswordResetError = PasswordReset("unknown_error (we should figure out what the error codes are)")
+            
+            override init(_ val: String) {
+                super.init("passwdReset-\(val)")
+            }
+        }
+        
+        // This will give a printable value to the error
+        override init(_ val: String) {
+            // This will make a list of types in the value
+            super.init("user-\(val)")
+        }
+    }
+    class ServerError: BackendError {
+        static let CloudCodeFailed = User("cloud_code_failed")
+        
+        override init(_ val: String) {
+            // The ending value will be "Backend Error: signup-\(val)"
+            super.init("signup-\(val)")
+        }
+    }
+    static let FailedToConnect: BackendError = BackendError("failed_to_connect")
+    static let FailedToSave: BackendError = BackendError("failed_to_save")
+    static let DataDoesntExist: BackendError = BackendError("data_doesnt_exist")
+    static let UnknownError: BackendError = BackendError("unknown_error")
+    
+    let raw_value: String
+    init(_ val: String) {
+        self.raw_value = val
+    }
+    
+    var description: String {
+        return "Backend Error: \(raw_value)"
+    }
+}
+```

@@ -70,7 +70,6 @@ class LoginPageViewController: UIViewController {
                         let navVC = mainStoryboard.instantiateViewController(withIdentifier: "formerNav") as! UINavigationController
                         
                         self.present(navVC, animated: true, completion: nil)
-                        
                     }
                 }
                     

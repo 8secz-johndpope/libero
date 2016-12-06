@@ -62,6 +62,13 @@ class ActiveWorkoutViewController: UIViewController {
             workout.stopLocationTracking()
             
             workout.stopTimer()
+            
+            
+            workout.saveInBackground(block: { (success, error) in
+                let user = User.current()!
+                self.workout.addToUser(user: user)
+                let _ = self.navigationController?.popToRootViewController(animated: true)
+            })
         }
     }
     
