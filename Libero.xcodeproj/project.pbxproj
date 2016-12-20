@@ -134,7 +134,7 @@
 		7C2B3DF11DCFAD3700DFDCC2 /* MyActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyActivity.storyboard; sourceTree = "<group>"; };
 		7C2B3DFB1DCFAF8E00DFDCC2 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		7C2B3DFD1DCFB10F00DFDCC2 /* MyActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityCell.swift; sourceTree = "<group>"; };
-		7C51D8761DD8FD6700B31DC7 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		7C51D8761DD8FD6700B31DC7 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = ../Global.swift; sourceTree = "<group>"; };
 		7C88B87A1DC8124A00DAE399 /* FormerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormerViewController.swift; sourceTree = "<group>"; };
 		7C88B87C1DC819CB00DAE399 /* Former.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Former.framework; path = "Pods/../build/Debug-iphoneos/Former/Former.framework"; sourceTree = "<group>"; };
 		7CB177431DBD403D00DA09AA /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -235,7 +235,6 @@
 		52268AD41D9F0C2D0005C759 /* Libero */ = {
 			isa = PBXGroup;
 			children = (
-				7C51D8761DD8FD6700B31DC7 /* Global.swift */,
 				52268AD51D9F0C2D0005C759 /* AppDelegate.swift */,
 				52268AD71D9F0C2D0005C759 /* ViewController.swift */,
 				52268AD91D9F0C2D0005C759 /* Main.storyboard */,
@@ -308,6 +307,7 @@
 		52D696981DBD31A400E84007 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7C51D8761DD8FD6700B31DC7 /* Global.swift */,
 				52344B2F1DB578F800A4BE22 /* GeneralEnumsAndFuncs.swift */,
 				522840341DC14D570062EE55 /* LeaderBoard.swift */,
 				522840361DC171220062EE55 /* LocationManager.swift */,
